@@ -1,0 +1,285 @@
+import { motion } from 'framer-motion';
+import { 
+  Coins, 
+  TrendingDown, 
+  Clock,
+  Vote,
+  Wallet,
+  BarChart3,
+  Shield,
+  Zap,
+  ArrowRight,
+  Users,
+  Building,
+  Heart,
+  Code
+} from 'lucide-react';
+import { Layout } from '@/components/Layout';
+import { Button } from '@/components/ui/button';
+import { GlassCard } from '@/components/GlassCard';
+import { SectionHeading } from '@/components/SectionHeading';
+import { AnimatedCounter } from '@/components/AnimatedCounter';
+import { Link } from 'react-router-dom';
+
+const tokenParams = [
+  { label: 'Token Name', value: 'BTCD' },
+  { label: 'Total Supply', value: '21,000,000,000' },
+  { label: 'Smallest Unit', value: 'Satoshi-D' },
+  { label: 'Network', value: 'BTCD Mainnet' },
+];
+
+const distribution = [
+  { label: 'Mining', percentage: 40, color: 'bg-gold', icon: Coins },
+  { label: 'Ecosystem Rewards', percentage: 10, color: 'bg-gold-light', icon: Zap },
+  { label: 'Operations & Marketing', percentage: 10, color: 'bg-burgundy-light', icon: Building },
+  { label: 'Charity', percentage: 10, color: 'bg-primary', icon: Heart },
+  { label: 'Investors', percentage: 10, color: 'bg-burgundy-dark', icon: TrendingDown },
+  { label: 'Dev Team & Advisors', percentage: 10, color: 'bg-muted', icon: Code },
+  { label: 'Founder', percentage: 10, color: 'bg-card', icon: Users },
+];
+
+const utilities = [
+  { title: 'Gas Fees', description: 'Pay for all network transactions', icon: Zap },
+  { title: 'AI Services', description: 'Access AI bots and marketplace apps', icon: BarChart3 },
+  { title: 'Governance', description: '1 BTCD = 1 Vote in DAO decisions', icon: Vote },
+  { title: 'Staking Rewards', description: 'Earn passive income through staking', icon: Coins },
+  { title: 'Marketplace', description: 'Currency for all ecosystem purchases', icon: Wallet },
+  { title: 'Social Rewards', description: 'Earn from engagement on SocialFi', icon: Users },
+];
+
+export default function Tokenomics() {
+  return (
+    <Layout>
+      {/* Hero Section */}
+      <section className="pt-32 pb-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-hero" />
+        <div className="absolute inset-0 bg-pattern-circuit opacity-20" />
+        
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-center max-w-4xl mx-auto"
+          >
+            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-gradient-gold mb-6">
+              Designed for Long-Term Value
+            </h1>
+            <p className="text-xl text-muted-foreground">
+              21 Billion BTCD | 2.5 Year Halving | 25 Year Vesting
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Token Parameters */}
+      <section className="py-20">
+        <div className="container mx-auto px-4 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <GlassCard className="max-w-3xl mx-auto" goldBorder>
+              <h2 className="font-serif text-2xl text-secondary text-center mb-8">
+                Token Parameters
+              </h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                {tokenParams.map((param) => (
+                  <div key={param.label} className="flex justify-between items-center p-4 rounded-lg bg-card/30">
+                    <span className="text-muted-foreground">{param.label}</span>
+                    <span className="font-serif text-secondary font-semibold">{param.value}</span>
+                  </div>
+                ))}
+              </div>
+            </GlassCard>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Distribution */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background" />
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <SectionHeading
+            title="Fair Distribution Model"
+            subtitle="Designed for sustainable growth and community ownership"
+          />
+
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Pie Chart Representation */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="relative aspect-square max-w-md mx-auto"
+            >
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="text-center">
+                  <div className="font-serif text-4xl text-secondary mb-2">
+                    <AnimatedCounter end={21} suffix="B" />
+                  </div>
+                  <p className="text-muted-foreground">Total Supply</p>
+                </div>
+              </div>
+              
+              {/* Visual representation */}
+              <svg viewBox="0 0 100 100" className="w-full h-full -rotate-90">
+                {distribution.map((item, index) => {
+                  const offset = distribution.slice(0, index).reduce((acc, i) => acc + i.percentage, 0);
+                  const circumference = 2 * Math.PI * 35;
+                  const strokeDasharray = (item.percentage / 100) * circumference;
+                  const strokeDashoffset = -(offset / 100) * circumference;
+                  
+                  return (
+                    <circle
+                      key={item.label}
+                      cx="50"
+                      cy="50"
+                      r="35"
+                      fill="none"
+                      strokeWidth="20"
+                      className={`${item.color.replace('bg-', 'stroke-')} opacity-80`}
+                      style={{
+                        strokeDasharray: `${strokeDasharray} ${circumference}`,
+                        strokeDashoffset,
+                      }}
+                    />
+                  );
+                })}
+              </svg>
+            </motion.div>
+
+            {/* Legend */}
+            <div className="space-y-4">
+              {distribution.map((item, index) => (
+                <motion.div
+                  key={item.label}
+                  initial={{ opacity: 0, x: 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="flex items-center gap-4 p-3 rounded-lg bg-card/30 hover:bg-card/50 transition-colors"
+                >
+                  <div className={`w-10 h-10 rounded-lg ${item.color} flex items-center justify-center`}>
+                    <item.icon className="w-5 h-5 text-foreground" />
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-foreground font-medium">{item.label}</p>
+                  </div>
+                  <span className="font-serif text-xl text-secondary">{item.percentage}%</span>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Halving Mechanism */}
+      <section className="py-24">
+        <div className="container mx-auto px-4 lg:px-8">
+          <SectionHeading
+            title="2.5-Year Halving Cycle"
+            subtitle="Faster deflation than Bitcoin's 4-year cycle"
+          />
+
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <GlassCard>
+                <Clock className="w-12 h-12 text-secondary mb-6" />
+                <h3 className="font-serif text-2xl text-secondary mb-4">
+                  Halving Schedule
+                </h3>
+                <p className="text-muted-foreground mb-6">
+                  Mining rewards reduce by 50% every 2.5 years, creating a predictable 
+                  deflationary model that rewards early participants while ensuring 
+                  long-term sustainability.
+                </p>
+                <div className="bg-card/50 p-4 rounded-lg font-mono text-sm">
+                  <p className="text-secondary">Mining_Rate(t) = R₀ × (0.5)^⌊t/2.5⌋</p>
+                </div>
+              </GlassCard>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <GlassCard>
+                <TrendingDown className="w-12 h-12 text-secondary mb-6" />
+                <h3 className="font-serif text-2xl text-secondary mb-4">
+                  25-Year Vesting
+                </h3>
+                <p className="text-muted-foreground mb-6">
+                  Team and founder tokens are vested equally over 25 years — the 
+                  strongest anti-rug-pull commitment in the cryptocurrency industry.
+                </p>
+                <div className="flex items-center gap-4">
+                  <Shield className="w-8 h-8 text-secondary" />
+                  <p className="text-foreground font-medium">Maximum Trust Guarantee</p>
+                </div>
+              </GlassCard>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Token Utility */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-burgundy opacity-50" />
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <SectionHeading
+            title="Token Utility"
+            subtitle="BTCD powers the entire ecosystem"
+          />
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {utilities.map((utility, index) => (
+              <motion.div
+                key={utility.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <GlassCard className="h-full">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center flex-shrink-0">
+                      <utility.icon className="w-6 h-6 text-secondary" />
+                    </div>
+                    <div>
+                      <h3 className="font-serif text-lg text-secondary mb-2">
+                        {utility.title}
+                      </h3>
+                      <p className="text-muted-foreground text-sm">
+                        {utility.description}
+                      </p>
+                    </div>
+                  </div>
+                </GlassCard>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mt-12"
+          >
+            <Link to="/whitepaper">
+              <Button variant="gold" size="lg">
+                Full Economic Model
+                <ArrowRight className="ml-2" size={18} />
+              </Button>
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+    </Layout>
+  );
+}

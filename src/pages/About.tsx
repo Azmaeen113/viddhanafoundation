@@ -1,0 +1,337 @@
+import { motion } from 'framer-motion';
+import { 
+  Target, 
+  Heart, 
+  Shield,
+  Globe,
+  Lightbulb,
+  Users,
+  Sparkles,
+  ArrowRight
+} from 'lucide-react';
+import { Layout } from '@/components/Layout';
+import { Button } from '@/components/ui/button';
+import { GlassCard } from '@/components/GlassCard';
+import { SectionHeading } from '@/components/SectionHeading';
+import { Link } from 'react-router-dom';
+import btcdLogo from '@/assets/btcd-logo.jpg';
+
+const values = [
+  { title: 'Decentralization', description: 'No central authority controls BTCD', icon: Globe },
+  { title: 'Accessibility', description: 'Zero barriers to entry for everyone', icon: Users },
+  { title: 'Innovation', description: 'Pushing boundaries of what blockchain can do', icon: Lightbulb },
+  { title: 'Community-First', description: 'Every decision prioritizes user benefits', icon: Heart },
+  { title: 'Transparency', description: 'Open source and fully auditable', icon: Shield },
+  { title: 'Sustainability', description: 'Built for generational impact', icon: Sparkles },
+];
+
+const impactGoals = [
+  { year: '2026', goal: 'Empower early adopters with free mining', users: '1M+' },
+  { year: '2030', goal: 'Become top 10 cryptocurrency by users', users: '100M+' },
+  { year: '2035', goal: 'Standard financial infrastructure globally', users: '500M+' },
+  { year: '2040+', goal: 'Global reserve asset consideration', users: '1B+' },
+];
+
+export default function About() {
+  return (
+    <Layout>
+      {/* Hero Section */}
+      <section className="pt-32 pb-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-hero" />
+        <div className="absolute inset-0 bg-pattern-circuit opacity-20" />
+        
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-center max-w-4xl mx-auto"
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              className="mb-8 flex justify-center"
+            >
+              <div className="relative">
+                <div className="absolute inset-0 bg-gold/20 blur-2xl rounded-full" />
+                <img
+                  src={btcdLogo}
+                  alt="BTCD Foundation"
+                  className="relative w-28 h-28 rounded-2xl border-4 border-secondary/50"
+                />
+              </div>
+            </motion.div>
+            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-gradient-gold mb-6">
+              Building Financial Freedom for 8 Billion People
+            </h1>
+            <p className="text-xl text-muted-foreground">
+              Our mission is to create the financial operating system for humanity's digital future
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Vision Statement */}
+      <section className="py-24">
+        <div className="container mx-auto px-4 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto text-center"
+          >
+            <GlassCard goldBorder className="p-8 md:p-12">
+              <Target className="w-16 h-16 text-secondary mx-auto mb-6" />
+              <blockquote className="font-serif text-2xl md:text-3xl text-foreground leading-relaxed mb-6">
+                "BTCD isn't just another cryptocurrency. It's a complete reimagining 
+                of how 8 billion people interact with money, technology, and each other. 
+                We're building the financial operating system for humanity's digital future."
+              </blockquote>
+              <p className="text-secondary uppercase tracking-widest text-sm">
+                BTCD Foundation Vision
+              </p>
+            </GlassCard>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* The Problem */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background" />
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <SectionHeading
+            title="The Problem We're Solving"
+            subtitle="Three fundamental barriers prevent cryptocurrency mass adoption"
+          />
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                title: 'Traditional Finance Exclusion',
+                stat: '2B+',
+                description: 'Over 2 billion adults remain unbanked, excluded from the global financial system.'
+              },
+              {
+                title: 'Crypto Complexity',
+                stat: '90%',
+                description: '90% of people find cryptocurrency too complex, technical, or risky to use.'
+              },
+              {
+                title: 'Limited Utility',
+                stat: '< 5%',
+                description: 'Less than 5% of crypto holders use their assets for anything beyond speculation.'
+              }
+            ].map((problem, index) => (
+              <motion.div
+                key={problem.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <GlassCard className="h-full text-center">
+                  <div className="font-serif text-5xl text-secondary mb-4">
+                    {problem.stat}
+                  </div>
+                  <h3 className="font-serif text-xl text-foreground mb-3">
+                    {problem.title}
+                  </h3>
+                  <p className="text-muted-foreground">
+                    {problem.description}
+                  </p>
+                </GlassCard>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Our Solution */}
+      <section className="py-24">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="font-serif text-3xl md:text-4xl text-gradient-gold mb-6">
+                The BTCD Difference
+              </h2>
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center flex-shrink-0">
+                    <span className="font-serif text-secondary">01</span>
+                  </div>
+                  <div>
+                    <h3 className="font-serif text-lg text-secondary mb-2">Bitcoin Gave Us Digital Gold</h3>
+                    <p className="text-muted-foreground">The foundation of decentralized value storage.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center flex-shrink-0">
+                    <span className="font-serif text-secondary">02</span>
+                  </div>
+                  <div>
+                    <h3 className="font-serif text-lg text-secondary mb-2">Ethereum Gave Us Smart Contracts</h3>
+                    <p className="text-muted-foreground">The ability to program money and build dApps.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-gold/20 flex items-center justify-center flex-shrink-0 border-2 border-secondary">
+                    <span className="font-serif text-secondary">03</span>
+                  </div>
+                  <div>
+                    <h3 className="font-serif text-lg text-secondary mb-2">BTCD Gives Us a Complete Financial Life</h3>
+                    <p className="text-muted-foreground">
+                      A unified ecosystem where anyone can earn, trade, communicate, 
+                      and manage their entire financial existence.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <GlassCard className="p-8" goldBorder>
+                <h3 className="font-serif text-2xl text-secondary text-center mb-6">
+                  Our Philosophy
+                </h3>
+                <ul className="space-y-4">
+                  {[
+                    'Accessibility over exclusivity',
+                    'Utility over speculation',
+                    'Community ownership over corporate control',
+                    'Long-term sustainability over short-term gains',
+                    'Innovation through collaboration'
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-center gap-3">
+                      <div className="w-2 h-2 rounded-full bg-secondary" />
+                      <span className="text-foreground">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </GlassCard>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Core Values */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-burgundy opacity-50" />
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <SectionHeading
+            title="Our Core Values"
+            subtitle="The principles that guide every decision we make"
+          />
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {values.map((value, index) => (
+              <motion.div
+                key={value.title}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <GlassCard className="h-full text-center">
+                  <div className="w-14 h-14 mx-auto mb-4 rounded-xl bg-secondary/10 flex items-center justify-center">
+                    <value.icon className="w-7 h-7 text-secondary" />
+                  </div>
+                  <h3 className="font-serif text-lg text-secondary mb-2">
+                    {value.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm">
+                    {value.description}
+                  </p>
+                </GlassCard>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Impact Goals */}
+      <section className="py-24">
+        <div className="container mx-auto px-4 lg:px-8">
+          <SectionHeading
+            title="Our Impact Timeline"
+            subtitle="The journey from launch to global financial infrastructure"
+          />
+
+          <div className="max-w-4xl mx-auto">
+            {impactGoals.map((goal, index) => (
+              <motion.div
+                key={goal.year}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="flex items-center gap-8 mb-8"
+              >
+                <div className="w-24 text-right">
+                  <span className="font-serif text-2xl text-secondary">{goal.year}</span>
+                </div>
+                <div className="w-4 h-4 rounded-full bg-secondary flex-shrink-0" />
+                <GlassCard className="flex-1">
+                  <div className="flex items-center justify-between gap-4 flex-wrap">
+                    <p className="text-foreground">{goal.goal}</p>
+                    <span className="font-serif text-xl text-secondary">{goal.users} users</span>
+                  </div>
+                </GlassCard>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-burgundy" />
+        <div className="absolute inset-0 bg-pattern-circuit opacity-20" />
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center max-w-3xl mx-auto"
+          >
+            <h2 className="font-serif text-3xl md:text-4xl text-gradient-gold mb-6">
+              Join Us in Building the Future
+            </h2>
+            <p className="text-xl text-foreground/80 mb-8">
+              Be part of the movement that will define the next era of finance.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button variant="hero" size="xl">
+                Start Mining Free BTCD
+                <ArrowRight className="ml-2" size={20} />
+              </Button>
+              <Link to="/whitepaper">
+                <Button variant="heroOutline" size="xl">
+                  Read Our Whitepaper
+                </Button>
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Disclaimer */}
+      <section className="py-12 bg-card/30">
+        <div className="container mx-auto px-4 lg:px-8">
+          <p className="text-center text-muted-foreground text-sm max-w-3xl mx-auto">
+            <strong>Disclaimer:</strong> This website is for informational purposes only. 
+            BTCD tokens are utility tokens and do not represent investment contracts. 
+            Cryptocurrency investments carry risk, and past performance is not indicative 
+            of future results. Please conduct your own research.
+          </p>
+        </div>
+      </section>
+    </Layout>
+  );
+}
