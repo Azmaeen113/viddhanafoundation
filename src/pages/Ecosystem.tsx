@@ -268,12 +268,207 @@ export default function Ecosystem() {
               </div>
             </GlassCard>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Web2 vs Web3 vs BTCD Comparison */}
+      <section className="py-24">
+        <div className="container mx-auto px-4 lg:px-8">
+          <SectionHeading
+            title="BTCD vs Traditional Solutions"
+            subtitle="See how BTCD surpasses both Web2 and current Web3 platforms"
+          />
+
+          <div className="space-y-8">
+            {/* Example 1: Financial Trading */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <GlassCard goldBorder>
+                <h3 className="font-serif text-2xl text-secondary mb-6">
+                  Example 1: Financial Trading – Who Wins?
+                </h3>
+                <div className="grid md:grid-cols-3 gap-6">
+                  <div className="space-y-3">
+                    <h4 className="font-semibold text-foreground/80">Web2 (Robinhood)</h4>
+                    <p className="text-sm text-foreground/60">
+                      Fast trading, but the company controls everything. Can block orders, limit trades.
+                    </p>
+                  </div>
+                  <div className="space-y-3">
+                    <h4 className="font-semibold text-foreground/80">Web3 (Uniswap)</h4>
+                    <p className="text-sm text-foreground/60">
+                      Decentralized, but manual trading, no AI assistance.
+                    </p>
+                  </div>
+                  <div className="space-y-3 bg-gold/10 p-4 rounded-lg border border-gold/30">
+                    <h4 className="font-semibold text-gold">✅ BTCD</h4>
+                    <p className="text-sm text-foreground/80">
+                      Has DEX + AI Bot Trade → Automates trading, optimizes profits, no intervention needed.
+                    </p>
+                  </div>
+                </div>
+              </GlassCard>
+            </motion.div>
+
+            {/* Example 2: Asset Management */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <GlassCard goldBorder>
+                <h3 className="font-serif text-2xl text-secondary mb-6">
+                  Example 2: Personal Asset Management
+                </h3>
+                <div className="grid md:grid-cols-3 gap-6">
+                  <div className="space-y-3">
+                    <h4 className="font-semibold text-foreground/80">Web2 (Mint, Personal Capital)</h4>
+                    <p className="text-sm text-foreground/60">
+                      Gathers account data but does not allow control.
+                    </p>
+                  </div>
+                  <div className="space-y-3">
+                    <h4 className="font-semibold text-foreground/80">Web3 (DeBank, Zapper)</h4>
+                    <p className="text-sm text-foreground/60">
+                      Displays assets but lacks AI management.
+                    </p>
+                  </div>
+                  <div className="space-y-3 bg-gold/10 p-4 rounded-lg border border-gold/30">
+                    <h4 className="font-semibold text-gold">✅ BTCD (Viddhana OS)</h4>
+                    <p className="text-sm text-foreground/80">
+                      Developing an AI-based asset management OS that predicts risks and automatically adjusts portfolios.
+                    </p>
+                  </div>
+                </div>
+              </GlassCard>
+            </motion.div>
+
+            {/* Example 3: Multi-Asset Trading */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <GlassCard goldBorder>
+                <h3 className="font-serif text-2xl text-secondary mb-6">
+                  Example 3: Multi-Asset Trading Platforms
+                </h3>
+                <div className="grid md:grid-cols-3 gap-6">
+                  <div className="space-y-3">
+                    <h4 className="font-semibold text-foreground/80">Web2 (TradingView)</h4>
+                    <p className="text-sm text-foreground/60">
+                      Only analysis, no direct trading capabilities.
+                    </p>
+                  </div>
+                  <div className="space-y-3">
+                    <h4 className="font-semibold text-foreground/80">Web3 (1inch, Matcha)</h4>
+                    <p className="text-sm text-foreground/60">
+                      Multi-chain trading, but lacks optimization AI.
+                    </p>
+                  </div>
+                  <div className="space-y-3 bg-gold/10 p-4 rounded-lg border border-gold/30">
+                    <h4 className="font-semibold text-gold">✅ BTCD</h4>
+                    <p className="text-sm text-foreground/80">
+                      Multi-asset trading + strategy optimization AI + automation → A "comprehensive financial assistant".
+                    </p>
+                  </div>
+                </div>
+              </GlassCard>
+            </motion.div>
+
+            {/* Example 4: Financial Messaging */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <GlassCard goldBorder>
+                <h3 className="font-serif text-2xl text-secondary mb-6">
+                  Example 4: Integrated Financial Messaging (Webcall)
+                </h3>
+                <div className="grid md:grid-cols-3 gap-6">
+                  <div className="space-y-3">
+                    <h4 className="font-semibold text-foreground/80">Web2 (WhatsApp)</h4>
+                    <p className="text-sm text-foreground/60">
+                      Sending money via e-wallet, but token integration missing.
+                    </p>
+                  </div>
+                  <div className="space-y-3">
+                    <h4 className="font-semibold text-foreground/80">Web3 (Status)</h4>
+                    <p className="text-sm text-foreground/60">
+                      Offers decentralized messaging, wallet integration.
+                    </p>
+                  </div>
+                  <div className="space-y-3 bg-gold/10 p-4 rounded-lg border border-gold/30">
+                    <h4 className="font-semibold text-gold">✅ BTCD (Webcall)</h4>
+                    <p className="text-sm text-foreground/80">
+                      Integrate messaging + transfer BTCD + trade directly within messages → A breakthrough feature not found in any current platform.
+                    </p>
+                  </div>
+                </div>
+              </GlassCard>
+            </motion.div>
+
+            {/* Example 5: SocialFi */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <GlassCard goldBorder>
+                <h3 className="font-serif text-2xl text-secondary mb-6">
+                  Example 5: Generating Revenue from Content (SocialFi)
+                </h3>
+                <div className="grid md:grid-cols-3 gap-6">
+                  <div className="space-y-3">
+                    <h4 className="font-semibold text-foreground/80">Web2 (TikTok, YouTube)</h4>
+                    <p className="text-sm text-foreground/60">
+                      Create content, but the company retains 70-90% of revenue.
+                    </p>
+                  </div>
+                  <div className="space-y-3">
+                    <h4 className="font-semibold text-foreground/80">Web3 (Lens, Farcaster)</h4>
+                    <p className="text-sm text-foreground/60">
+                      Create content, earn tokens, but lacks real monetization mechanisms.
+                    </p>
+                  </div>
+                  <div className="space-y-3 bg-gold/10 p-4 rounded-lg border border-gold/30">
+                    <h4 className="font-semibold text-gold">✅ BTCD</h4>
+                    <p className="text-sm text-foreground/80">
+                      Users create content → rewarded with BTCD, can convert to real money, or use for AI trading. Building a genuinely valuable SocialFi model.
+                    </p>
+                  </div>
+                </div>
+              </GlassCard>
+            </motion.div>
+          </div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-center mt-12"
+          >
+            <GlassCard className="max-w-3xl mx-auto p-8">
+              <p className="text-xl text-secondary font-semibold mb-2">
+                ✅ Conclusion:
+              </p>
+              <p className="text-lg text-foreground/80">
+                BTCD is building the first AI financial platform on blockchain, 
+                outperforming existing Web2 and Web3 options with intelligent automation, 
+                comprehensive features, and genuine utility.
+              </p>
+            </GlassCard>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mt-8"
           >
             <Link to="/tokenomics">
               <Button variant="gold" size="lg">

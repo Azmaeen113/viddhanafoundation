@@ -7,7 +7,10 @@ import {
   Lightbulb,
   Users,
   Sparkles,
-  ArrowRight
+  ArrowRight,
+  CheckCircle2,
+  Clock,
+  Rocket
 } from 'lucide-react';
 import { Layout } from '@/components/Layout';
 import { Button } from '@/components/ui/button';
@@ -89,6 +92,110 @@ export default function About() {
               </blockquote>
               <p className="text-secondary uppercase tracking-widest text-sm">
                 BTCD Foundation Vision
+              </p>
+            </GlassCard>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Development Status Section - NEW */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-burgundy-dark/5 to-background" />
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <SectionHeading
+            title="From Idea to Emerging Reality"
+            subtitle="BTCD is no longer just a concept—it is becoming a real technological ecosystem"
+          />
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            {[
+              { icon: CheckCircle2, label: 'Layer 1 Blockchain', status: 'Completed', color: 'text-green-500' },
+              { icon: CheckCircle2, label: 'Swap Platform', status: 'Completed', color: 'text-green-500' },
+              { icon: CheckCircle2, label: 'DEX Platform', status: 'Completed', color: 'text-green-500' },
+              { icon: CheckCircle2, label: 'AI Bot Trade', status: 'Completed', color: 'text-green-500' },
+            ].map((item, index) => (
+              <motion.div
+                key={item.label}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <GlassCard className="text-center h-full">
+                  <item.icon className={`w-12 h-12 mx-auto mb-4 ${item.color}`} />
+                  <h3 className="font-serif text-lg text-secondary mb-2">
+                    {item.label}
+                  </h3>
+                  <p className={`text-sm font-semibold ${item.color}`}>
+                    {item.status}
+                  </p>
+                </GlassCard>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-8">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <GlassCard goldBorder className="h-full">
+                <Clock className="w-10 h-10 text-gold mb-4" />
+                <h3 className="font-serif text-2xl text-secondary mb-3">
+                  Viddhana Asset Management OS
+                </h3>
+                <p className="text-yellow-500 font-semibold mb-3">🟡 In Development</p>
+                <p className="text-foreground/80 mb-4">
+                  AI-powered asset management operating system currently under active development. 
+                  This revolutionary platform will predict risks and automatically adjust portfolios, 
+                  representing a significant advancement over current tools.
+                </p>
+              </GlassCard>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <GlassCard goldBorder className="h-full">
+                <Rocket className="w-10 h-10 text-gold mb-4" />
+                <h3 className="font-serif text-2xl text-secondary mb-3">
+                  Development Team & Timeline
+                </h3>
+                <div className="space-y-3 text-foreground/80">
+                  <p className="flex items-center gap-2">
+                    <Users className="w-5 h-5 text-secondary" />
+                    <strong>Technical Team:</strong> ~15 dedicated professionals
+                  </p>
+                  <p className="flex items-center gap-2">
+                    <Clock className="w-5 h-5 text-secondary" />
+                    <strong>Expected Completion:</strong> July 2026
+                  </p>
+                  <p className="flex items-center gap-2">
+                    <CheckCircle2 className="w-5 h-5 text-green-500" />
+                    <strong>Status:</strong> Core components operational, clear roadmap established
+                  </p>
+                </div>
+              </GlassCard>
+            </motion.div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mt-12"
+          >
+            <GlassCard className="max-w-3xl mx-auto p-8">
+              <p className="text-xl text-foreground font-semibold mb-2">
+                ✅ Conclusion:
+              </p>
+              <p className="text-lg text-foreground/80">
+                BTCD is <strong className="text-secondary">no longer just an idea</strong>—it is becoming a 
+                real technological ecosystem, with foundational components already in place and a team 
+                working continuously toward completion.
               </p>
             </GlassCard>
           </motion.div>

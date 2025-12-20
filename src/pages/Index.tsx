@@ -12,7 +12,9 @@ import {
   Wallet,
   MessageSquare,
   BarChart3,
-  ArrowRightLeft
+  ArrowRightLeft,
+  Youtube,
+  CheckCircle2
 } from 'lucide-react';
 import { Layout } from '@/components/Layout';
 import { Button } from '@/components/ui/button';
@@ -115,7 +117,7 @@ export default function Index() {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="text-xl md:text-2xl text-foreground/90 mb-4"
             >
-              The Future of Decentralized Finance
+              From Idea to Emerging Reality
             </motion.p>
 
             <motion.p
@@ -124,7 +126,7 @@ export default function Index() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="text-lg text-muted-foreground mb-10 max-w-3xl mx-auto"
             >
-              A Complete Financial Operating System for 8 Billion People
+              A Complete Financial Operating System Built by ~15 Experts • Expected Completion: July 2026
             </motion.p>
 
             {/* CTAs */}
@@ -161,6 +163,42 @@ export default function Index() {
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-burgundy-dark/20 to-background" />
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          {/* Development Status Banner */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-12 text-center"
+          >
+            <GlassCard goldBorder className="max-w-4xl mx-auto p-8">
+              <h2 className="font-serif text-2xl md:text-3xl text-gradient-gold mb-4">
+                ✅ BTCD is No Longer Just an Idea—It's Becoming Reality
+              </h2>
+              <p className="text-foreground/80 mb-6">
+                Core components already completed, with a dedicated team of ~15 professionals 
+                working continuously toward July 2026 completion.
+              </p>
+              <div className="flex flex-wrap justify-center gap-4">
+                <div className="flex items-center gap-2 px-4 py-2 bg-green-500/10 rounded-lg border border-green-500/30">
+                  <CheckCircle2 className="w-5 h-5 text-green-500" />
+                  <span className="text-sm font-semibold text-foreground">Layer 1 ✅</span>
+                </div>
+                <div className="flex items-center gap-2 px-4 py-2 bg-green-500/10 rounded-lg border border-green-500/30">
+                  <CheckCircle2 className="w-5 h-5 text-green-500" />
+                  <span className="text-sm font-semibold text-foreground">Swap ✅</span>
+                </div>
+                <div className="flex items-center gap-2 px-4 py-2 bg-green-500/10 rounded-lg border border-green-500/30">
+                  <CheckCircle2 className="w-5 h-5 text-green-500" />
+                  <span className="text-sm font-semibold text-foreground">DEX ✅</span>
+                </div>
+                <div className="flex items-center gap-2 px-4 py-2 bg-green-500/10 rounded-lg border border-green-500/30">
+                  <CheckCircle2 className="w-5 h-5 text-green-500" />
+                  <span className="text-sm font-semibold text-foreground">AI Bot ✅</span>
+                </div>
+              </div>
+            </GlassCard>
+          </motion.div>
+
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
             {stats.map((stat, index) => (
               <motion.div
@@ -203,23 +241,23 @@ export default function Index() {
               transition={{ duration: 0.6 }}
             >
               <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-gradient-gold mb-6">
-                More Than Cryptocurrency
+                Not Just an Idea—Real Products
               </h2>
               <p className="text-xl text-foreground/90 mb-4">
-                A Financial Universe
+                A Pioneering Web3 Financial Ecosystem
               </p>
               <p className="text-muted-foreground mb-8 leading-relaxed">
-                BTCD transcends traditional blockchain limitations by integrating 
-                high-performance infrastructure with AI, social networking, and 
-                automated financial tools. We're democratizing finance for the 
-                next billion users.
+                BTCD is being built every day with real technical products, a team of experts, 
+                and a grand vision. Completing all four main components (Layer 1, Swap, DEX, AI Trade) 
+                is rare—usually seen only in large projects like Solana, Cosmos, or Ethereum.
               </p>
               <ul className="space-y-4 mb-8">
                 {[
-                  'Native AI integration at protocol level',
-                  'Zero-cost entry for all users',
-                  'Complete ecosystem: DEX, social, messaging, AI',
-                  'Sustainable tokenomics with 2.5-year halving'
+                  'Own Layer 1 blockchain - fully operational',
+                  'Cross-chain swap platform - completed',
+                  'Decentralized exchange - live and tested',
+                  'AI-powered trading bots - trained on 10M+ transactions',
+                  'Viddhana Asset Management OS - in development'
                 ].map((item, index) => (
                   <motion.li
                     key={index}
@@ -230,7 +268,7 @@ export default function Index() {
                     className="flex items-center gap-3"
                   >
                     <div className="w-6 h-6 rounded-full bg-secondary/20 flex items-center justify-center">
-                      <div className="w-2 h-2 rounded-full bg-secondary" />
+                      <CheckCircle2 className="w-4 h-4 text-green-500" />
                     </div>
                     <span className="text-foreground/80">{item}</span>
                   </motion.li>
@@ -384,6 +422,47 @@ export default function Index() {
               Get Started Now
               <ArrowRight className="ml-2" size={20} />
             </Button>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* YouTube Channel Section */}
+      <section className="py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-burgundy-dark/5 to-background" />
+        
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center max-w-4xl mx-auto"
+          >
+            <div className="flex justify-center mb-6">
+              <div className="p-4 bg-gradient-burgundy rounded-full">
+                <Youtube className="w-12 h-12 text-gold" />
+              </div>
+            </div>
+            
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-gradient-gold mb-4">
+              CreativexpertIDO Marketing Agency
+            </h2>
+            <p className="text-xl text-foreground/80 mb-8">
+              Follow our YouTube channel for the latest updates and insights
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <a 
+                href="https://youtube.com/@btcdfoundation?si=sCQFPXN_cJwI4lh1"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="goldOutline" size="lg" className="group">
+                  <Youtube className="mr-2 w-5 h-5" />
+                  Visit Our Channel
+                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </a>
+            </div>
           </motion.div>
         </div>
       </section>

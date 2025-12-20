@@ -308,11 +308,56 @@ export default function Tokenomics() {
         <div className="absolute inset-0 bg-pattern-circuit opacity-20" />
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <SectionHeading
-            title="Token Utility"
-            subtitle="BTCD powers the entire ecosystem"
+            title="Token Utility & Real Business Model"
+            subtitle="BTCD powers the entire ecosystem with genuine value and utility"
           />
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Core Value Proposition */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-12"
+          >
+            <GlassCard goldBorder className="p-8">
+              <h3 className="font-serif text-2xl text-secondary text-center mb-6">
+                Core Values of BTCD Token
+              </h3>
+              <div className="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h4 className="text-gold font-semibold mb-3">Comprehensive Financial Services</h4>
+                  <p className="text-foreground/80 text-sm">
+                    A unified ecosystem where anyone can earn, trade, communicate, and manage 
+                    their entire financial existence—all within a single platform.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="text-gold font-semibold mb-3">AI-Powered Intelligence</h4>
+                  <p className="text-foreground/80 text-sm">
+                    The AI Bot Trade is not just "automated" but also learns and adjusts strategies 
+                    according to the market—like a "virtual financial assistant".
+                  </p>
+                </div>
+                <div>
+                  <h4 className="text-gold font-semibold mb-3">100% Asset Ownership</h4>
+                  <p className="text-foreground/80 text-sm">
+                    Users control the private key, completely independent of intermediaries. 
+                    True financial sovereignty.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="text-gold font-semibold mb-3">Real Revenue Generation</h4>
+                  <p className="text-foreground/80 text-sm">
+                    Potential revenue from transaction fees, AI usage fees, and financial service 
+                    fees—creating sustainable economic value.
+                  </p>
+                </div>
+              </div>
+            </GlassCard>
+          </motion.div>
+
+          {/* Utility Use Cases */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {utilities.map((utility, index) => (
               <motion.div
                 key={utility.title}
@@ -339,6 +384,85 @@ export default function Tokenomics() {
               </motion.div>
             ))}
           </div>
+
+          {/* Detailed Use Cases */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <GlassCard className="p-8">
+              <h3 className="font-serif text-2xl text-secondary mb-6 text-center">
+                How BTCD Token is Used Across the Ecosystem
+              </h3>
+              <div className="space-y-6">
+                <div className="flex items-start gap-4 p-4 bg-card/30 rounded-lg">
+                  <div className="w-8 h-8 rounded-full bg-gold/20 flex items-center justify-center flex-shrink-0">
+                    <span className="text-gold font-bold">1</span>
+                  </div>
+                  <div>
+                    <h4 className="text-foreground font-semibold mb-2">Trading on DEX</h4>
+                    <p className="text-foreground/70 text-sm">
+                      BTCD is used for all trading operations on the decentralized exchange, 
+                      including liquidity provision and cross-chain swaps.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 p-4 bg-card/30 rounded-lg">
+                  <div className="w-8 h-8 rounded-full bg-gold/20 flex items-center justify-center flex-shrink-0">
+                    <span className="text-gold font-bold">2</span>
+                  </div>
+                  <div>
+                    <h4 className="text-foreground font-semibold mb-2">Payment for AI Bot Trade</h4>
+                    <p className="text-foreground/70 text-sm">
+                      Access to AI-powered trading bots requires BTCD tokens, enabling automated 
+                      portfolio management and intelligent trading strategies.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 p-4 bg-card/30 rounded-lg">
+                  <div className="w-8 h-8 rounded-full bg-gold/20 flex items-center justify-center flex-shrink-0">
+                    <span className="text-gold font-bold">3</span>
+                  </div>
+                  <div>
+                    <h4 className="text-foreground font-semibold mb-2">Access to Premium Services (Viddhana OS)</h4>
+                    <p className="text-foreground/70 text-sm">
+                      Premium features of the Viddhana Asset Management OS and other ecosystem 
+                      services are unlocked with BTCD tokens.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 p-4 bg-card/30 rounded-lg">
+                  <div className="w-8 h-8 rounded-full bg-gold/20 flex items-center justify-center flex-shrink-0">
+                    <span className="text-gold font-bold">4</span>
+                  </div>
+                  <div>
+                    <h4 className="text-foreground font-semibold mb-2">Rewards for User Engagement (Engage-to-Earn)</h4>
+                    <p className="text-foreground/70 text-sm">
+                      Participate in the SocialFi network, create content, engage with the community, 
+                      and earn BTCD tokens that can be converted to real money or used for trading.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4 p-4 bg-card/30 rounded-lg">
+                  <div className="w-8 h-8 rounded-full bg-gold/20 flex items-center justify-center flex-shrink-0">
+                    <span className="text-gold font-bold">5</span>
+                  </div>
+                  <div>
+                    <h4 className="text-foreground font-semibold mb-2">AI Marketplace Currency</h4>
+                    <p className="text-foreground/70 text-sm">
+                      Rent or purchase AI models and applications from the Web3 AppStore using 
+                      BTCD tokens, with 80/20 revenue split for developers.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </GlassCard>
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}

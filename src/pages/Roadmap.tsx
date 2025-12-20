@@ -31,6 +31,19 @@ const roadmapPhases = [
   },
   {
     quarter: 'Q3 2026',
+    date: 'July 2026',
+    title: 'Full Platform Completion',
+    status: 'upcoming',
+    icon: CheckCircle2,
+    milestones: [
+      'All core components operational',
+      'Viddhana Asset Management OS launch',
+      'Mainnet preparation complete',
+      'Comprehensive testing finished'
+    ]
+  },
+  {
+    quarter: 'Q4 2026',
     date: 'Aug 15',
     title: 'Mainnet Launch',
     status: 'upcoming',
@@ -38,7 +51,7 @@ const roadmapPhases = [
     milestones: [
       'Genesis block mined',
       'BTCD DEX goes live',
-      'First AI Marketplace apps',
+      'AI Marketplace apps launch',
       'Initial mining rewards'
     ]
   },
@@ -123,6 +136,51 @@ export default function Roadmap() {
       {/* Timeline */}
       <section className="py-24">
         <div className="container mx-auto px-4 lg:px-8">
+          {/* Current Status Banner */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-16"
+          >
+            <GlassCard goldBorder className="p-8">
+              <h2 className="font-serif text-2xl md:text-3xl text-gradient-gold text-center mb-6">
+                Development Progress: On Track
+              </h2>
+              <div className="grid md:grid-cols-4 gap-6 mb-6">
+                <div className="text-center">
+                  <CheckCircle2 className="w-10 h-10 text-green-500 mx-auto mb-2" />
+                  <p className="text-sm font-semibold text-green-500">Layer 1 Blockchain</p>
+                  <p className="text-xs text-foreground/60">Completed</p>
+                </div>
+                <div className="text-center">
+                  <CheckCircle2 className="w-10 h-10 text-green-500 mx-auto mb-2" />
+                  <p className="text-sm font-semibold text-green-500">Swap Platform</p>
+                  <p className="text-xs text-foreground/60">Completed</p>
+                </div>
+                <div className="text-center">
+                  <CheckCircle2 className="w-10 h-10 text-green-500 mx-auto mb-2" />
+                  <p className="text-sm font-semibold text-green-500">DEX Platform</p>
+                  <p className="text-xs text-foreground/60">Completed</p>
+                </div>
+                <div className="text-center">
+                  <CheckCircle2 className="w-10 h-10 text-green-500 mx-auto mb-2" />
+                  <p className="text-sm font-semibold text-green-500">AI Bot Trade</p>
+                  <p className="text-xs text-foreground/60">Completed</p>
+                </div>
+              </div>
+              <div className="text-center pt-6 border-t border-secondary/20">
+                <p className="text-foreground/80 mb-2">
+                  <Clock className="inline w-5 h-5 mr-2 text-gold" />
+                  <strong className="text-secondary">Expected Completion: July 2026</strong>
+                </p>
+                <p className="text-sm text-foreground/60">
+                  ~15 dedicated professionals working continuously on remaining components
+                </p>
+              </div>
+            </GlassCard>
+          </motion.div>
+
           <div className="relative">
             {/* Vertical line */}
             <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-gold via-secondary to-primary transform md:-translate-x-1/2" />
