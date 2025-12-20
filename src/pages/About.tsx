@@ -97,7 +97,8 @@ export default function About() {
 
       {/* The Problem */}
       <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background" />
+        <div className="absolute inset-0 bg-gradient-burgundy" />
+        <div className="absolute inset-0 bg-pattern-circuit opacity-20" />
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <SectionHeading
             title="The Problem We're Solving"
@@ -223,7 +224,8 @@ export default function About() {
 
       {/* Core Values */}
       <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-burgundy opacity-50" />
+        <div className="absolute inset-0 bg-gradient-burgundy" />
+        <div className="absolute inset-0 bg-pattern-circuit opacity-20" />
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <SectionHeading
             title="Our Core Values"

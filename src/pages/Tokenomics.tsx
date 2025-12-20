@@ -29,13 +29,13 @@ const tokenParams = [
 ];
 
 const distribution = [
-  { label: 'Mining', percentage: 40, color: 'bg-gold', icon: Coins },
-  { label: 'Ecosystem Rewards', percentage: 10, color: 'bg-gold-light', icon: Zap },
-  { label: 'Operations & Marketing', percentage: 10, color: 'bg-burgundy-light', icon: Building },
-  { label: 'Charity', percentage: 10, color: 'bg-primary', icon: Heart },
-  { label: 'Investors', percentage: 10, color: 'bg-burgundy-dark', icon: TrendingDown },
-  { label: 'Dev Team & Advisors', percentage: 10, color: 'bg-muted', icon: Code },
-  { label: 'Founder', percentage: 10, color: 'bg-card', icon: Users },
+  { label: 'Mining', percentage: 40, color: 'bg-gold', strokeColor: 'hsl(43, 87%, 59%)', icon: Coins },
+  { label: 'Ecosystem Rewards', percentage: 10, color: 'bg-secondary', strokeColor: 'hsl(43, 87%, 59%)', icon: Zap },
+  { label: 'Operations & Marketing', percentage: 10, color: 'bg-burgundy-light', strokeColor: 'hsl(350, 50%, 40%)', icon: Building },
+  { label: 'Charity', percentage: 10, color: 'bg-gold-light', strokeColor: 'hsl(45, 100%, 72%)', icon: Heart },
+  { label: 'Investors', percentage: 10, color: 'bg-burgundy-dark', strokeColor: 'hsl(350, 70%, 20%)', icon: TrendingDown },
+  { label: 'Dev Team & Advisors', percentage: 10, color: 'bg-primary', strokeColor: 'hsl(350, 70%, 32%)', icon: Code },
+  { label: 'Founder', percentage: 10, color: 'bg-gold-dark', strokeColor: 'hsl(40, 80%, 45%)', icon: Users },
 ];
 
 const utilities = [
@@ -111,46 +111,103 @@ export default function Tokenomics() {
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="relative aspect-square max-w-md mx-auto"
+              className="relative"
             >
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="font-serif text-4xl text-secondary mb-2">
-                    <AnimatedCounter end={21} suffix="B" />
+              <div className="relative w-full max-w-lg mx-auto aspect-square">
+                {/* Center content */}
+                <div className="absolute inset-0 flex items-center justify-center z-10">
+                  <div className="text-center">
+                    <div className="font-serif text-5xl text-gradient-gold mb-2 font-bold">
+                      <AnimatedCounter end={21} suffix="B" />
+                    </div>
+                    <p className="text-secondary uppercase text-xs tracking-wider font-semibold">Total Supply</p>
                   </div>
-                  <p className="text-muted-foreground">Total Supply</p>
                 </div>
+                
+                {/* Donut Chart SVG */}
+                <svg viewBox="0 0 200 200" className="w-full h-full" style={{ overflow: 'visible' }}>
+                  {distribution.map((item, index) => {
+                    const offset = distribution.slice(0, index).reduce((acc, i) => acc + i.percentage, 0);
+                    const startAngle = (offset / 100) * 360;
+                    const endAngle = ((offset + item.percentage) / 100) * 360;
+                    
+                    // Convert angles to radians
+                    const startRad = (startAngle - 90) * (Math.PI / 180);
+                    const endRad = (endAngle - 90) * (Math.PI / 180);
+                    
+                    // Donut chart parameters
+                    const outerRadius = 85;
+                    const innerRadius = 50;
+                    const centerX = 100;
+                    const centerY = 100;
+                    
+                    // Outer arc coordinates
+                    const x1Outer = centerX + outerRadius * Math.cos(startRad);
+                    const y1Outer = centerY + outerRadius * Math.sin(startRad);
+                    const x2Outer = centerX + outerRadius * Math.cos(endRad);
+                    const y2Outer = centerY + outerRadius * Math.sin(endRad);
+                    
+                    // Inner arc coordinates
+                    const x1Inner = centerX + innerRadius * Math.cos(startRad);
+                    const y1Inner = centerY + innerRadius * Math.sin(startRad);
+                    const x2Inner = centerX + innerRadius * Math.cos(endRad);
+                    const y2Inner = centerY + innerRadius * Math.sin(endRad);
+                    
+                    const largeArcFlag = item.percentage > 50 ? 1 : 0;
+                    
+                    // Create donut path
+                    const pathData = [
+                      `M ${x1Outer} ${y1Outer}`,
+                      `A ${outerRadius} ${outerRadius} 0 ${largeArcFlag} 1 ${x2Outer} ${y2Outer}`,
+                      `L ${x2Inner} ${y2Inner}`,
+                      `A ${innerRadius} ${innerRadius} 0 ${largeArcFlag} 0 ${x1Inner} ${y1Inner}`,
+                      'Z'
+                    ].join(' ');
+                    
+                    // Calculate the middle angle for the slice to determine hover direction
+                    const midAngle = ((startAngle + endAngle) / 2 - 90) * (Math.PI / 180);
+                    
+                    return (
+                      <motion.g
+                        key={item.label}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: index * 0.15, duration: 0.5 }}
+                        whileHover={{
+                          x: Math.cos(midAngle) * 8,
+                          y: Math.sin(midAngle) * 8,
+                          transition: { type: "spring", stiffness: 400, damping: 25 }
+                        }}
+                        style={{ cursor: 'pointer' }}
+                      >
+                        <motion.path
+                          d={pathData}
+                          fill={item.strokeColor}
+                          stroke="rgba(0, 0, 0, 0.3)"
+                          strokeWidth="2"
+                          initial={{ 
+                            opacity: 0,
+                            fill: 'rgba(0, 0, 0, 0.3)'
+                          }}
+                          animate={{ 
+                            opacity: 1,
+                            fill: item.strokeColor
+                          }}
+                          transition={{ 
+                            delay: index * 0.15,
+                            duration: 0.8,
+                            ease: "easeOut"
+                          }}
+                        />
+                      </motion.g>
+                    );
+                  })}
+                </svg>
               </div>
-              
-              {/* Visual representation */}
-              <svg viewBox="0 0 100 100" className="w-full h-full -rotate-90">
-                {distribution.map((item, index) => {
-                  const offset = distribution.slice(0, index).reduce((acc, i) => acc + i.percentage, 0);
-                  const circumference = 2 * Math.PI * 35;
-                  const strokeDasharray = (item.percentage / 100) * circumference;
-                  const strokeDashoffset = -(offset / 100) * circumference;
-                  
-                  return (
-                    <circle
-                      key={item.label}
-                      cx="50"
-                      cy="50"
-                      r="35"
-                      fill="none"
-                      strokeWidth="20"
-                      className={`${item.color.replace('bg-', 'stroke-')} opacity-80`}
-                      style={{
-                        strokeDasharray: `${strokeDasharray} ${circumference}`,
-                        strokeDashoffset,
-                      }}
-                    />
-                  );
-                })}
-              </svg>
             </motion.div>
 
             {/* Legend */}
-            <div className="space-y-4">
+            <div className="space-y-3">
               {distribution.map((item, index) => (
                 <motion.div
                   key={item.label}
@@ -158,15 +215,32 @@ export default function Tokenomics() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="flex items-center gap-4 p-3 rounded-lg bg-card/30 hover:bg-card/50 transition-colors"
+                  whileHover={{ scale: 1.02, x: 5 }}
+                  className="group relative"
                 >
-                  <div className={`w-10 h-10 rounded-lg ${item.color} flex items-center justify-center`}>
-                    <item.icon className="w-5 h-5 text-foreground" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-xl" />
+                  <div className="relative flex items-center gap-4 p-4 rounded-xl bg-card/50 border border-secondary/10 hover:border-secondary/30 transition-all backdrop-blur-sm shadow-lg hover:shadow-xl">
+                    <div className={`w-12 h-12 rounded-xl ${item.color} flex items-center justify-center shadow-lg border-2 border-white/10 relative overflow-hidden group-hover:scale-110 transition-transform`}>
+                      <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent" />
+                      <item.icon className="w-6 h-6 text-foreground relative z-10" />
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-foreground font-semibold text-sm mb-0.5">{item.label}</p>
+                      <div className="h-1.5 bg-background/50 rounded-full overflow-hidden">
+                        <motion.div 
+                          initial={{ width: 0 }}
+                          whileInView={{ width: `${item.percentage}%` }}
+                          viewport={{ once: true }}
+                          transition={{ delay: index * 0.1 + 0.3, duration: 0.8 }}
+                          className={`h-full ${item.color} rounded-full`}
+                        />
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <span className="font-serif text-2xl text-secondary font-bold block leading-none">{item.percentage}%</span>
+                      <span className="text-xs text-muted-foreground uppercase tracking-wider">Share</span>
+                    </div>
                   </div>
-                  <div className="flex-1">
-                    <p className="text-foreground font-medium">{item.label}</p>
-                  </div>
-                  <span className="font-serif text-xl text-secondary">{item.percentage}%</span>
                 </motion.div>
               ))}
             </div>
@@ -230,7 +304,8 @@ export default function Tokenomics() {
 
       {/* Token Utility */}
       <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-burgundy opacity-50" />
+        <div className="absolute inset-0 bg-gradient-burgundy" />
+        <div className="absolute inset-0 bg-pattern-circuit opacity-20" />
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <SectionHeading
             title="Token Utility"

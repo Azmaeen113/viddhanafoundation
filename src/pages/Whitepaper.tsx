@@ -120,7 +120,8 @@ export default function Whitepaper() {
 
       {/* Executive Summary */}
       <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background" />
+        <div className="absolute inset-0 bg-gradient-burgundy" />
+        <div className="absolute inset-0 bg-pattern-circuit opacity-20" />
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto">
             <motion.div
@@ -212,7 +213,8 @@ export default function Whitepaper() {
 
       {/* Disclaimer */}
       <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-burgundy opacity-30" />
+        <div className="absolute inset-0 bg-gradient-burgundy" />
+        <div className="absolute inset-0 bg-pattern-circuit opacity-20" />
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
