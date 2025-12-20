@@ -14,7 +14,7 @@ import {
   BarChart3,
   ArrowRightLeft,
   Youtube,
-  CheckCircle2
+  BadgeCheck
 } from 'lucide-react';
 import { Layout } from '@/components/Layout';
 import { Button } from '@/components/ui/button';
@@ -163,42 +163,6 @@ export default function Index() {
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-burgundy-dark/20 to-background" />
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          {/* Development Status Banner */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-12 text-center"
-          >
-            <GlassCard goldBorder className="max-w-4xl mx-auto p-8">
-              <h2 className="font-serif text-2xl md:text-3xl text-gradient-gold mb-4">
-                ✅ BTCD is No Longer Just an Idea—It's Becoming Reality
-              </h2>
-              <p className="text-foreground/80 mb-6">
-                Core components already completed, with a dedicated team of ~15 professionals 
-                working continuously toward July 2026 completion.
-              </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <div className="flex items-center gap-2 px-4 py-2 bg-green-500/10 rounded-lg border border-green-500/30">
-                  <CheckCircle2 className="w-5 h-5 text-green-500" />
-                  <span className="text-sm font-semibold text-foreground">Layer 1 ✅</span>
-                </div>
-                <div className="flex items-center gap-2 px-4 py-2 bg-green-500/10 rounded-lg border border-green-500/30">
-                  <CheckCircle2 className="w-5 h-5 text-green-500" />
-                  <span className="text-sm font-semibold text-foreground">Swap ✅</span>
-                </div>
-                <div className="flex items-center gap-2 px-4 py-2 bg-green-500/10 rounded-lg border border-green-500/30">
-                  <CheckCircle2 className="w-5 h-5 text-green-500" />
-                  <span className="text-sm font-semibold text-foreground">DEX ✅</span>
-                </div>
-                <div className="flex items-center gap-2 px-4 py-2 bg-green-500/10 rounded-lg border border-green-500/30">
-                  <CheckCircle2 className="w-5 h-5 text-green-500" />
-                  <span className="text-sm font-semibold text-foreground">AI Bot ✅</span>
-                </div>
-              </div>
-            </GlassCard>
-          </motion.div>
-
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
             {stats.map((stat, index) => (
               <motion.div
@@ -268,7 +232,7 @@ export default function Index() {
                     className="flex items-center gap-3"
                   >
                     <div className="w-6 h-6 rounded-full bg-secondary/20 flex items-center justify-center">
-                      <CheckCircle2 className="w-4 h-4 text-green-500" />
+                      <BadgeCheck className="w-4 h-4 text-secondary" />
                     </div>
                     <span className="text-foreground/80">{item}</span>
                   </motion.li>

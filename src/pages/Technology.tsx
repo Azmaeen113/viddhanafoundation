@@ -7,9 +7,10 @@ import {
   Layers,
   Code,
   ArrowRight,
-  CheckCircle2,
+  BadgeCheck,
   Gauge,
-  Lock
+  Lock,
+  ArrowRightLeft
 } from 'lucide-react';
 import { Layout } from '@/components/Layout';
 import { Button } from '@/components/ui/button';
@@ -130,19 +131,19 @@ export default function Technology() {
               </p>
               <div className="flex flex-wrap justify-center gap-4 text-sm">
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-5 h-5 text-green-500" />
+                  <BadgeCheck className="w-5 h-5 text-secondary" />
                   <span className="text-foreground">Layer 1 Blockchain</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-5 h-5 text-green-500" />
+                  <BadgeCheck className="w-5 h-5 text-secondary" />
                   <span className="text-foreground">Swap Platform</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-5 h-5 text-green-500" />
+                  <BadgeCheck className="w-5 h-5 text-secondary" />
                   <span className="text-foreground">DEX Platform</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-5 h-5 text-green-500" />
+                  <BadgeCheck className="w-5 h-5 text-secondary" />
                   <span className="text-foreground">AI Bot Trade</span>
                 </div>
               </div>
@@ -190,12 +191,15 @@ export default function Technology() {
             >
               <GlassCard goldBorder className="h-full">
                 <div className="flex items-start gap-4 mb-4">
-                  <Layers className="w-10 h-10 text-green-500 flex-shrink-0" />
+                  <Layers className="w-10 h-10 text-secondary flex-shrink-0" />
                   <div>
-                    <h3 className="font-serif text-xl text-secondary mb-2">
-                      BTCD Layer 1 Blockchain ✅
-                    </h3>
-                    <p className="text-green-500 font-semibold text-sm mb-3">COMPLETED</p>
+                    <div className="flex items-center gap-2 mb-2">
+                      <h3 className="font-serif text-xl text-secondary">
+                        BTCD Layer 1 Blockchain
+                      </h3>
+                      <BadgeCheck className="w-5 h-5 text-gold" />
+                    </div>
+                    <p className="text-gold font-semibold text-sm mb-3">COMPLETED</p>
                   </div>
                 </div>
                 <p className="text-foreground/80 mb-4">
@@ -218,12 +222,15 @@ export default function Technology() {
             >
               <GlassCard goldBorder className="h-full">
                 <div className="flex items-start gap-4 mb-4">
-                  <ArrowRightLeft className="w-10 h-10 text-green-500 flex-shrink-0" />
+                  <ArrowRightLeft className="w-10 h-10 text-secondary flex-shrink-0" />
                   <div>
-                    <h3 className="font-serif text-xl text-secondary mb-2">
-                      Swap Platform ✅
-                    </h3>
-                    <p className="text-green-500 font-semibold text-sm mb-3">COMPLETED</p>
+                    <div className="flex items-center gap-2 mb-2">
+                      <h3 className="font-serif text-xl text-secondary">
+                        Swap Platform
+                      </h3>
+                      <BadgeCheck className="w-5 h-5 text-gold" />
+                    </div>
+                    <p className="text-gold font-semibold text-sm mb-3">COMPLETED</p>
                   </div>
                 </div>
                 <p className="text-foreground/80 mb-4">
@@ -246,12 +253,15 @@ export default function Technology() {
             >
               <GlassCard goldBorder className="h-full">
                 <div className="flex items-start gap-4 mb-4">
-                  <Code className="w-10 h-10 text-green-500 flex-shrink-0" />
+                  <Code className="w-10 h-10 text-secondary flex-shrink-0" />
                   <div>
-                    <h3 className="font-serif text-xl text-secondary mb-2">
-                      DEX Platform ✅
-                    </h3>
-                    <p className="text-green-500 font-semibold text-sm mb-3">COMPLETED</p>
+                    <div className="flex items-center gap-2 mb-2">
+                      <h3 className="font-serif text-xl text-secondary">
+                        DEX Platform
+                      </h3>
+                      <BadgeCheck className="w-5 h-5 text-gold" />
+                    </div>
+                    <p className="text-gold font-semibold text-sm mb-3">COMPLETED</p>
                   </div>
                 </div>
                 <p className="text-foreground/80 mb-4">
@@ -274,12 +284,15 @@ export default function Technology() {
             >
               <GlassCard goldBorder className="h-full">
                 <div className="flex items-start gap-4 mb-4">
-                  <Brain className="w-10 h-10 text-green-500 flex-shrink-0" />
+                  <Brain className="w-10 h-10 text-secondary flex-shrink-0" />
                   <div>
-                    <h3 className="font-serif text-xl text-secondary mb-2">
-                      AI Bot Trade ✅
-                    </h3>
-                    <p className="text-green-500 font-semibold text-sm mb-3">COMPLETED</p>
+                    <div className="flex items-center gap-2 mb-2">
+                      <h3 className="font-serif text-xl text-secondary">
+                        AI Bot Trade
+                      </h3>
+                      <BadgeCheck className="w-5 h-5 text-gold" />
+                    </div>
+                    <p className="text-gold font-semibold text-sm mb-3">COMPLETED</p>
                   </div>
                 </div>
                 <p className="text-foreground/80 mb-4">
@@ -397,7 +410,7 @@ export default function Technology() {
                     transition={{ delay: index * 0.1 }}
                     className="flex items-center gap-3"
                   >
-                    <CheckCircle2 className="w-5 h-5 text-secondary flex-shrink-0" />
+                    <BadgeCheck className="w-5 h-5 text-secondary flex-shrink-0" />
                     <span className="text-foreground/80">{capability}</span>
                   </motion.li>
                 ))}

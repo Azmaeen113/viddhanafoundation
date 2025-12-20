@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { 
-  CheckCircle2, 
+  BadgeCheck, 
   Circle, 
   Clock,
   Rocket,
@@ -34,7 +34,7 @@ const roadmapPhases = [
     date: 'July 2026',
     title: 'Full Platform Completion',
     status: 'upcoming',
-    icon: CheckCircle2,
+    icon: BadgeCheck,
     milestones: [
       'All core components operational',
       'Viddhana Asset Management OS launch',
@@ -47,7 +47,7 @@ const roadmapPhases = [
     date: 'Aug 15',
     title: 'Mainnet Launch',
     status: 'upcoming',
-    icon: CheckCircle2,
+    icon: BadgeCheck,
     milestones: [
       'Genesis block mined',
       'BTCD DEX goes live',
@@ -149,23 +149,23 @@ export default function Roadmap() {
               </h2>
               <div className="grid md:grid-cols-4 gap-6 mb-6">
                 <div className="text-center">
-                  <CheckCircle2 className="w-10 h-10 text-green-500 mx-auto mb-2" />
-                  <p className="text-sm font-semibold text-green-500">Layer 1 Blockchain</p>
+                  <BadgeCheck className="w-10 h-10 text-secondary mx-auto mb-2" />
+                  <p className="text-sm font-semibold text-secondary">Layer 1 Blockchain</p>
                   <p className="text-xs text-foreground/60">Completed</p>
                 </div>
                 <div className="text-center">
-                  <CheckCircle2 className="w-10 h-10 text-green-500 mx-auto mb-2" />
-                  <p className="text-sm font-semibold text-green-500">Swap Platform</p>
+                  <BadgeCheck className="w-10 h-10 text-secondary mx-auto mb-2" />
+                  <p className="text-sm font-semibold text-secondary">Swap Platform</p>
                   <p className="text-xs text-foreground/60">Completed</p>
                 </div>
                 <div className="text-center">
-                  <CheckCircle2 className="w-10 h-10 text-green-500 mx-auto mb-2" />
-                  <p className="text-sm font-semibold text-green-500">DEX Platform</p>
+                  <BadgeCheck className="w-10 h-10 text-secondary mx-auto mb-2" />
+                  <p className="text-sm font-semibold text-secondary">DEX Platform</p>
                   <p className="text-xs text-foreground/60">Completed</p>
                 </div>
                 <div className="text-center">
-                  <CheckCircle2 className="w-10 h-10 text-green-500 mx-auto mb-2" />
-                  <p className="text-sm font-semibold text-green-500">AI Bot Trade</p>
+                  <BadgeCheck className="w-10 h-10 text-secondary mx-auto mb-2" />
+                  <p className="text-sm font-semibold text-secondary">AI Bot Trade</p>
                   <p className="text-xs text-foreground/60">Completed</p>
                 </div>
               </div>

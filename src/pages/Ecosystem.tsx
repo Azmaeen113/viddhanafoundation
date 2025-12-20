@@ -10,7 +10,9 @@ import {
   ArrowRight,
   Zap,
   Shield,
-  Globe
+  Globe,
+  BadgeCheck,
+  Sparkles
 } from 'lucide-react';
 import { Layout } from '@/components/Layout';
 import { Button } from '@/components/ui/button';
@@ -337,7 +339,10 @@ export default function Ecosystem() {
                     </p>
                   </div>
                   <div className="space-y-3 bg-gold/10 p-4 rounded-lg border border-gold/30">
-                    <h4 className="font-semibold text-gold">✅ BTCD (Viddhana OS)</h4>
+                    <div className="flex items-center gap-2">
+                      <BadgeCheck className="w-5 h-5 text-gold" />
+                      <h4 className="font-semibold text-gold">BTCD (Viddhana OS)</h4>
+                    </div>
                     <p className="text-sm text-foreground/80">
                       Developing an AI-based asset management OS that predicts risks and automatically adjusts portfolios.
                     </p>
@@ -370,7 +375,10 @@ export default function Ecosystem() {
                     </p>
                   </div>
                   <div className="space-y-3 bg-gold/10 p-4 rounded-lg border border-gold/30">
-                    <h4 className="font-semibold text-gold">✅ BTCD</h4>
+                    <div className="flex items-center gap-2">
+                      <BadgeCheck className="w-5 h-5 text-gold" />
+                      <h4 className="font-semibold text-gold">BTCD</h4>
+                    </div>
                     <p className="text-sm text-foreground/80">
                       Multi-asset trading + strategy optimization AI + automation → A "comprehensive financial assistant".
                     </p>
@@ -403,7 +411,10 @@ export default function Ecosystem() {
                     </p>
                   </div>
                   <div className="space-y-3 bg-gold/10 p-4 rounded-lg border border-gold/30">
-                    <h4 className="font-semibold text-gold">✅ BTCD (Webcall)</h4>
+                    <div className="flex items-center gap-2">
+                      <BadgeCheck className="w-5 h-5 text-gold" />
+                      <h4 className="font-semibold text-gold">BTCD (Webcall)</h4>
+                    </div>
                     <p className="text-sm text-foreground/80">
                       Integrate messaging + transfer BTCD + trade directly within messages → A breakthrough feature not found in any current platform.
                     </p>
@@ -436,7 +447,10 @@ export default function Ecosystem() {
                     </p>
                   </div>
                   <div className="space-y-3 bg-gold/10 p-4 rounded-lg border border-gold/30">
-                    <h4 className="font-semibold text-gold">✅ BTCD</h4>
+                    <div className="flex items-center gap-2">
+                      <BadgeCheck className="w-5 h-5 text-gold" />
+                      <h4 className="font-semibold text-gold">BTCD</h4>
+                    </div>
                     <p className="text-sm text-foreground/80">
                       Users create content → rewarded with BTCD, can convert to real money, or use for AI trading. Building a genuinely valuable SocialFi model.
                     </p>
@@ -453,9 +467,12 @@ export default function Ecosystem() {
             className="text-center mt-12"
           >
             <GlassCard className="max-w-3xl mx-auto p-8">
-              <p className="text-xl text-secondary font-semibold mb-2">
-                ✅ Conclusion:
-              </p>
+              <div className="flex items-center justify-center gap-2 mb-4">
+                <Sparkles className="w-6 h-6 text-gold" />
+                <p className="text-xl text-secondary font-semibold">
+                  Conclusion:
+                </p>
+              </div>
               <p className="text-lg text-foreground/80">
                 BTCD is building the first AI financial platform on blockchain, 
                 outperforming existing Web2 and Web3 options with intelligent automation, 

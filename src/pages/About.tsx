@@ -8,9 +8,10 @@ import {
   Users,
   Sparkles,
   ArrowRight,
-  CheckCircle2,
+  BadgeCheck,
   Clock,
-  Rocket
+  Rocket,
+  Loader2
 } from 'lucide-react';
 import { Layout } from '@/components/Layout';
 import { Button } from '@/components/ui/button';
@@ -109,10 +110,10 @@ export default function About() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {[
-              { icon: CheckCircle2, label: 'Layer 1 Blockchain', status: 'Completed', color: 'text-green-500' },
-              { icon: CheckCircle2, label: 'Swap Platform', status: 'Completed', color: 'text-green-500' },
-              { icon: CheckCircle2, label: 'DEX Platform', status: 'Completed', color: 'text-green-500' },
-              { icon: CheckCircle2, label: 'AI Bot Trade', status: 'Completed', color: 'text-green-500' },
+              { icon: BadgeCheck, label: 'Layer 1 Blockchain', status: 'Completed', color: 'text-secondary' },
+              { icon: BadgeCheck, label: 'Swap Platform', status: 'Completed', color: 'text-secondary' },
+              { icon: BadgeCheck, label: 'DEX Platform', status: 'Completed', color: 'text-secondary' },
+              { icon: BadgeCheck, label: 'AI Bot Trade', status: 'Completed', color: 'text-secondary' },
             ].map((item, index) => (
               <motion.div
                 key={item.label}
@@ -145,7 +146,10 @@ export default function About() {
                 <h3 className="font-serif text-2xl text-secondary mb-3">
                   Viddhana Asset Management OS
                 </h3>
-                <p className="text-yellow-500 font-semibold mb-3">🟡 In Development</p>
+                <div className="flex items-center gap-2 mb-3">
+                  <Loader2 className="w-5 h-5 text-gold animate-spin" />
+                  <p className="text-gold font-semibold">In Development</p>
+                </div>
                 <p className="text-foreground/80 mb-4">
                   AI-powered asset management operating system currently under active development. 
                   This revolutionary platform will predict risks and automatically adjust portfolios, 
@@ -174,7 +178,7 @@ export default function About() {
                     <strong>Expected Completion:</strong> July 2026
                   </p>
                   <p className="flex items-center gap-2">
-                    <CheckCircle2 className="w-5 h-5 text-green-500" />
+                    <BadgeCheck className="w-5 h-5 text-secondary" />
                     <strong>Status:</strong> Core components operational, clear roadmap established
                   </p>
                 </div>
@@ -189,9 +193,12 @@ export default function About() {
             className="text-center mt-12"
           >
             <GlassCard className="max-w-3xl mx-auto p-8">
-              <p className="text-xl text-foreground font-semibold mb-2">
-                ✅ Conclusion:
-              </p>
+              <div className="flex items-center justify-center gap-2 mb-4">
+                <Sparkles className="w-6 h-6 text-gold" />
+                <p className="text-xl text-secondary font-semibold">
+                  Conclusion:
+                </p>
+              </div>
               <p className="text-lg text-foreground/80">
                 BTCD is <strong className="text-secondary">no longer just an idea</strong>—it is becoming a 
                 real technological ecosystem, with foundational components already in place and a team 
