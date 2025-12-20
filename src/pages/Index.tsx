@@ -155,22 +155,6 @@ export default function Index() {
             </motion.div>
           </motion.div>
         </div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        >
-          <div className="w-6 h-10 rounded-full border-2 border-secondary/50 flex items-start justify-center p-2">
-            <motion.div
-              animate={{ y: [0, 8, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-              className="w-1.5 h-1.5 rounded-full bg-secondary"
-            />
-          </div>
-        </motion.div>
       </section>
 
       {/* Stats Section */}
@@ -207,8 +191,10 @@ export default function Index() {
       </section>
 
       {/* What is BTCD Section */}
-      <section className="py-24 relative">
-        <div className="container mx-auto px-4 lg:px-8">
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-burgundy" />
+        <div className="absolute inset-0 bg-pattern-circuit opacity-20" />
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -265,41 +251,16 @@ export default function Index() {
               transition={{ duration: 0.6 }}
               className="relative"
             >
-              <div className="relative aspect-square max-w-md mx-auto">
-                {/* Central logo */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="relative">
-                    <div className="absolute inset-0 bg-gold/20 blur-3xl rounded-full animate-pulse" />
-                    <img
-                      src={btcdLogo}
-                      alt="BTCD Ecosystem"
-                      className="relative w-48 h-48 rounded-2xl border-4 border-secondary/30"
-                    />
-                  </div>
+              <div className="relative aspect-square max-w-md mx-auto flex items-center justify-center">
+                {/* Central logo - 2x bigger */}
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gold/20 blur-3xl rounded-full animate-pulse" />
+                  <img
+                    src={btcdLogo}
+                    alt="BTCD Ecosystem"
+                    className="relative w-96 h-96 rounded-2xl border-4 border-secondary/30"
+                  />
                 </div>
-                
-                {/* Orbiting icons */}
-                {[Brain, Globe, Wallet, Shield].map((Icon, index) => (
-                  <motion.div
-                    key={index}
-                    className="absolute w-16 h-16 rounded-xl bg-card/50 border border-secondary/20 flex items-center justify-center backdrop-blur-sm"
-                    style={{
-                      top: `${50 + 40 * Math.sin((index * Math.PI) / 2)}%`,
-                      left: `${50 + 40 * Math.cos((index * Math.PI) / 2)}%`,
-                      transform: 'translate(-50%, -50%)'
-                    }}
-                    animate={{
-                      y: [0, -10, 0],
-                    }}
-                    transition={{
-                      duration: 3,
-                      delay: index * 0.3,
-                      repeat: Infinity
-                    }}
-                  >
-                    <Icon className="w-8 h-8 text-secondary" />
-                  </motion.div>
-                ))}
               </div>
             </motion.div>
           </div>
