@@ -24,6 +24,16 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
+          50: '#f0f9f4',
+          100: '#dcf2e4',
+          200: '#bae5cd',
+          300: '#8dd3ad',
+          400: '#5fb88a',
+          500: '#4A7C59',
+          600: '#3a6847',
+          700: '#2D5F4D',
+          800: '#264a3c',
+          900: '#1A3A2E',
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
         },
@@ -40,6 +50,8 @@ export default {
           foreground: "hsl(var(--muted-foreground))",
         },
         accent: {
+          gold: '#D4AF37',
+          lightGreen: '#4A7C59',
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
         },
@@ -61,10 +73,11 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        burgundy: {
-          DEFAULT: "hsl(var(--burgundy))",
-          dark: "hsl(var(--burgundy-dark))",
-          light: "hsl(var(--burgundy-light))",
+        green: {
+          DEFAULT: '#4A7C59',
+          dark: '#1A3A2E',
+          medium: '#2D5F4D',
+          light: '#5fb88a',
         },
         gold: {
           DEFAULT: "hsl(var(--gold))",
@@ -120,6 +133,14 @@ export default {
           from: { opacity: "0", transform: "translateY(10px)" },
           to: { opacity: "1", transform: "translateY(0)" },
         },
+        "gradient-shift": {
+          "0%, 100%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+        },
+        "gradient-pulse": {
+          "0%, 100%": { opacity: "0.8" },
+          "50%": { opacity: "0.4" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -132,12 +153,14 @@ export default {
         "slide-up": "slide-up 0.5s ease-out",
         "slide-down": "slide-down 0.5s ease-out",
         "count-up": "count-up 0.5s ease-out forwards",
+        "gradient-shift": "gradient-shift 8s ease infinite",
+        "gradient-pulse": "gradient-pulse 4s ease-in-out infinite",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-burgundy": "linear-gradient(135deg, hsl(350, 70%, 32%) 0%, hsl(350, 70%, 20%) 100%)",
+        "gradient-green": "linear-gradient(135deg, hsl(122, 39%, 41%) 0%, hsl(150, 39%, 18%) 100%)",
         "gradient-gold": "linear-gradient(135deg, hsl(43, 87%, 59%) 0%, hsl(40, 80%, 45%) 100%)",
-        "gradient-hero": "linear-gradient(180deg, hsl(350, 70%, 20%) 0%, hsl(350, 70%, 12%) 50%, hsl(0, 31%, 8%) 100%)",
+        "gradient-hero": "linear-gradient(180deg, hsl(150, 39%, 18%) 0%, hsl(150, 35%, 28%) 50%, hsl(150, 30%, 10%) 100%)",
         "pattern-circuit": "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
       },
     },

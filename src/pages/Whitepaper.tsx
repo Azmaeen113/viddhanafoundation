@@ -67,7 +67,7 @@ export default function Whitepaper() {
               Complete Technical Documentation
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
-              Deep dive into BTCD's architecture, economics, and vision
+              Deep dive into VIDDHANA's architecture, economics, and vision
             </p>
             <Button variant="hero" size="xl">
               <Download className="mr-2" size={20} />
@@ -85,7 +85,7 @@ export default function Whitepaper() {
         <div className="container mx-auto px-4 lg:px-8">
           <SectionHeading
             title="Documentation Overview"
-            subtitle="Comprehensive coverage of every aspect of BTCD"
+            subtitle="Comprehensive coverage of every aspect of VIDDHANA"
           />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -120,7 +120,7 @@ export default function Whitepaper() {
 
       {/* Executive Summary */}
       <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-burgundy" />
+        <div className="absolute inset-0 bg-gradient-green" />
         <div className="absolute inset-0 bg-pattern-circuit opacity-20" />
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto">
@@ -136,7 +136,7 @@ export default function Whitepaper() {
                 
                 <div className="prose prose-invert max-w-none">
                   <p className="text-lg text-foreground/90 mb-6">
-                    BTCD Foundation introduces a revolutionary approach to 
+                    VIDDHANA introduces a revolutionary approach to 
                     decentralized finance — a complete financial operating system 
                     designed to serve 8 billion people regardless of their technical 
                     expertise or financial background.
@@ -146,14 +146,14 @@ export default function Whitepaper() {
                   <p className="text-muted-foreground mb-6">
                     Traditional cryptocurrencies suffer from three fundamental barriers 
                     to mass adoption: technical complexity, financial exclusivity, and 
-                    limited real-world utility. BTCD solves all three.
+                    limited real-world utility. VIDDHANA solves all three.
                   </p>
 
                   <h3 className="font-serif text-xl text-secondary mt-8 mb-4">Our Solution</h3>
                   <p className="text-muted-foreground mb-6">
                     By integrating native AI at the protocol level, implementing 
                     zero-cost entry mechanisms, and building a comprehensive ecosystem 
-                    of seven interconnected applications, BTCD creates a frictionless 
+                    of six interconnected components, VIDDHANA creates a frictionless 
                     path from traditional finance to the decentralized future.
                   </p>
 
@@ -162,7 +162,7 @@ export default function Whitepaper() {
                     With 2 billion unbanked individuals and growing distrust in 
                     traditional financial systems, the opportunity for a truly 
                     accessible, utility-rich cryptocurrency has never been greater. 
-                    BTCD is positioned to capture this market with its unique 
+                    VIDDHANA is positioned to capture this market with its unique 
                     combination of technology and accessibility.
                   </p>
                 </div>
@@ -213,7 +213,7 @@ export default function Whitepaper() {
 
       {/* Disclaimer */}
       <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-burgundy" />
+        <div className="absolute inset-0 bg-gradient-green" />
         <div className="absolute inset-0 bg-pattern-circuit opacity-20" />
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <motion.div
@@ -233,13 +233,13 @@ export default function Whitepaper() {
                   or any other sort of advice.
                 </p>
                 <p>
-                  BTCD tokens are utility tokens and are not intended to be securities. 
-                  Participation in the BTCD ecosystem involves risk, and participants 
+                  VDH tokens are utility tokens and are not intended to be securities. 
+                  Participation in the VIDDHANA ecosystem involves risk, and participants 
                   should conduct their own research before making any decisions.
                 </p>
                 <p>
                   The information contained herein is subject to change without notice. 
-                  BTCD Foundation makes no representations about the accuracy or 
+                  VIDDHANA Foundation makes no representations about the accuracy or 
                   completeness of this information.
                 </p>
               </div>

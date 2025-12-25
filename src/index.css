@@ -6,72 +6,74 @@
 
 @layer base {
   :root {
-    /* Burgundy/Maroon Primary Colors */
-    --background: 0 31% 8%;
-    --foreground: 40 29% 94%;
+    /* VIDDHANA Green Primary Colors */
+    --background: 150 30% 10%;
+    --foreground: 0 0% 98%;
 
-    --card: 0 31% 10%;
-    --card-foreground: 40 29% 94%;
+    --card: 150 25% 15%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 0 31% 10%;
-    --popover-foreground: 40 29% 94%;
+    --popover: 150 25% 15%;
+    --popover-foreground: 0 0% 98%;
 
-    /* Deep Burgundy */
-    --primary: 350 70% 32%;
-    --primary-foreground: 43 87% 59%;
+    /* Primary Green */
+    --primary: 122 39% 41%;
+    --primary-foreground: 0 0% 100%;
 
     /* Rich Gold */
-    --secondary: 43 87% 59%;
-    --secondary-foreground: 0 31% 8%;
+    --secondary: 45 73% 52%;
+    --secondary-foreground: 0 0% 0%;
 
-    /* Muted burgundy */
-    --muted: 350 30% 15%;
-    --muted-foreground: 40 15% 65%;
+    /* Muted green */
+    --muted: 150 20% 20%;
+    --muted-foreground: 0 0% 70%;
 
     /* Gold accent */
-    --accent: 43 87% 59%;
-    --accent-foreground: 0 31% 8%;
+    --accent: 45 73% 52%;
+    --accent-foreground: 0 0% 0%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 350 30% 20%;
-    --input: 350 30% 20%;
-    --ring: 43 87% 59%;
+    --border: 122 20% 30%;
+    --input: 122 20% 30%;
+    --ring: 122 39% 41%;
 
     --radius: 0.75rem;
 
-    /* Custom BTCD colors */
-    --burgundy: 350 70% 32%;
-    --burgundy-dark: 350 70% 20%;
-    --burgundy-light: 350 50% 40%;
-    --gold: 43 87% 59%;
+    /* Custom VIDDHANA colors */
+    --green: 122 39% 41%;
+    --green-dark: 150 39% 18%;
+    --green-medium: 150 35% 28%;
+    --green-light: 122 39% 60%;
+    --gold: 45 73% 52%;
     --gold-light: 45 100% 72%;
     --gold-dark: 40 80% 45%;
     --cream: 35 47% 94%;
     --charcoal: 0 0% 12%;
 
     /* Gradients */
-    --gradient-burgundy: linear-gradient(135deg, hsl(350, 70%, 32%) 0%, hsl(350, 70%, 20%) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(43, 87%, 59%) 0%, hsl(40, 80%, 45%) 100%);
-    --gradient-hero: linear-gradient(180deg, hsl(350, 70%, 20%) 0%, hsl(350, 70%, 12%) 50%, hsl(0, 31%, 8%) 100%);
-    --gradient-glass: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 215, 0, 0.05) 100%);
-    --gradient-shine: linear-gradient(90deg, transparent 0%, rgba(255, 215, 0, 0.3) 50%, transparent 100%);
+    --gradient-green: linear-gradient(135deg, hsl(122, 39%, 41%) 0%, hsl(150, 35%, 28%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(45, 73%, 52%) 0%, hsl(40, 80%, 45%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(150, 39%, 18%) 0%, hsl(150, 35%, 28%) 50%, hsl(150, 30%, 10%) 100%);
+    --gradient-glass: linear-gradient(135deg, rgba(74, 124, 89, 0.1) 0%, rgba(74, 124, 89, 0.05) 100%);
+    --gradient-shine: linear-gradient(90deg, transparent 0%, rgba(212, 175, 55, 0.3) 50%, transparent 100%);
 
     /* Shadows */
-    --shadow-gold: 0 0 30px hsla(43, 87%, 59%, 0.3);
+    --shadow-gold: 0 0 30px hsla(45, 73%, 52%, 0.3);
+    --shadow-green: 0 0 30px hsla(122, 39%, 41%, 0.3);
     --shadow-card: 0 10px 40px hsla(0, 0%, 0%, 0.3);
-    --shadow-glow: 0 0 60px hsla(43, 87%, 59%, 0.2);
+    --shadow-glow: 0 0 60px hsla(122, 39%, 41%, 0.2);
 
     /* Sidebar */
-    --sidebar-background: 350 70% 15%;
-    --sidebar-foreground: 40 29% 94%;
-    --sidebar-primary: 43 87% 59%;
-    --sidebar-primary-foreground: 0 31% 8%;
-    --sidebar-accent: 350 50% 25%;
-    --sidebar-accent-foreground: 40 29% 94%;
-    --sidebar-border: 350 30% 20%;
-    --sidebar-ring: 43 87% 59%;
+    --sidebar-background: 150 35% 18%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 122 39% 41%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 150 30% 25%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 122 20% 30%;
+    --sidebar-ring: 122 39% 41%;
   }
 }
 
@@ -247,12 +249,31 @@
     content: '';
     flex: 1;
     height: 1px;
-    background: linear-gradient(90deg, transparent, hsl(43, 87%, 59%), transparent);
+    background: linear-gradient(90deg, transparent, hsl(45, 73%, 52%), transparent);
   }
 
   /* Counter animation placeholder */
   .counter {
     font-variant-numeric: tabular-nums;
+  }
+
+  /* Green-specific utilities */
+  .bg-gradient-green {
+    background: linear-gradient(135deg, #4A7C59 0%, #2D5F4D 100%);
+  }
+
+  .bg-gradient-gold-green {
+    background: linear-gradient(135deg, #D4AF37 0%, #4A7C59 100%);
+  }
+
+  .bg-gradient-dark-green {
+    background: linear-gradient(180deg, #1A3A2E 0%, #2D5F4D 100%);
+  }
+
+  .glass-green {
+    background: rgba(74, 124, 89, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(74, 124, 89, 0.2);
   }
 }
 
@@ -262,14 +283,14 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: hsl(350, 70%, 15%);
+  background: hsl(150, 35%, 18%);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, hsl(43, 87%, 59%), hsl(40, 80%, 45%));
+  background: linear-gradient(180deg, hsl(45, 73%, 52%), hsl(40, 80%, 45%));
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(43, 87%, 65%);
+  background: hsl(122, 39%, 50%);
 }

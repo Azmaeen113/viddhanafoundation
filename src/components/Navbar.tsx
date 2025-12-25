@@ -3,7 +3,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import btcdLogo from '@/assets/btcd-logo.jpg';
+
+const viddhanLogo = '/Viddhana Logo.jpg';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -49,13 +50,13 @@ export function Navbar() {
           <Link to="/" className="flex items-center gap-3 group">
             <div className="relative w-12 h-12 overflow-hidden rounded-lg border-2 border-secondary/50 group-hover:border-secondary transition-colors duration-300">
               <img
-                src={btcdLogo}
-                alt="BTCD Foundation"
+                src={viddhanLogo}
+                alt="VIDDHANA"
                 className="w-full h-full object-cover"
               />
             </div>
             <span className="font-serif text-xl font-bold text-secondary hidden sm:block">
-              BTCD
+              VIDDHANA
             </span>
           </Link>
 
@@ -77,8 +78,8 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden lg:block">
+          {/* CTA Buttons */}
+          <div className="hidden lg:flex items-center gap-3">
             <Button variant="gold" size="default">
               Launch App
             </Button>

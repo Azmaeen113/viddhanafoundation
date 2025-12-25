@@ -50,7 +50,7 @@ const roadmapPhases = [
     icon: BadgeCheck,
     milestones: [
       'Genesis block mined',
-      'BTCD DEX goes live',
+      'DeFi Hub goes live',
       'AI Marketplace apps launch',
       'Initial mining rewards'
     ]
@@ -89,7 +89,7 @@ const roadmapPhases = [
     icon: Building,
     milestones: [
       'Target: 100M+ users',
-      'BTCD as reserve asset',
+      'VDH as reserve asset',
       'Institutional adoption',
       'Full ecosystem maturity'
     ]
@@ -256,7 +256,7 @@ export default function Roadmap() {
 
       {/* CTA */}
       <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-burgundy" />
+        <div className="absolute inset-0 bg-gradient-green" />
         <div className="absolute inset-0 bg-pattern-circuit opacity-20" />
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <motion.div

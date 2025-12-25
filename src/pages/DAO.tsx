@@ -18,9 +18,9 @@ import { AnimatedCounter } from '@/components/AnimatedCounter';
 import { Link } from 'react-router-dom';
 
 const daoSteps = [
-  { step: 1, title: 'Proposal Submission', description: 'Any BTCD holder can submit proposals', icon: FileText },
+  { step: 1, title: 'Proposal Submission', description: 'Any VDH holder can submit proposals', icon: FileText },
   { step: 2, title: 'AI Impact Analysis', description: 'AI evaluates proposal implications', icon: Brain },
-  { step: 3, title: 'Community Voting', description: '1 BTCD = 1 Vote for 7 days', icon: Vote },
+  { step: 3, title: 'Community Voting', description: '1 VDH = 1 Vote for 7 days', icon: Vote },
   { step: 4, title: 'Automatic Execution', description: 'Smart contracts implement results', icon: CheckCircle },
 ];
 
@@ -55,7 +55,7 @@ export default function DAO() {
               True Decentralization Through Community Governance
             </h1>
             <p className="text-xl text-muted-foreground">
-              1 BTCD = 1 Vote | Your Voice Matters
+              1 VDH = 1 Vote | Your Voice Matters
             </p>
           </motion.div>
         </div>
@@ -114,8 +114,8 @@ export default function DAO() {
                 Your Voting Power
               </h2>
               <p className="text-lg text-foreground/80 mb-6">
-                Every BTCD token represents one vote in governance decisions. 
-                The more BTCD you hold, the greater your influence on the 
+                Every VDH token represents one vote in governance decisions. 
+                The more VDH you hold, the greater your influence on the 
                 project's direction.
               </p>
               <ul className="space-y-4">
@@ -146,7 +146,7 @@ export default function DAO() {
                 <div className="space-y-4">
                   <div>
                     <label className="block text-muted-foreground text-sm mb-2">
-                      Your BTCD Holdings
+                      Your VDH Holdings
                     </label>
                     <input
                       type="number"
@@ -156,7 +156,7 @@ export default function DAO() {
                   </div>
                   <div className="p-4 bg-primary/20 rounded-lg text-center">
                     <p className="text-muted-foreground text-sm mb-1">Your Voting Power</p>
-                    <p className="font-serif text-3xl text-secondary">1 BTCD = 1 Vote</p>
+                    <p className="font-serif text-3xl text-secondary">1 VDH = 1 Vote</p>
                   </div>
                 </div>
               </GlassCard>
@@ -201,7 +201,7 @@ export default function DAO() {
 
       {/* AI-Assisted Voting */}
       <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-burgundy" />
+        <div className="absolute inset-0 bg-gradient-green" />
         <div className="absolute inset-0 bg-pattern-circuit opacity-20" />
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">

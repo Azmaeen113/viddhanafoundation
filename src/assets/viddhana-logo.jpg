@@ -1,0 +1,3 @@
+// This is a placeholder - the actual logo file should be copied from public\Viddhana Logo.jpg
+// Import statement for TypeScript
+export default '/Viddhana Logo.jpg';

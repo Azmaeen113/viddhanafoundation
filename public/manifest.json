@@ -1,0 +1,35 @@
+{
+  "name": "VIDDHANA - Personal Wealth Operating System",
+  "short_name": "VIDDHANA",
+  "description": "Revolutionary wealth management platform powered by AI and blockchain. Democratizing finance for 3.3 billion underbanked people globally.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1A3A2E",
+  "theme_color": "#4A7C59",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/Viddhana Logo.jpg",
+      "sizes": "640x640",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["finance", "business", "productivity"],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Launch App",
+      "short_name": "App",
+      "description": "Launch VIDDHANA Application",
+      "url": "/",
+      "icons": [
+        {
+          "src": "/Viddhana Logo.jpg",
+          "sizes": "640x640",
+          "type": "image/jpeg"
+        }
+      ]
+    }
+  ]
+}

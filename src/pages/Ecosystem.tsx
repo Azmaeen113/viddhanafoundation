@@ -23,29 +23,29 @@ import { Link } from 'react-router-dom';
 const ecosystemComponents = [
   {
     id: 'dex',
-    title: 'BTCD DEX',
+    title: 'DeFi Hub',
     icon: ArrowRightLeft,
-    description: 'Fully decentralized exchange with no custody',
+    description: 'Optimized DeFi protocols with AI-powered strategies',
     features: [
       'Cross-chain swaps (BTC, ETH, BSC, Solana)',
       'AI-optimized routing for best prices',
       'Transaction fees under $0.001',
       'No KYC required'
     ],
-    gradient: 'from-burgundy-dark to-primary'
+    gradient: 'from-green-dark to-primary'
   },
   {
-    id: 'ai-bots',
-    title: 'AI Trading Bots',
+    id: 'prometheus-ai',
+    title: 'Prometheus AI Core',
     icon: Brain,
-    description: 'Trained on 10M+ transactions, 5,000 indicators',
+    description: 'Personalized wealth advisor for the unbanked',
     features: [
       'Automated portfolio rebalancing',
       'Sentiment analysis from 2,000+ sources',
       'Dynamic risk management',
       'Natural language trading'
     ],
-    gradient: 'from-primary to-burgundy-light'
+    gradient: 'from-primary to-green-light'
   },
   {
     id: 'socialfi',
@@ -58,7 +58,7 @@ const ecosystemComponents = [
       'Creator reward distribution',
       'Community governance'
     ],
-    gradient: 'from-burgundy-light to-gold-dark'
+    gradient: 'from-green-light to-gold-dark'
   },
   {
     id: 'webcall',
@@ -230,12 +230,12 @@ export default function Ecosystem() {
 
       {/* Integration Diagram */}
       <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-burgundy" />
+        <div className="absolute inset-0 bg-gradient-green" />
         <div className="absolute inset-0 bg-pattern-circuit opacity-20" />
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <SectionHeading
             title="Unified Ecosystem"
-            subtitle="All components interconnected with BTCD as the central fuel"
+            subtitle="All components interconnected with VDH as the central fuel"
           />
 
           <motion.div
@@ -257,7 +257,7 @@ export default function Ecosystem() {
                   </motion.div>
                 ))}
                 <div className="col-span-3 md:col-span-1 aspect-square flex flex-col items-center justify-center p-4 rounded-xl bg-gradient-gold">
-                  <span className="font-serif text-2xl text-background font-bold">BTCD</span>
+                  <span className="font-serif text-2xl text-background font-bold">VDH</span>
                   <p className="text-xs text-background/80">Central Token</p>
                 </div>
                 <motion.div
@@ -273,12 +273,12 @@ export default function Ecosystem() {
         </div>
       </section>
 
-      {/* Web2 vs Web3 vs BTCD Comparison */}
+      {/* Web2 vs Web3 vs VIDDHANA Comparison */}
       <section className="py-24">
         <div className="container mx-auto px-4 lg:px-8">
           <SectionHeading
-            title="BTCD vs Traditional Solutions"
-            subtitle="See how BTCD surpasses both Web2 and current Web3 platforms"
+            title="VIDDHANA vs Traditional Solutions"
+            subtitle="See how VIDDHANA surpasses both Web2 and current Web3 platforms"
           />
 
           <div className="space-y-8">
@@ -306,7 +306,7 @@ export default function Ecosystem() {
                     </p>
                   </div>
                   <div className="space-y-3 bg-gold/10 p-4 rounded-lg border border-gold/30">
-                    <h4 className="font-semibold text-gold">✅ BTCD</h4>
+                    <h4 className="font-semibold text-gold">✅ VIDDHANA</h4>
                     <p className="text-sm text-foreground/80">
                       Has DEX + AI Bot Trade → Automates trading, optimizes profits, no intervention needed.
                     </p>
@@ -341,7 +341,7 @@ export default function Ecosystem() {
                   <div className="space-y-3 bg-gold/10 p-4 rounded-lg border border-gold/30">
                     <div className="flex items-center gap-2">
                       <BadgeCheck className="w-5 h-5 text-gold" />
-                      <h4 className="font-semibold text-gold">BTCD (Viddhana OS)</h4>
+                      <h4 className="font-semibold text-gold">VIDDHANA (Wealth OS)</h4>
                     </div>
                     <p className="text-sm text-foreground/80">
                       Developing an AI-based asset management OS that predicts risks and automatically adjusts portfolios.
@@ -377,7 +377,7 @@ export default function Ecosystem() {
                   <div className="space-y-3 bg-gold/10 p-4 rounded-lg border border-gold/30">
                     <div className="flex items-center gap-2">
                       <BadgeCheck className="w-5 h-5 text-gold" />
-                      <h4 className="font-semibold text-gold">BTCD</h4>
+                      <h4 className="font-semibold text-gold">VIDDHANA</h4>
                     </div>
                     <p className="text-sm text-foreground/80">
                       Multi-asset trading + strategy optimization AI + automation → A "comprehensive financial assistant".
@@ -413,10 +413,10 @@ export default function Ecosystem() {
                   <div className="space-y-3 bg-gold/10 p-4 rounded-lg border border-gold/30">
                     <div className="flex items-center gap-2">
                       <BadgeCheck className="w-5 h-5 text-gold" />
-                      <h4 className="font-semibold text-gold">BTCD (Webcall)</h4>
+                      <h4 className="font-semibold text-gold">VIDDHANA (Webcall)</h4>
                     </div>
                     <p className="text-sm text-foreground/80">
-                      Integrate messaging + transfer BTCD + trade directly within messages → A breakthrough feature not found in any current platform.
+                      Integrate messaging + transfer VDH + trade directly within messages → A breakthrough feature not found in any current platform.
                     </p>
                   </div>
                 </div>
@@ -449,10 +449,10 @@ export default function Ecosystem() {
                   <div className="space-y-3 bg-gold/10 p-4 rounded-lg border border-gold/30">
                     <div className="flex items-center gap-2">
                       <BadgeCheck className="w-5 h-5 text-gold" />
-                      <h4 className="font-semibold text-gold">BTCD</h4>
+                      <h4 className="font-semibold text-gold">VIDDHANA</h4>
                     </div>
                     <p className="text-sm text-foreground/80">
-                      Users create content → rewarded with BTCD, can convert to real money, or use for AI trading. Building a genuinely valuable SocialFi model.
+                      Users create content → rewarded with VDH, can convert to real money, or use for wealth management. Building a genuinely valuable SocialFi model.
                     </p>
                   </div>
                 </div>
@@ -474,7 +474,7 @@ export default function Ecosystem() {
                 </p>
               </div>
               <p className="text-lg text-foreground/80">
-                BTCD is building the first AI financial platform on blockchain, 
+                VIDDHANA is building the first AI-powered wealth management platform on blockchain, 
                 outperforming existing Web2 and Web3 options with intelligent automation, 
                 comprehensive features, and genuine utility.
               </p>

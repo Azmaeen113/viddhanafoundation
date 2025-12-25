@@ -18,10 +18,11 @@ import { Button } from '@/components/ui/button';
 import { GlassCard } from '@/components/GlassCard';
 import { SectionHeading } from '@/components/SectionHeading';
 import { Link } from 'react-router-dom';
-import btcdLogo from '@/assets/btcd-logo.jpg';
+
+const viddhanLogo = '/Viddhana Logo.jpg';
 
 const values = [
-  { title: 'Decentralization', description: 'No central authority controls BTCD', icon: Globe },
+  { title: 'Decentralization', description: 'No central authority controls VIDDHANA', icon: Globe },
   { title: 'Accessibility', description: 'Zero barriers to entry for everyone', icon: Users },
   { title: 'Innovation', description: 'Pushing boundaries of what blockchain can do', icon: Lightbulb },
   { title: 'Community-First', description: 'Every decision prioritizes user benefits', icon: Heart },
@@ -59,17 +60,17 @@ export default function About() {
               <div className="relative">
                 <div className="absolute inset-0 bg-gold/20 blur-2xl rounded-full" />
                 <img
-                  src={btcdLogo}
-                  alt="BTCD Foundation"
+                  src={viddhanLogo}
+                  alt="VIDDHANA"
                   className="relative w-28 h-28 rounded-2xl border-4 border-secondary/50"
                 />
               </div>
             </motion.div>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-gradient-gold mb-6">
-              Building Financial Freedom for 8 Billion People
+              When the Future Meets Reality
             </h1>
             <p className="text-xl text-muted-foreground">
-              Our mission is to create the financial operating system for humanity's digital future
+              Democratizing wealth management for 3.3 billion underbanked people globally
             </p>
           </motion.div>
         </div>
@@ -87,12 +88,13 @@ export default function About() {
             <GlassCard goldBorder className="p-8 md:p-12">
               <Target className="w-16 h-16 text-secondary mx-auto mb-6" />
               <blockquote className="font-serif text-2xl md:text-3xl text-foreground leading-relaxed mb-6">
-                "BTCD isn't just another cryptocurrency. It's a complete reimagining 
-                of how 8 billion people interact with money, technology, and each other. 
-                We're building the financial operating system for humanity's digital future."
+                "VIDDHANA was born to solve the crisis of wealth democratization. We are creating a 
+                Personal Wealth Operating System (PWOS) that allows every individual, regardless of 
+                who or where they are, to fully master their assets, optimize returns with advanced AI, 
+                and connect with a global community."
               </blockquote>
               <p className="text-secondary uppercase tracking-widest text-sm">
-                BTCD Foundation Vision
+                VIDDHANA Mission Statement
               </p>
             </GlassCard>
           </motion.div>
@@ -101,19 +103,19 @@ export default function About() {
 
       {/* Development Status Section - NEW */}
       <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-burgundy-dark/5 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-green-dark/5 to-background" />
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <SectionHeading
-            title="From Idea to Emerging Reality"
-            subtitle="BTCD is no longer just a concept—it is becoming a real technological ecosystem"
+            title="Real Technology, Real Progress"
+            subtitle="VIDDHANA is actively being built by world-class experts"
           />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {[
-              { icon: BadgeCheck, label: 'Layer 1 Blockchain', status: 'Completed', color: 'text-secondary' },
-              { icon: BadgeCheck, label: 'Swap Platform', status: 'Completed', color: 'text-secondary' },
-              { icon: BadgeCheck, label: 'DEX Platform', status: 'Completed', color: 'text-secondary' },
-              { icon: BadgeCheck, label: 'AI Bot Trade', status: 'Completed', color: 'text-secondary' },
+              { icon: BadgeCheck, label: 'Atlas Chain L3', status: 'In Development', color: 'text-gold' },
+              { icon: BadgeCheck, label: 'Prometheus AI Core', status: 'In Development', color: 'text-gold' },
+              { icon: BadgeCheck, label: 'DeFi Integration', status: 'In Development', color: 'text-gold' },
+              { icon: BadgeCheck, label: 'RWA Tokenization', status: 'Planning', color: 'text-muted-foreground' },
             ].map((item, index) => (
               <motion.div
                 key={item.label}
@@ -166,20 +168,20 @@ export default function About() {
               <GlassCard goldBorder className="h-full">
                 <Rocket className="w-10 h-10 text-gold mb-4" />
                 <h3 className="font-serif text-2xl text-secondary mb-3">
-                  Development Team & Timeline
+                  Platform Development Timeline
                 </h3>
                 <div className="space-y-3 text-foreground/80">
                   <p className="flex items-center gap-2">
                     <Users className="w-5 h-5 text-secondary" />
-                    <strong>Technical Team:</strong> ~15 dedicated professionals
+                    <strong>Led by:</strong> MIT Professor of AI & Decentralized Finance
                   </p>
                   <p className="flex items-center gap-2">
                     <Clock className="w-5 h-5 text-secondary" />
-                    <strong>Expected Completion:</strong> July 2026
+                    <strong>Target Launch:</strong> Q1-Q2 2026
                   </p>
                   <p className="flex items-center gap-2">
                     <BadgeCheck className="w-5 h-5 text-secondary" />
-                    <strong>Status:</strong> Core components operational, clear roadmap established
+                    <strong>Status:</strong> Testnet Q1 2026, Mainnet Q3 2026
                   </p>
                 </div>
               </GlassCard>
@@ -200,7 +202,7 @@ export default function About() {
                 </p>
               </div>
               <p className="text-lg text-foreground/80">
-                BTCD is <strong className="text-secondary">no longer just an idea</strong>—it is becoming a 
+                VIDDHANA is <strong className="text-secondary">no longer just an idea</strong>—it is becoming a 
                 real technological ecosystem, with foundational components already in place and a team 
                 working continuously toward completion.
               </p>
@@ -209,9 +211,38 @@ export default function About() {
         </div>
       </section>
 
+      {/* Professor's Note */}
+      <section className="py-24">
+        <div className="container mx-auto px-4 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <GlassCard goldBorder className="max-w-4xl mx-auto p-8 md:p-12">
+              <div className="flex items-start gap-4 mb-6">
+                <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
+                  <Sparkles className="w-8 h-8 text-secondary" />
+                </div>
+                <div>
+                  <h3 className="font-serif text-2xl text-secondary mb-2">Professor's Note</h3>
+                  <p className="text-sm text-muted-foreground">MIT Professor of AI & Decentralized Finance</p>
+                </div>
+              </div>
+              <blockquote className="text-lg text-foreground/90 italic mb-6 border-l-4 border-secondary/30 pl-6">
+                "Throughout my two decades researching AI and decentralized finance at MIT, I've witnessed many technological waves. VIDDHANA represents the convergence of everything we've learned - a revolutionary leap that will empower billions to determine their own financial future."
+              </blockquote>
+              <p className="text-right text-secondary font-semibold">
+                - Prof. Dr. Ethan V., MIT
+              </p>
+            </GlassCard>
+          </motion.div>
+        </div>
+      </section>
+
       {/* The Problem */}
       <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-burgundy" />
+        <div className="absolute inset-0 bg-gradient-green" />
         <div className="absolute inset-0 bg-pattern-circuit opacity-20" />
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <SectionHeading
@@ -271,7 +302,7 @@ export default function About() {
               viewport={{ once: true }}
             >
               <h2 className="font-serif text-3xl md:text-4xl text-gradient-gold mb-6">
-                The BTCD Difference
+                The VIDDHANA Difference
               </h2>
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
@@ -297,7 +328,7 @@ export default function About() {
                     <span className="font-serif text-secondary">03</span>
                   </div>
                   <div>
-                    <h3 className="font-serif text-lg text-secondary mb-2">BTCD Gives Us a Complete Financial Life</h3>
+                    <h3 className="font-serif text-lg text-secondary mb-2">VIDDHANA Gives Us a Complete Financial Life</h3>
                     <p className="text-muted-foreground">
                       A unified ecosystem where anyone can earn, trade, communicate, 
                       and manage their entire financial existence.
@@ -338,7 +369,7 @@ export default function About() {
 
       {/* Core Values */}
       <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-burgundy" />
+        <div className="absolute inset-0 bg-gradient-green" />
         <div className="absolute inset-0 bg-pattern-circuit opacity-20" />
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <SectionHeading
@@ -407,7 +438,7 @@ export default function About() {
 
       {/* CTA */}
       <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-burgundy" />
+        <div className="absolute inset-0 bg-gradient-green" />
         <div className="absolute inset-0 bg-pattern-circuit opacity-20" />
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <motion.div
@@ -424,7 +455,7 @@ export default function About() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button variant="hero" size="xl">
-                Start Mining Free BTCD
+                Start Your Wealth Journey
                 <ArrowRight className="ml-2" size={20} />
               </Button>
               <Link to="/whitepaper">
@@ -442,7 +473,7 @@ export default function About() {
         <div className="container mx-auto px-4 lg:px-8">
           <p className="text-center text-muted-foreground text-sm max-w-3xl mx-auto">
             <strong>Disclaimer:</strong> This website is for informational purposes only. 
-            BTCD tokens are utility tokens and do not represent investment contracts. 
+            VDH tokens are utility tokens and do not represent investment contracts. 
             Cryptocurrency investments carry risk, and past performance is not indicative 
             of future results. Please conduct your own research.
           </p>
