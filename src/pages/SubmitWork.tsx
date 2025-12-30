@@ -19,8 +19,11 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { openEmailWithInstructions } from '@/lib/emailUtils';
+import { useTranslation } from 'react-i18next';
 
 export default function SubmitWork() {
+  const { t } = useTranslation();
+  
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -101,10 +104,10 @@ Thank you for your interest in joining VIDDHANA Foundation!
             className="text-center max-w-4xl mx-auto"
           >
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-gradient-gold mb-6">
-              Join Our Team
+              {t('submitWork.title')}
             </h1>
             <p className="text-xl text-muted-foreground mb-4">
-              Help us build the future of decentralized finance
+              {t('submitWork.subtitle')}
             </p>
             <p className="text-gray-light">
               We're looking for talented developers, designers, marketers, and blockchain experts

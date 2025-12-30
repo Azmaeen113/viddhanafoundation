@@ -18,26 +18,30 @@ import { Button } from '@/components/ui/button';
 import { GlassCard } from '@/components/GlassCard';
 import { SectionHeading } from '@/components/SectionHeading';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const viddhanLogo = '/Viddhana Logo.jpg';
 
-const values = [
-  { title: 'Decentralization', description: 'No central authority controls VIDDHANA', icon: Globe },
-  { title: 'Accessibility', description: 'Zero barriers to entry for everyone', icon: Users },
-  { title: 'Innovation', description: 'Pushing boundaries of what blockchain can do', icon: Lightbulb },
-  { title: 'Community-First', description: 'Every decision prioritizes user benefits', icon: Heart },
-  { title: 'Transparency', description: 'Open source and fully auditable', icon: Shield },
-  { title: 'Sustainability', description: 'Built for generational impact', icon: Sparkles },
-];
-
-const impactGoals = [
-  { year: '2026', goal: 'Empower early adopters with free mining', users: '1M+' },
-  { year: '2030', goal: 'Become top 10 cryptocurrency by users', users: '100M+' },
-  { year: '2035', goal: 'Standard financial infrastructure globally', users: '500M+' },
-  { year: '2040+', goal: 'Global reserve asset consideration', users: '1B+' },
-];
-
 export default function About() {
+  const { t } = useTranslation();
+  
+  const values = [
+    { title: t('about.values.decentralization'), description: t('about.values.decentralizationDesc'), icon: Globe },
+    { title: t('about.values.accessibility'), description: t('about.values.accessibilityDesc'), icon: Users },
+    { title: t('about.values.innovation'), description: t('about.values.innovationDesc'), icon: Lightbulb },
+    { title: t('about.values.community'), description: t('about.values.communityDesc'), icon: Heart },
+    { title: t('about.values.transparency'), description: t('about.values.transparencyDesc'), icon: Shield },
+    { title: t('about.values.sustainability'), description: t('about.values.sustainabilityDesc'), icon: Sparkles },
+  ];
+  
+  const impactGoals = [
+    { year: '2025', goal: t('about.impactGoals.year2025'), users: '10,000' },
+    { year: '2026', goal: t('about.impactGoals.year2026'), users: '100,000' },
+    { year: '2027', goal: t('about.impactGoals.year2027'), users: '1M' },
+    { year: '2028', goal: t('about.impactGoals.year2028'), users: '10M' },
+    { year: '2030', goal: t('about.impactGoals.year2030'), users: '100M+' },
+  ];
+  
   return (
     <Layout>
       {/* Hero Section */}
@@ -67,10 +71,10 @@ export default function About() {
               </div>
             </motion.div>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-gradient-gold mb-6">
-              When the Future Meets Reality
+              {t('about.hero.title')}
             </h1>
             <p className="text-xl text-muted-foreground">
-              Democratizing wealth management for 3.3 billion underbanked people globally
+              {t('about.hero.subtitle')}
             </p>
           </motion.div>
         </div>
@@ -88,13 +92,10 @@ export default function About() {
             <GlassCard goldBorder className="p-8 md:p-12">
               <Target className="w-16 h-16 text-secondary mx-auto mb-6" />
               <blockquote className="font-serif text-2xl md:text-3xl text-foreground leading-relaxed mb-6">
-                "VIDDHANA was born to solve the crisis of wealth democratization. We are creating a 
-                Personal Wealth Operating System (PWOS) that allows every individual, regardless of 
-                who or where they are, to fully master their assets, optimize returns with advanced AI, 
-                and connect with a global community."
+                {t('about.vision.quote')}
               </blockquote>
               <p className="text-secondary uppercase tracking-widest text-sm">
-                VIDDHANA Mission Statement
+                {t('about.vision.title')}
               </p>
             </GlassCard>
           </motion.div>
@@ -106,16 +107,16 @@ export default function About() {
         <div className="absolute inset-0 bg-gradient-to-b from-background via-green-dark/5 to-background" />
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <SectionHeading
-            title="Real Technology, Real Progress"
-            subtitle="VIDDHANA is actively being built by world-class experts"
+            title={t('about.development.title')}
+            subtitle={t('about.development.subtitle')}
           />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {[
-              { icon: BadgeCheck, label: 'Atlas Chain L3', status: 'In Development', color: 'text-gold' },
-              { icon: BadgeCheck, label: 'Prometheus AI Core', status: 'In Development', color: 'text-gold' },
-              { icon: BadgeCheck, label: 'DeFi Integration', status: 'In Development', color: 'text-gold' },
-              { icon: BadgeCheck, label: 'RWA Tokenization', status: 'Planning', color: 'text-muted-foreground' },
+              { icon: BadgeCheck, label: t('about.development.statusItem1.label'), status: t('about.development.statusItem1.status'), color: 'text-gold' },
+              { icon: BadgeCheck, label: t('about.development.statusItem2.label'), status: t('about.development.statusItem2.status'), color: 'text-gold' },
+              { icon: BadgeCheck, label: t('about.development.statusItem3.label'), status: t('about.development.statusItem3.status'), color: 'text-gold' },
+              { icon: BadgeCheck, label: t('about.development.statusItem4.label'), status: t('about.development.statusItem4.status'), color: 'text-muted-foreground' },
             ].map((item, index) => (
               <motion.div
                 key={item.label}
@@ -146,16 +147,14 @@ export default function About() {
               <GlassCard goldBorder className="h-full">
                 <Clock className="w-10 h-10 text-gold mb-4" />
                 <h3 className="font-serif text-2xl text-secondary mb-3">
-                  Viddhana Asset Management OS
+                  {t('about.development.assetManagement.title')}
                 </h3>
                 <div className="flex items-center gap-2 mb-3">
                   <Loader2 className="w-5 h-5 text-gold animate-spin" />
-                  <p className="text-gold font-semibold">In Development</p>
+                  <p className="text-gold font-semibold">{t('about.development.assetManagement.status')}</p>
                 </div>
                 <p className="text-foreground/80 mb-4">
-                  AI-powered asset management operating system currently under active development. 
-                  This revolutionary platform will predict risks and automatically adjust portfolios, 
-                  representing a significant advancement over current tools.
+                  {t('about.development.assetManagement.description')}
                 </p>
               </GlassCard>
             </motion.div>
@@ -168,20 +167,20 @@ export default function About() {
               <GlassCard goldBorder className="h-full">
                 <Rocket className="w-10 h-10 text-gold mb-4" />
                 <h3 className="font-serif text-2xl text-secondary mb-3">
-                  Platform Development Timeline
+                  {t('about.development.timeline.title')}
                 </h3>
                 <div className="space-y-3 text-foreground/80">
                   <p className="flex items-center gap-2">
                     <Users className="w-5 h-5 text-secondary" />
-                    <strong>Led by:</strong> MIT Professor of AI & Decentralized Finance
+                    {t('about.development.timeline.ledBy')}
                   </p>
                   <p className="flex items-center gap-2">
                     <Clock className="w-5 h-5 text-secondary" />
-                    <strong>Target Launch:</strong> Q1-Q2 2026
+                    {t('about.development.timeline.targetLaunch')}
                   </p>
                   <p className="flex items-center gap-2">
                     <BadgeCheck className="w-5 h-5 text-secondary" />
-                    <strong>Status:</strong> Testnet Q1 2026, Mainnet Q3 2026
+                    <strong>Status:</strong> {t('about.development.timeline.status')}
                   </p>
                 </div>
               </GlassCard>
@@ -198,13 +197,11 @@ export default function About() {
               <div className="flex items-center justify-center gap-2 mb-4">
                 <Sparkles className="w-6 h-6 text-gold" />
                 <p className="text-xl text-secondary font-semibold">
-                  Conclusion:
+                  {t('about.development.conclusion.label')}
                 </p>
               </div>
               <p className="text-lg text-foreground/80">
-                VIDDHANA is <strong className="text-secondary">no longer just an idea</strong>—it is becoming a 
-                real technological ecosystem, with foundational components already in place and a team 
-                working continuously toward completion.
+                {t('about.development.conclusion.text')}
               </p>
             </GlassCard>
           </motion.div>
@@ -225,15 +222,15 @@ export default function About() {
                   <Sparkles className="w-8 h-8 text-secondary" />
                 </div>
                 <div>
-                  <h3 className="font-serif text-2xl text-secondary mb-2">Professor's Note</h3>
-                  <p className="text-sm text-muted-foreground">MIT Professor of AI & Decentralized Finance</p>
+                  <h3 className="font-serif text-2xl text-secondary mb-2">{t('about.professorsNote.title')}</h3>
+                  <p className="text-sm text-muted-foreground">{t('about.professorsNote.subtitle')}</p>
                 </div>
               </div>
               <blockquote className="text-lg text-foreground/90 italic mb-6 border-l-4 border-secondary/30 pl-6">
-                "Throughout my two decades researching AI and decentralized finance at MIT, I've witnessed many technological waves. VIDDHANA represents the convergence of everything we've learned - a revolutionary leap that will empower billions to determine their own financial future."
+                {t('about.professorsNote.quote')}
               </blockquote>
               <p className="text-right text-secondary font-semibold">
-                - Prof. Dr. Ethan V., MIT
+                {t('about.professorsNote.name')}
               </p>
             </GlassCard>
           </motion.div>
@@ -246,26 +243,26 @@ export default function About() {
         <div className="absolute inset-0 bg-pattern-circuit opacity-20" />
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <SectionHeading
-            title="The Problem We're Solving"
-            subtitle="Three fundamental barriers prevent cryptocurrency mass adoption"
+            title={t('about.problem.title')}
+            subtitle={t('about.problem.subtitle')}
           />
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                title: 'Traditional Finance Exclusion',
-                stat: '2B+',
-                description: 'Over 2 billion adults remain unbanked, excluded from the global financial system.'
+                title: t('about.problem.problem1.title'),
+                stat: t('about.problem.problem1.stat'),
+                description: t('about.problem.problem1.description')
               },
               {
-                title: 'Crypto Complexity',
-                stat: '90%',
-                description: '90% of people find cryptocurrency too complex, technical, or risky to use.'
+                title: t('about.problem.problem2.title'),
+                stat: t('about.problem.problem2.stat'),
+                description: t('about.problem.problem2.description')
               },
               {
-                title: 'Limited Utility',
-                stat: '< 5%',
-                description: 'Less than 5% of crypto holders use their assets for anything beyond speculation.'
+                title: t('about.problem.problem3.title'),
+                stat: t('about.problem.problem3.stat'),
+                description: t('about.problem.problem3.description')
               }
             ].map((problem, index) => (
               <motion.div
@@ -302,36 +299,35 @@ export default function About() {
               viewport={{ once: true }}
             >
               <h2 className="font-serif text-3xl md:text-4xl text-gradient-gold mb-6">
-                The VIDDHANA Difference
+                {t('about.difference.title')}
               </h2>
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center flex-shrink-0">
-                    <span className="font-serif text-secondary">01</span>
+                    <span className="font-serif text-secondary">{t('about.difference.step1.number')}</span>
                   </div>
                   <div>
-                    <h3 className="font-serif text-lg text-secondary mb-2">Bitcoin Gave Us Digital Gold</h3>
-                    <p className="text-muted-foreground">The foundation of decentralized value storage.</p>
+                    <h3 className="font-serif text-lg text-secondary mb-2">{t('about.difference.step1.title')}</h3>
+                    <p className="text-muted-foreground">{t('about.difference.step1.description')}</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center flex-shrink-0">
-                    <span className="font-serif text-secondary">02</span>
+                    <span className="font-serif text-secondary">{t('about.difference.step2.number')}</span>
                   </div>
                   <div>
-                    <h3 className="font-serif text-lg text-secondary mb-2">Ethereum Gave Us Smart Contracts</h3>
-                    <p className="text-muted-foreground">The ability to program money and build dApps.</p>
+                    <h3 className="font-serif text-lg text-secondary mb-2">{t('about.difference.step2.title')}</h3>
+                    <p className="text-muted-foreground">{t('about.difference.step2.description')}</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-lg bg-gold/20 flex items-center justify-center flex-shrink-0 border-2 border-secondary">
-                    <span className="font-serif text-secondary">03</span>
+                    <span className="font-serif text-secondary">{t('about.difference.step3.number')}</span>
                   </div>
                   <div>
-                    <h3 className="font-serif text-lg text-secondary mb-2">VIDDHANA Gives Us a Complete Financial Life</h3>
+                    <h3 className="font-serif text-lg text-secondary mb-2">{t('about.difference.step3.title')}</h3>
                     <p className="text-muted-foreground">
-                      A unified ecosystem where anyone can earn, trade, communicate, 
-                      and manage their entire financial existence.
+                      {t('about.difference.step3.description')}
                     </p>
                   </div>
                 </div>
@@ -345,15 +341,15 @@ export default function About() {
             >
               <GlassCard className="p-8" goldBorder>
                 <h3 className="font-serif text-2xl text-secondary text-center mb-6">
-                  Our Philosophy
+                  {t('about.philosophy.title')}
                 </h3>
                 <ul className="space-y-4">
                   {[
-                    'Accessibility over exclusivity',
-                    'Utility over speculation',
-                    'Community ownership over corporate control',
-                    'Long-term sustainability over short-term gains',
-                    'Innovation through collaboration'
+                    t('about.philosophy.item1'),
+                    t('about.philosophy.item2'),
+                    t('about.philosophy.item3'),
+                    t('about.philosophy.item4'),
+                    t('about.philosophy.item5')
                   ].map((item, i) => (
                     <li key={i} className="flex items-center gap-3">
                       <div className="w-2 h-2 rounded-full bg-secondary" />
@@ -407,8 +403,8 @@ export default function About() {
       <section className="py-24">
         <div className="container mx-auto px-4 lg:px-8">
           <SectionHeading
-            title="Our Impact Timeline"
-            subtitle="The journey from launch to global financial infrastructure"
+            title={t('about.impactTimeline.title')}
+            subtitle={t('about.impactTimeline.subtitle')}
           />
 
           <div className="max-w-4xl mx-auto">
@@ -448,19 +444,19 @@ export default function About() {
             className="text-center max-w-3xl mx-auto"
           >
             <h2 className="font-serif text-3xl md:text-4xl text-gradient-gold mb-6">
-              Join Us in Building the Future
+              {t('about.cta.title')}
             </h2>
             <p className="text-xl text-foreground/80 mb-8">
-              Be part of the movement that will define the next era of finance.
+              {t('about.cta.description')}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button variant="hero" size="xl">
-                Start Your Wealth Journey
+                {t('about.cta.button1')}
                 <ArrowRight className="ml-2" size={20} />
               </Button>
               <a href="/VIDDHANA WHITEPAPERE.pdf" target="_blank" rel="noopener noreferrer">
                 <Button variant="heroOutline" size="xl">
-                  Read Our Whitepaper
+                  {t('about.cta.button2')}
                 </Button>
               </a>
             </div>
@@ -472,10 +468,7 @@ export default function About() {
       <section className="py-12 bg-card/30">
         <div className="container mx-auto px-4 lg:px-8">
           <p className="text-center text-muted-foreground text-sm max-w-3xl mx-auto">
-            <strong>Disclaimer:</strong> This website is for informational purposes only. 
-            VDH tokens are utility tokens and do not represent investment contracts. 
-            Cryptocurrency investments carry risk, and past performance is not indicative 
-            of future results. Please conduct your own research.
+            {t('about.disclaimer')}
           </p>
         </div>
       </section>

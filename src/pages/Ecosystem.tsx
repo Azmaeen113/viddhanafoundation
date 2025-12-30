@@ -22,114 +22,117 @@ import { SectionHeading } from '@/components/SectionHeading';
 import { FlowDiagram } from '@/components/FlowDiagram';
 import { SplitCard } from '@/components/SplitCard';
 import { Link } from 'react-router-dom';
-
-const ecosystemComponents = [
-  {
-    id: 'dex',
-    title: 'DeFi Hub',
-    icon: ArrowRightLeft,
-    description: 'Optimized DeFi protocols with AI-powered strategies',
-    features: [
-      'Cross-chain swaps (BTC, ETH, BSC, Solana)',
-      'AI-optimized routing for best prices',
-      'Transaction fees under $0.001',
-      'No KYC required'
-    ],
-    gradient: 'from-green-dark to-primary'
-  },
-  {
-    id: 'prometheus-ai',
-    title: 'Prometheus AI Core',
-    icon: Brain,
-    description: 'Personalized wealth advisor for the unbanked',
-    features: [
-      'Automated portfolio rebalancing',
-      'Sentiment analysis from 2,000+ sources',
-      'Dynamic risk management',
-      'Natural language trading'
-    ],
-    gradient: 'from-primary to-green-light'
-  },
-  {
-    id: 'socialfi',
-    title: 'SocialFi Network',
-    icon: Users,
-    description: 'Engage-to-Earn model with full data ownership',
-    features: [
-      'Direct monetization of content',
-      'Zero advertising interference',
-      'Creator reward distribution',
-      'Community governance'
-    ],
-    gradient: 'from-green-light to-gold-dark'
-  },
-  {
-    id: 'webcall',
-    title: 'Webcall',
-    icon: MessageSquare,
-    description: 'Web3 communication protocol',
-    features: [
-      'End-to-end encryption',
-      'In-chat crypto payments',
-      'AI assistant integration',
-      'Real-time translation'
-    ],
-    gradient: 'from-gold-dark to-gold'
-  },
-  {
-    id: 'marketplace',
-    title: 'AI App Marketplace',
-    icon: Store,
-    description: "Web3's AppStore for AI models",
-    features: [
-      '80/20 revenue split for developers',
-      'Rent or buy AI agents',
-      'Developer SDK and tools',
-      'Community-rated apps'
-    ],
-    gradient: 'from-gold to-gold-light'
-  },
-  {
-    id: 'dashboard',
-    title: 'Asset Dashboard',
-    icon: Wallet,
-    description: 'Multi-chain asset management',
-    features: [
-      'Track all crypto, DeFi, NFT assets',
-      'Automated tax reporting',
-      'Performance analytics',
-      'Security monitoring'
-    ],
-    gradient: 'from-gold-light to-secondary'
-  },
-  {
-    id: 'rwa',
-    title: 'RWA Platform',
-    icon: Building,
-    description: 'Real-world asset tokenization',
-    features: [
-      'Fractional real estate',
-      'Renewable energy projects',
-      'Corporate bonds',
-      'Low $50 minimum'
-    ],
-    gradient: 'from-secondary to-gold'
-  }
-];
-
-const flowSteps = ecosystemComponents.map(comp => ({
-  icon: <comp.icon size={24} />,
-  label: comp.title,
-  description: comp.description.split(' ').slice(0, 3).join(' ')
-}));
-
-const benefits = [
-  { icon: Zap, title: 'Lightning Fast', description: '65,000+ TPS for instant transactions' },
-  { icon: Shield, title: 'Secure', description: 'Military-grade encryption and audited contracts' },
-  { icon: Globe, title: 'Accessible', description: 'Zero-cost entry for everyone worldwide' }
-];
+import { useTranslation } from 'react-i18next';
 
 export default function Ecosystem() {
+  const { t } = useTranslation();
+  
+  const ecosystemComponents = [
+    {
+      id: 'dex',
+      title: t('ecosystem.dex.title'),
+      icon: ArrowRightLeft,
+      description: t('ecosystem.dex.description'),
+      features: [
+        t('ecosystem.dex.feature1'),
+        t('ecosystem.dex.feature2'),
+        t('ecosystem.dex.feature3'),
+        t('ecosystem.dex.feature4'),
+      ],
+      gradient: 'from-green-dark to-primary'
+    },
+    {
+      id: 'prometheus-ai',
+      title: t('ecosystem.prometheusAI.title'),
+      icon: Brain,
+      description: t('ecosystem.prometheusAI.description'),
+      features: [
+        t('ecosystem.prometheusAI.feature1'),
+        t('ecosystem.prometheusAI.feature2'),
+        t('ecosystem.prometheusAI.feature3'),
+        t('ecosystem.prometheusAI.feature4'),
+      ],
+      gradient: 'from-primary to-green-light'
+    },
+    {
+      id: 'socialfi',
+      title: t('ecosystem.socialfi.title'),
+      icon: Users,
+      description: t('ecosystem.socialfi.description'),
+      features: [
+        t('ecosystem.socialfi.feature1'),
+        t('ecosystem.socialfi.feature2'),
+        t('ecosystem.socialfi.feature3'),
+        t('ecosystem.socialfi.feature4'),
+      ],
+      gradient: 'from-green-light to-gold-dark'
+    },
+    {
+      id: 'webcall',
+      title: t('ecosystem.webcall.title'),
+      icon: MessageSquare,
+      description: t('ecosystem.webcall.description'),
+      features: [
+        t('ecosystem.webcall.feature1'),
+        t('ecosystem.webcall.feature2'),
+        t('ecosystem.webcall.feature3'),
+        t('ecosystem.webcall.feature4'),
+      ],
+      gradient: 'from-gold-dark to-gold'
+    },
+    {
+      id: 'marketplace',
+      title: t('ecosystem.marketplace.title'),
+      icon: Store,
+      description: t('ecosystem.marketplace.description'),
+      features: [
+        t('ecosystem.marketplace.feature1'),
+        t('ecosystem.marketplace.feature2'),
+        t('ecosystem.marketplace.feature3'),
+        t('ecosystem.marketplace.feature4'),
+      ],
+      gradient: 'from-gold to-gold-light'
+    },
+    {
+      id: 'dashboard',
+      title: t('ecosystem.dashboard.title'),
+      icon: Wallet,
+      description: t('ecosystem.dashboard.description'),
+      features: [
+        t('ecosystem.dashboard.feature1'),
+        t('ecosystem.dashboard.feature2'),
+        t('ecosystem.dashboard.feature3'),
+        t('ecosystem.dashboard.feature4'),
+      ],
+      gradient: 'from-gold-light to-secondary'
+    },
+    {
+      id: 'rwa',
+      title: t('ecosystem.rwa.title'),
+      icon: Building,
+      description: t('ecosystem.rwa.description'),
+      features: [
+        t('ecosystem.rwa.feature1'),
+        t('ecosystem.rwa.feature2'),
+        t('ecosystem.rwa.feature3'),
+        t('ecosystem.rwa.feature4'),
+      ],
+      gradient: 'from-secondary to-gold'
+    }
+  ];
+
+  const flowSteps = ecosystemComponents.map(comp => ({
+    icon: <comp.icon size={24} />,
+    label: comp.title,
+    description: comp.description.split(' ').slice(0, 3).join(' ')
+  }));
+
+  const benefits = [
+    { icon: Zap, title: t('ecosystem.benefits.fast'), description: t('ecosystem.benefits.fastDesc') },
+    { icon: Shield, title: t('ecosystem.benefits.secure'), description: t('ecosystem.benefits.secureDesc') },
+    { icon: Globe, title: t('ecosystem.benefits.accessible'), description: t('ecosystem.benefits.accessibleDesc') }
+  ];
+  
   return (
     <Layout>
       {/* Hero Section */}
@@ -144,10 +147,10 @@ export default function Ecosystem() {
             className="text-center max-w-4xl mx-auto"
           >
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-gradient-gold mb-6">
-              Seven Pillars of Financial Freedom
+              {t('ecosystem.title')}
             </h1>
             <p className="text-xl text-muted-foreground">
-              A complete, integrated financial operating system
+              {t('ecosystem.subtitle')}
             </p>
           </motion.div>
         </div>
@@ -157,8 +160,8 @@ export default function Ecosystem() {
       <section className="py-24 bg-green-darkest">
         <div className="container mx-auto px-4 lg:px-8">
           <SectionHeading
-            title="Integrated Ecosystem"
-            subtitle="All components working seamlessly together"
+            title={t('ecosystem.integratedEcosystem')}
+            subtitle={t('ecosystem.integratedSubtitle')}
           />
           <FlowDiagram steps={flowSteps} size="md" />
         </div>
@@ -238,7 +241,7 @@ export default function Ecosystem() {
                         <component.icon className="w-12 h-12 text-foreground" />
                       </div>
                       <p className="text-secondary font-serif text-xl">{component.title}</p>
-                      <p className="text-muted-foreground text-sm mt-2">Coming with Mainnet</p>
+                      <p className="text-muted-foreground text-sm mt-2">{t('ecosystem.comingMainnet')}</p>
                     </div>
                   </GlassCard>
                 </div>
@@ -254,8 +257,8 @@ export default function Ecosystem() {
         <div className="absolute inset-0 bg-pattern-circuit opacity-20" />
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <SectionHeading
-            title="Unified Ecosystem"
-            subtitle="All components interconnected with VDH as the central fuel"
+            title={t('ecosystem.unifiedEcosystem')}
+            subtitle={t('ecosystem.unifiedSubtitle')}
           />
 
           <motion.div
@@ -278,14 +281,14 @@ export default function Ecosystem() {
                 ))}
                 <div className="col-span-3 md:col-span-1 aspect-square flex flex-col items-center justify-center p-4 rounded-xl bg-gradient-gold">
                   <span className="font-serif text-2xl text-background font-bold">VDH</span>
-                  <p className="text-xs text-background/80">Central Token</p>
+                  <p className="text-xs text-background/80">{t('ecosystem.centralToken')}</p>
                 </div>
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   className="aspect-square flex flex-col items-center justify-center p-4 rounded-xl bg-card/50 border border-secondary/20"
                 >
                   <RefreshCw className="w-8 h-8 text-secondary mb-2" />
-                  <p className="text-xs text-center text-muted-foreground">Simple Swap</p>
+                  <p className="text-xs text-center text-muted-foreground">{t('ecosystem.simpleSwap')}</p>
                 </motion.div>
               </div>
             </GlassCard>
@@ -297,8 +300,8 @@ export default function Ecosystem() {
       <section className="py-24">
         <div className="container mx-auto px-4 lg:px-8">
           <SectionHeading
-            title="VIDDHANA vs Traditional Solutions"
-            subtitle="See how VIDDHANA surpasses both Web2 and current Web3 platforms"
+            title={t('ecosystem.comparisonTitle')}
+            subtitle={t('ecosystem.comparisonSubtitle')}
           />
 
           <div className="space-y-8">
@@ -310,28 +313,28 @@ export default function Ecosystem() {
             >
               <GlassCard goldBorder>
                 <h3 className="font-serif text-2xl text-secondary mb-6">
-                  Example 1: Financial Trading – Who Wins?
+                  {t('ecosystem.example1.title')}
                 </h3>
                 <div className="grid md:grid-cols-3 gap-6">
                   <div className="space-y-3">
-                    <h4 className="font-semibold text-foreground/80">Web2 (Robinhood)</h4>
+                    <h4 className="font-semibold text-foreground/80">{t('ecosystem.example1.web2Title')}</h4>
                     <p className="text-sm text-foreground/60">
-                      Fast trading, but the company controls everything. Can block orders, limit trades.
+                      {t('ecosystem.example1.web2Desc')}
                     </p>
                   </div>
                   <div className="space-y-3">
-                    <h4 className="font-semibold text-foreground/80">Web3 (Uniswap)</h4>
+                    <h4 className="font-semibold text-foreground/80">{t('ecosystem.example1.web3Title')}</h4>
                     <p className="text-sm text-foreground/60">
-                      Decentralized, but manual trading, no AI assistance.
+                      {t('ecosystem.example1.web3Desc')}
                     </p>
                   </div>
                   <div className="space-y-3 bg-gold/10 p-4 rounded-lg border border-gold/30">
                     <div className="flex items-center gap-2">
                       <BadgeCheck className="w-5 h-5 text-gold" />
-                      <h4 className="font-semibold text-gold">VIDDHANA</h4>
+                      <h4 className="font-semibold text-gold">{t('ecosystem.example1.viddhanaTit')}</h4>
                     </div>
                     <p className="text-sm text-foreground/80">
-                      Has DEX + AI Bot Trade → Automates trading, optimizes profits, no intervention needed.
+                      {t('ecosystem.example1.viddhanaDesc')}
                     </p>
                   </div>
                 </div>
@@ -346,28 +349,28 @@ export default function Ecosystem() {
             >
               <GlassCard goldBorder>
                 <h3 className="font-serif text-2xl text-secondary mb-6">
-                  Example 2: Personal Asset Management
+                  {t('ecosystem.example2.title')}
                 </h3>
                 <div className="grid md:grid-cols-3 gap-6">
                   <div className="space-y-3">
-                    <h4 className="font-semibold text-foreground/80">Web2 (Mint, Personal Capital)</h4>
+                    <h4 className="font-semibold text-foreground/80">{t('ecosystem.example2.web2Title')}</h4>
                     <p className="text-sm text-foreground/60">
-                      Gathers account data but does not allow control.
+                      {t('ecosystem.example2.web2Desc')}
                     </p>
                   </div>
                   <div className="space-y-3">
-                    <h4 className="font-semibold text-foreground/80">Web3 (DeBank, Zapper)</h4>
+                    <h4 className="font-semibold text-foreground/80">{t('ecosystem.example2.web3Title')}</h4>
                     <p className="text-sm text-foreground/60">
-                      Displays assets but lacks AI management.
+                      {t('ecosystem.example2.web3Desc')}
                     </p>
                   </div>
                   <div className="space-y-3 bg-gold/10 p-4 rounded-lg border border-gold/30">
                     <div className="flex items-center gap-2">
                       <BadgeCheck className="w-5 h-5 text-gold" />
-                      <h4 className="font-semibold text-gold">VIDDHANA (Wealth OS)</h4>
+                      <h4 className="font-semibold text-gold">{t('ecosystem.example2.viddhanaTitle')}</h4>
                     </div>
                     <p className="text-sm text-foreground/80">
-                      Developing an AI-based asset management OS that predicts risks and automatically adjusts portfolios.
+                      {t('ecosystem.example2.viddhanaDesc')}
                     </p>
                   </div>
                 </div>
@@ -418,28 +421,28 @@ export default function Ecosystem() {
             >
               <GlassCard goldBorder>
                 <h3 className="font-serif text-2xl text-secondary mb-6">
-                  Example 4: Integrated Financial Messaging (Webcall)
+                  {t('ecosystem.example4.title')}
                 </h3>
                 <div className="grid md:grid-cols-3 gap-6">
                   <div className="space-y-3">
-                    <h4 className="font-semibold text-foreground/80">Web2 (WhatsApp)</h4>
+                    <h4 className="font-semibold text-foreground/80">{t('ecosystem.example4.web2Title')}</h4>
                     <p className="text-sm text-foreground/60">
-                      Sending money via e-wallet, but token integration missing.
+                      {t('ecosystem.example4.web2Desc')}
                     </p>
                   </div>
                   <div className="space-y-3">
-                    <h4 className="font-semibold text-foreground/80">Web3 (Status)</h4>
+                    <h4 className="font-semibold text-foreground/80">{t('ecosystem.example4.web3Title')}</h4>
                     <p className="text-sm text-foreground/60">
-                      Offers decentralized messaging, wallet integration.
+                      {t('ecosystem.example4.web3Desc')}
                     </p>
                   </div>
                   <div className="space-y-3 bg-gold/10 p-4 rounded-lg border border-gold/30">
                     <div className="flex items-center gap-2">
                       <BadgeCheck className="w-5 h-5 text-gold" />
-                      <h4 className="font-semibold text-gold">VIDDHANA (Webcall)</h4>
+                      <h4 className="font-semibold text-gold">{t('ecosystem.example4.viddhanaTitle')}</h4>
                     </div>
                     <p className="text-sm text-foreground/80">
-                      Integrate messaging + transfer VDH + trade directly within messages → A breakthrough feature not found in any current platform.
+                      {t('ecosystem.example4.viddhanaDesc')}
                     </p>
                   </div>
                 </div>
@@ -454,28 +457,28 @@ export default function Ecosystem() {
             >
               <GlassCard goldBorder>
                 <h3 className="font-serif text-2xl text-secondary mb-6">
-                  Example 5: Generating Revenue from Content (SocialFi)
+                  {t('ecosystem.example5.title')}
                 </h3>
                 <div className="grid md:grid-cols-3 gap-6">
                   <div className="space-y-3">
-                    <h4 className="font-semibold text-foreground/80">Web2 (TikTok, YouTube)</h4>
+                    <h4 className="font-semibold text-foreground/80">{t('ecosystem.example5.web2Title')}</h4>
                     <p className="text-sm text-foreground/60">
-                      Create content, but the company retains 70-90% of revenue.
+                      {t('ecosystem.example5.web2Desc')}
                     </p>
                   </div>
                   <div className="space-y-3">
-                    <h4 className="font-semibold text-foreground/80">Web3 (Lens, Farcaster)</h4>
+                    <h4 className="font-semibold text-foreground/80">{t('ecosystem.example5.web3Title')}</h4>
                     <p className="text-sm text-foreground/60">
-                      Create content, earn tokens, but lacks real monetization mechanisms.
+                      {t('ecosystem.example5.web3Desc')}
                     </p>
                   </div>
                   <div className="space-y-3 bg-gold/10 p-4 rounded-lg border border-gold/30">
                     <div className="flex items-center gap-2">
                       <BadgeCheck className="w-5 h-5 text-gold" />
-                      <h4 className="font-semibold text-gold">VIDDHANA</h4>
+                      <h4 className="font-semibold text-gold">{t('ecosystem.example5.viddhanaTitle')}</h4>
                     </div>
                     <p className="text-sm text-foreground/80">
-                      Users create content → rewarded with VDH, can convert to real money, or use for wealth management. Building a genuinely valuable SocialFi model.
+                      {t('ecosystem.example5.viddhanaDesc')}
                     </p>
                   </div>
                 </div>
@@ -493,13 +496,11 @@ export default function Ecosystem() {
               <div className="flex items-center justify-center gap-2 mb-4">
                 <Sparkles className="w-6 h-6 text-gold" />
                 <p className="text-xl text-secondary font-semibold">
-                  Conclusion:
+                  {t('ecosystem.conclusion')}
                 </p>
               </div>
               <p className="text-lg text-foreground/80">
-                VIDDHANA is building the first AI-powered wealth management platform on blockchain, 
-                outperforming existing Web2 and Web3 options with intelligent automation, 
-                comprehensive features, and genuine utility.
+                {t('ecosystem.conclusionText')}
               </p>
             </GlassCard>
           </motion.div>
@@ -512,7 +513,7 @@ export default function Ecosystem() {
           >
             <Link to="/tokenomics">
               <Button variant="gold" size="lg">
-                View Tokenomics
+                {t('ecosystem.viewTokenomics')}
                 <ArrowRight className="ml-2" size={18} />
               </Button>
             </Link>

@@ -20,75 +20,78 @@ import { AnimatedCounter } from '@/components/AnimatedCounter';
 import { CircularDiagram } from '@/components/CircularDiagram';
 import { HorizontalTimeline } from '@/components/HorizontalTimeline';
 import { Link } from 'react-router-dom';
-
-const daoSteps = [
-  { step: 1, title: 'Proposal Submission', description: 'Any VDH holder can submit proposals', icon: FileText },
-  { step: 2, title: 'AI Impact Analysis', description: 'AI evaluates proposal implications', icon: Brain },
-  { step: 3, title: 'Community Voting', description: '1 VDH = 1 Vote for 7 days', icon: Vote },
-  { step: 4, title: 'Automatic Execution', description: 'Smart contracts implement results', icon: CheckCircle },
-];
-
-const governancePhases = [
-  {
-    icon: <FileText size={24} />,
-    quarter: 'Day 1',
-    title: 'Submit Proposal',
-    status: 'upcoming' as const,
-    milestones: ['Draft creation', 'Community review', 'Formal submission']
-  },
-  {
-    icon: <MessageSquare size={24} />,
-    quarter: 'Days 2-3',
-    title: 'Discussion Period',
-    status: 'upcoming' as const,
-    milestones: ['Community debate', 'Q&A sessions', 'Revisions']
-  },
-  {
-    icon: <Vote size={24} />,
-    quarter: 'Days 4-10',
-    title: 'Voting Period',
-    status: 'planned' as const,
-    milestones: ['Cast votes', 'Track progress', 'Real-time results']
-  },
-  {
-    icon: <BarChart3 size={24} />,
-    quarter: 'Day 11',
-    title: 'Count Votes',
-    status: 'planned' as const,
-    milestones: ['Tally results', 'Verify quorum', 'Announce outcome']
-  },
-  {
-    icon: <CheckCircle size={24} />,
-    quarter: 'Day 12+',
-    title: 'Implementation',
-    status: 'vision' as const,
-    milestones: ['Execute changes', 'Monitor impact', 'Report results']
-  }
-];
-
-const daoNodes = [
-  { icon: <Users size={32} />, label: 'Token Holders', description: 'VDH holders vote' },
-  { icon: <FileText size={32} />, label: 'Proposals', description: 'Submit ideas' },
-  { icon: <Vote size={32} />, label: 'Voting', description: '1 VDH = 1 Vote' },
-  { icon: <Wallet size={32} />, label: 'Treasury', description: 'Community funds' },
-  { icon: <Shield size={32} />, label: 'Governance', description: 'Protocol rules' },
-  { icon: <Zap size={32} />, label: 'Execution', description: 'Smart contracts' },
-];
-
-const proposalTypes = [
-  { title: 'Protocol Upgrades', description: 'Technical improvements and new features', icon: Zap },
-  { title: 'Treasury Allocation', description: 'Community fund distribution decisions', icon: BarChart3 },
-  { title: 'Fee Structure', description: 'Transaction and service fee adjustments', icon: Shield },
-  { title: 'Partnership Approvals', description: 'Strategic integration decisions', icon: Users },
-];
-
-const sampleProposals = [
-  { id: 'BIP-001', title: 'Reduce DEX Trading Fees', status: 'Active', votes: 75, daysLeft: 3 },
-  { id: 'BIP-002', title: 'Add Solana Bridge Support', status: 'Passed', votes: 92, daysLeft: 0 },
-  { id: 'BIP-003', title: 'Increase AI Bot Capabilities', status: 'Pending', votes: 45, daysLeft: 5 },
-];
+import { useTranslation } from 'react-i18next';
 
 export default function DAO() {
+  const { t } = useTranslation();
+
+  const daoSteps = [
+    { step: 1, title: t('dao.steps.step1.title'), description: t('dao.steps.step1.description'), icon: FileText },
+    { step: 2, title: t('dao.steps.step2.title'), description: t('dao.steps.step2.description'), icon: Brain },
+    { step: 3, title: t('dao.steps.step3.title'), description: t('dao.steps.step3.description'), icon: Vote },
+    { step: 4, title: t('dao.steps.step4.title'), description: t('dao.steps.step4.description'), icon: CheckCircle },
+  ];
+
+  const governancePhases = [
+    {
+      icon: <FileText size={24} />,
+      quarter: t('dao.phases.phase1.quarter'),
+      title: t('dao.phases.phase1.title'),
+      status: 'upcoming' as const,
+      milestones: [t('dao.phases.phase1.milestone1'), t('dao.phases.phase1.milestone2'), t('dao.phases.phase1.milestone3')]
+    },
+    {
+      icon: <MessageSquare size={24} />,
+      quarter: t('dao.phases.phase2.quarter'),
+      title: t('dao.phases.phase2.title'),
+      status: 'upcoming' as const,
+      milestones: [t('dao.phases.phase2.milestone1'), t('dao.phases.phase2.milestone2'), t('dao.phases.phase2.milestone3')]
+    },
+    {
+      icon: <Vote size={24} />,
+      quarter: t('dao.phases.phase3.quarter'),
+      title: t('dao.phases.phase3.title'),
+      status: 'planned' as const,
+      milestones: [t('dao.phases.phase3.milestone1'), t('dao.phases.phase3.milestone2'), t('dao.phases.phase3.milestone3')]
+    },
+    {
+      icon: <BarChart3 size={24} />,
+      quarter: t('dao.phases.phase4.quarter'),
+      title: t('dao.phases.phase4.title'),
+      status: 'planned' as const,
+      milestones: [t('dao.phases.phase4.milestone1'), t('dao.phases.phase4.milestone2'), t('dao.phases.phase4.milestone3')]
+    },
+    {
+      icon: <CheckCircle size={24} />,
+      quarter: t('dao.phases.phase5.quarter'),
+      title: t('dao.phases.phase5.title'),
+      status: 'vision' as const,
+      milestones: [t('dao.phases.phase5.milestone1'), t('dao.phases.phase5.milestone2'), t('dao.phases.phase5.milestone3')]
+    }
+  ];
+
+  const daoNodes = [
+    { icon: <Users size={32} />, label: t('dao.nodes.tokenHolders.label'), description: t('dao.nodes.tokenHolders.description') },
+    { icon: <FileText size={32} />, label: t('dao.nodes.proposals.label'), description: t('dao.nodes.proposals.description') },
+    { icon: <Vote size={32} />, label: t('dao.nodes.voting.label'), description: t('dao.nodes.voting.description') },
+    { icon: <Wallet size={32} />, label: t('dao.nodes.treasury.label'), description: t('dao.nodes.treasury.description') },
+    { icon: <Shield size={32} />, label: t('dao.nodes.governance.label'), description: t('dao.nodes.governance.description') },
+    { icon: <Zap size={32} />, label: t('dao.nodes.execution.label'), description: t('dao.nodes.execution.description') },
+  ];
+
+  const proposalTypes = [
+    { title: t('dao.proposalTypes.protocolUpgrades.title'), description: t('dao.proposalTypes.protocolUpgrades.description'), icon: Zap },
+    { title: t('dao.proposalTypes.treasuryAllocation.title'), description: t('dao.proposalTypes.treasuryAllocation.description'), icon: BarChart3 },
+    { title: t('dao.proposalTypes.feeStructure.title'), description: t('dao.proposalTypes.feeStructure.description'), icon: Shield },
+    { title: t('dao.proposalTypes.partnershipApprovals.title'), description: t('dao.proposalTypes.partnershipApprovals.description'), icon: Users },
+  ];
+
+  const sampleProposals = [
+    { id: 'BIP-001', title: t('dao.sampleProposals.proposal1.title'), status: t('dao.sampleProposals.proposal1.status'), votes: 75, daysLeft: 3 },
+    { id: 'BIP-002', title: t('dao.sampleProposals.proposal2.title'), status: t('dao.sampleProposals.proposal2.status'), votes: 92, daysLeft: 0 },
+    { id: 'BIP-003', title: t('dao.sampleProposals.proposal3.title'), status: t('dao.sampleProposals.proposal3.status'), votes: 45, daysLeft: 5 },
+  ];
+  
   return (
     <Layout>
       {/* Hero Section */}
@@ -103,10 +106,10 @@ export default function DAO() {
             className="text-center max-w-4xl mx-auto"
           >
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-gradient-gold mb-6">
-              True Decentralization Through Community Governance
+              {t('dao.title')}
             </h1>
             <p className="text-xl text-muted-foreground">
-              1 VDH = 1 Vote | Your Voice Matters
+              {t('dao.subtitle')}
             </p>
           </motion.div>
         </div>
@@ -117,8 +120,8 @@ export default function DAO() {
         <div className="absolute inset-0 bg-pattern-circuit opacity-10" />
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <SectionHeading
-            title="DAO Structure"
-            subtitle="Decentralized governance with interconnected components"
+            title={t('dao.structure.title')}
+            subtitle={t('dao.structure.subtitle')}
           />
           
           <div className="mt-16 max-w-6xl mx-auto">
@@ -135,7 +138,7 @@ export default function DAO() {
                   <Shield className="w-12 h-12 text-green-dark" />
                 </div>
                 <h3 className="font-serif text-3xl text-gradient-gold mb-2">VIDDHANA DAO</h3>
-                <p className="text-gray-light">Decentralized Autonomous Organization</p>
+                <p className="text-gray-light">{t('dao.structure.daoCard')}</p>
               </GlassCard>
             </motion.div>
 
@@ -191,7 +194,7 @@ export default function DAO() {
               <div className="inline-flex items-center gap-3 px-6 py-3 bg-gold/10 border border-gold/30 rounded-full">
                 <ArrowRight className="w-5 h-5 text-gold" />
                 <p className="text-sm text-gray-light">
-                  All components work together in a <span className="text-gold font-semibold">trustless, transparent</span> ecosystem
+                  {t('dao.structure.flowExplanation')}
                 </p>
               </div>
             </motion.div>
@@ -203,8 +206,8 @@ export default function DAO() {
       <section className="py-32 bg-gradient-to-b from-background to-green-dark/20">
         <div className="container mx-auto px-4 lg:px-8">
           <SectionHeading
-            title="Governance Process"
-            subtitle="From proposal to implementation in 12 days"
+            title={t('dao.governanceProcess.title')}
+            subtitle={t('dao.governanceProcess.subtitle')}
           />
           
           <div className="mt-16">
@@ -217,8 +220,8 @@ export default function DAO() {
       <section className="py-24 bg-primary/5">
         <div className="container mx-auto px-4 lg:px-8">
           <SectionHeading
-            title="Key Features"
-            subtitle="Transparent, AI-assisted decision-making"
+            title={t('dao.keyFeatures.title')}
+            subtitle={t('dao.keyFeatures.subtitle')}
           />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -263,25 +266,23 @@ export default function DAO() {
               viewport={{ once: true }}
             >
               <h2 className="font-serif text-3xl md:text-4xl text-gradient-gold mb-6">
-                Your Voting Power
+                {t('dao.votingPower.title')}
               </h2>
               <p className="text-lg text-foreground/80 mb-6">
-                Every VDH token represents one vote in governance decisions. 
-                The more VDH you hold, the greater your influence on the 
-                project's direction.
+                {t('dao.votingPower.description')}
               </p>
               <ul className="space-y-4">
                 <li className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-secondary" />
-                  <span className="text-foreground/80">No minimum holding required to vote</span>
+                  <span className="text-foreground/80">{t('dao.votingPower.feature1')}</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-secondary" />
-                  <span className="text-foreground/80">Votes are weighted equally per token</span>
+                  <span className="text-foreground/80">{t('dao.votingPower.feature2')}</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-secondary" />
-                  <span className="text-foreground/80">Delegation supported for passive holders</span>
+                  <span className="text-foreground/80">{t('dao.votingPower.feature3')}</span>
                 </li>
               </ul>
             </motion.div>
@@ -293,22 +294,22 @@ export default function DAO() {
             >
               <GlassCard goldBorder>
                 <h3 className="font-serif text-xl text-secondary text-center mb-6">
-                  Voting Power Calculator
+                  {t('dao.calculator.title')}
                 </h3>
                 <div className="space-y-4">
                   <div>
                     <label className="block text-muted-foreground text-sm mb-2">
-                      Your VDH Holdings
+                      {t('dao.calculator.label')}
                     </label>
                     <input
                       type="number"
-                      placeholder="Enter amount"
+                      placeholder={t('dao.calculator.placeholder')}
                       className="w-full px-4 py-3 bg-card/50 border border-secondary/20 rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-secondary/50"
                     />
                   </div>
                   <div className="p-4 bg-primary/20 rounded-lg text-center">
-                    <p className="text-muted-foreground text-sm mb-1">Your Voting Power</p>
-                    <p className="font-serif text-3xl text-secondary">1 VDH = 1 Vote</p>
+                    <p className="text-muted-foreground text-sm mb-1">{t('dao.calculator.result')}</p>
+                    <p className="font-serif text-3xl text-secondary">{t('dao.calculator.formula')}</p>
                   </div>
                 </div>
               </GlassCard>
@@ -321,8 +322,8 @@ export default function DAO() {
       <section className="py-24">
         <div className="container mx-auto px-4 lg:px-8">
           <SectionHeading
-            title="What Can Be Voted On"
-            subtitle="Community decides on all major protocol decisions"
+            title={t('dao.proposalTypesSection.title')}
+            subtitle={t('dao.proposalTypesSection.subtitle')}
           />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -365,17 +366,17 @@ export default function DAO() {
               <GlassCard className="p-8">
                 <Brain className="w-16 h-16 text-secondary mb-6" />
                 <h3 className="font-serif text-2xl text-secondary mb-4">
-                  AI-Assisted Decision Making
+                  {t('dao.aiAssisted.title')}
                 </h3>
                 <p className="text-muted-foreground mb-6">
-                  Before voting begins, our AI analyzes each proposal to provide:
+                  {t('dao.aiAssisted.description')}
                 </p>
                 <ul className="space-y-3">
                   {[
-                    'Impact prediction on ecosystem',
-                    'Risk assessment and mitigation',
-                    'Historical comparison with similar proposals',
-                    'Potential unintended consequences'
+                    t('dao.aiAssisted.feature1'),
+                    t('dao.aiAssisted.feature2'),
+                    t('dao.aiAssisted.feature3'),
+                    t('dao.aiAssisted.feature4')
                   ].map((item, i) => (
                     <li key={i} className="flex items-center gap-3">
                       <div className="w-2 h-2 rounded-full bg-secondary" />
@@ -392,17 +393,13 @@ export default function DAO() {
               viewport={{ once: true }}
             >
               <h2 className="font-serif text-3xl md:text-4xl text-gradient-gold mb-6">
-                Informed Voting
+                {t('dao.informedVoting.title')}
               </h2>
               <p className="text-lg text-foreground/80 mb-6">
-                AI analysis helps voters understand the full implications of 
-                each proposal, enabling more informed decision-making while 
-                maintaining complete decentralization.
+                {t('dao.informedVoting.description')}
               </p>
               <p className="text-muted-foreground">
-                The AI provides analysis only — all decisions are made by 
-                the community through voting. No AI can override or influence 
-                the voting outcome.
+                {t('dao.informedVoting.disclaimer')}
               </p>
             </motion.div>
           </div>
@@ -413,8 +410,8 @@ export default function DAO() {
       <section className="py-24">
         <div className="container mx-auto px-4 lg:px-8">
           <SectionHeading
-            title="Active Proposals"
-            subtitle="See what the community is currently deciding"
+            title={t('dao.activeProposals.title')}
+            subtitle={t('dao.activeProposals.subtitle')}
           />
 
           <div className="max-w-3xl mx-auto space-y-4">
@@ -432,8 +429,8 @@ export default function DAO() {
                       <div className="flex items-center gap-3 mb-2">
                         <span className="text-secondary font-mono text-sm">{proposal.id}</span>
                         <span className={`px-2 py-1 rounded text-xs uppercase ${
-                          proposal.status === 'Active' ? 'bg-gold/20 text-gold' :
-                          proposal.status === 'Passed' ? 'bg-green-500/20 text-green-400' :
+                          proposal.status === t('dao.sampleProposals.proposal1.status') ? 'bg-gold/20 text-gold' :
+                          proposal.status === t('dao.sampleProposals.proposal2.status') ? 'bg-green-500/20 text-green-400' :
                           'bg-secondary/20 text-secondary'
                         }`}>
                           {proposal.status}
@@ -446,7 +443,7 @@ export default function DAO() {
                     <div className="text-right">
                       <div className="font-serif text-2xl text-secondary">{proposal.votes}%</div>
                       <p className="text-muted-foreground text-sm">
-                        {proposal.daysLeft > 0 ? `${proposal.daysLeft} days left` : 'Completed'}
+                        {proposal.daysLeft > 0 ? `${proposal.daysLeft} ${t('dao.activeProposals.daysLeft')}` : t('dao.activeProposals.completed')}
                       </p>
                     </div>
                   </div>
@@ -464,10 +461,10 @@ export default function DAO() {
           {/* Stats */}
           <div className="grid md:grid-cols-4 gap-6 mt-16">
             {[
-              { label: 'Total Proposals', value: 156 },
-              { label: 'Active Voters', value: 45000 },
-              { label: 'Avg Participation', value: 68, suffix: '%' },
-              { label: 'Proposals Passed', value: 89, suffix: '%' }
+              { label: t('dao.stats.totalProposals'), value: 156 },
+              { label: t('dao.stats.activeVoters'), value: 45000 },
+              { label: t('dao.stats.avgParticipation'), value: 68, suffix: '%' },
+              { label: t('dao.stats.proposalsPassed'), value: 89, suffix: '%' }
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}

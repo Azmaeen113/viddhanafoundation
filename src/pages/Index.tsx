@@ -26,114 +26,117 @@ import { SectionHeading } from '@/components/SectionHeading';
 import { CountdownTimer } from '@/components/CountdownTimer';
 import { FlowDiagram } from '@/components/FlowDiagram';
 import { SplitCard } from '@/components/SplitCard';
+import { useTranslation } from 'react-i18next';
 
 const viddhanLogo = '/Viddhana Logo.jpg';
-
-const stats = [
-  { value: 3.3, suffix: 'B', label: 'Underbanked People Worldwide', icon: Users, decimals: 1 },
-  { value: 100000, suffix: '+', label: 'Transactions Per Second', icon: Zap },
-  { value: 100, suffix: 'B', label: 'AUM Target by 2030', prefix: '$', icon: TrendingUp },
-  { value: 8, suffix: '-15% APY', label: 'Average Returns', icon: Shield },
-];
-
-const problems = [
-  {
-    problem: 'Loss of Control',
-    solution: 'True Asset Ownership',
-    description: 'Your money in banks isn\'t truly yours - banks use it for profit while you earn minimal interest. With VIDDHANA, you own and control everything.',
-    icon: Wallet
-  },
-  {
-    problem: 'Geographic Barriers',
-    solution: 'Borderless Access',
-    description: 'Cross-border transfers cost 5-10% and take days. High-yield investments require $100K+ minimums. VIDDHANA removes all barriers.',
-    icon: Globe
-  },
-  {
-    problem: 'Inflation Erosion',
-    solution: '8-15% APY Returns',
-    description: 'Traditional 3% savings rates lose money against 5-10% inflation. VIDDHANA offers AI-optimized returns that outpace inflation.',
-    icon: TrendingUp
-  }
-];
-
-const corePillars = [
-  { 
-    title: 'Atlas Chain (Layer 3)', 
-    description: '100,000+ TPS, <$0.001 fees, <1 second confirmation', 
-    icon: Cpu,
-    features: [
-      'Lightning-fast transaction processing',
-      'Near-zero transaction costs',
-      'Instant settlement finality',
-      'EVM compatible infrastructure',
-      'Cross-chain interoperability'
-    ]
-  },
-  { 
-    title: 'Prometheus AI Core', 
-    description: '24/7 self-learning quantitative financial brain', 
-    icon: Brain,
-    features: [
-      'Multi-model AI architecture',
-      'Real-time market analysis',
-      'Dynamic portfolio optimization',
-      'Risk management automation',
-      'Continuous learning system'
-    ]
-  },
-  { 
-    title: 'DeFi Integration', 
-    description: '8-15% APY with AI-optimized strategies', 
-    icon: BarChart3,
-    features: [
-      'Automated yield farming',
-      'Liquidity pool optimization',
-      'Cross-protocol arbitrage',
-      'Risk-adjusted returns',
-      'Multi-chain DeFi access'
-    ]
-  },
-  { 
-    title: 'RWA Tokenization', 
-    description: 'Invest in real estate, solar farms, bonds with $50', 
-    icon: BadgeCheck,
-    features: [
-      'Fractional real estate ownership',
-      'Renewable energy investments',
-      'Tokenized corporate bonds',
-      'Low minimum investment ($50)',
-      'Legal compliance framework'
-    ]
-  },
-  { 
-    title: 'SocialFi & DePIN', 
-    description: 'Community-driven wealth building with passive income', 
-    icon: Users,
-    features: [
-      'Engage-to-earn rewards',
-      'Decentralized infrastructure',
-      'Community governance',
-      'Data ownership rights',
-      'Passive income streams'
-    ]
-  },
-];
-
-const ecosystemComponents = [
-  { icon: <ArrowRightLeft size={24} />, label: 'DeFi Hub', description: 'Decentralized exchange' },
-  { icon: <Brain size={24} />, label: 'Prometheus AI', description: 'AI advisor' },
-  { icon: <Users size={24} />, label: 'SocialFi', description: 'Social network' },
-  { icon: <MessageSquare size={24} />, label: 'Webcall', description: 'Web3 communication' },
-  { icon: <Store size={24} />, label: 'AI Marketplace', description: 'App store' },
-  { icon: <Wallet size={24} />, label: 'Asset Dashboard', description: 'Portfolio tracker' },
-  { icon: <Building size={24} />, label: 'RWA Platform', description: 'Real assets' },
-];
 
 // Launch date: Q1 2026
 const launchDate = new Date('2026-03-01T00:00:00');
 
 export default function Index() {
+  const { t } = useTranslation();
+  
+  const stats = [
+    { value: 3.3, suffix: 'B', label: t('home.stats.label1'), icon: Users, decimals: 1 },
+    { value: 100000, suffix: '+', label: t('home.stats.label2'), icon: Zap },
+    { value: 100, suffix: 'B', label: t('home.stats.label3'), prefix: '$', icon: TrendingUp },
+    { value: 8, suffix: '-15% APY', label: t('home.stats.label4'), icon: Shield },
+  ];
+
+  const problems = [
+    {
+      problem: t('home.problems.problem1'),
+      solution: t('home.problems.solution1'),
+      description: t('home.problems.desc1'),
+      icon: Wallet
+    },
+    {
+      problem: t('home.problems.problem2'),
+      solution: t('home.problems.solution2'),
+      description: t('home.problems.desc2'),
+      icon: Globe
+    },
+    {
+      problem: t('home.problems.problem3'),
+      solution: t('home.problems.solution3'),
+      description: t('home.problems.desc3'),
+      icon: TrendingUp
+    }
+  ];
+
+  const corePillars = [
+    { 
+      title: t('home.corePillars.pillar1'), 
+      description: t('home.corePillars.pillar1Desc'), 
+      icon: Cpu,
+      features: [
+        t('home.corePillars.pillar1Feature1'),
+        t('home.corePillars.pillar1Feature2'),
+        t('home.corePillars.pillar1Feature3'),
+        t('home.corePillars.pillar1Feature4'),
+        t('home.corePillars.pillar1Feature5'),
+      ]
+    },
+    { 
+      title: t('home.corePillars.pillar2'), 
+      description: t('home.corePillars.pillar2Desc'), 
+      icon: Brain,
+      features: [
+        t('home.corePillars.pillar2Feature1'),
+        t('home.corePillars.pillar2Feature2'),
+        t('home.corePillars.pillar2Feature3'),
+        t('home.corePillars.pillar2Feature4'),
+        t('home.corePillars.pillar2Feature5'),
+      ]
+    },
+    { 
+      title: t('home.corePillars.pillar3'), 
+      description: t('home.corePillars.pillar3Desc'), 
+      icon: BarChart3,
+      features: [
+        t('home.corePillars.pillar3Feature1'),
+        t('home.corePillars.pillar3Feature2'),
+        t('home.corePillars.pillar3Feature3'),
+        t('home.corePillars.pillar3Feature4'),
+        t('home.corePillars.pillar3Feature5'),
+      ]
+    },
+    { 
+      title: t('home.corePillars.pillar4'), 
+      description: t('home.corePillars.pillar4Desc'), 
+      icon: BadgeCheck,
+      features: [
+        t('home.corePillars.pillar4Feature1'),
+        t('home.corePillars.pillar4Feature2'),
+        t('home.corePillars.pillar4Feature3'),
+        t('home.corePillars.pillar4Feature4'),
+        t('home.corePillars.pillar4Feature5'),
+      ]
+    },
+    { 
+      title: t('home.corePillars.pillar5'), 
+      description: t('home.corePillars.pillar5Desc'), 
+      icon: Users,
+      features: [
+        t('home.corePillars.pillar5Feature1'),
+        t('home.corePillars.pillar5Feature2'),
+        t('home.corePillars.pillar5Feature3'),
+        t('home.corePillars.pillar5Feature4'),
+        t('home.corePillars.pillar5Feature5'),
+      ]
+    },
+  ];
+
+  const ecosystemComponents = [
+    { icon: <ArrowRightLeft size={24} />, label: t('home.ecosystem.defiHub'), description: t('home.ecosystem.defiHubDesc') },
+    { icon: <Brain size={24} />, label: t('home.ecosystem.prometheusAI'), description: t('home.ecosystem.prometheusAIDesc') },
+    { icon: <Users size={24} />, label: t('home.ecosystem.socialfi'), description: t('home.ecosystem.socialfiDesc') },
+    { icon: <MessageSquare size={24} />, label: t('home.ecosystem.webcall'), description: t('home.ecosystem.webcallDesc') },
+    { icon: <Store size={24} />, label: t('home.ecosystem.marketplace'), description: t('home.ecosystem.marketplaceDesc') },
+    { icon: <Wallet size={24} />, label: t('home.ecosystem.dashboard'), description: t('home.ecosystem.dashboardDesc') },
+    { icon: <Building size={24} />, label: t('home.ecosystem.rwa'), description: t('home.ecosystem.rwaDesc') },
+  ];
+  
   return (
     <Layout>
       {/* Hero Section */}
@@ -180,7 +183,7 @@ export default function Index() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="font-serif text-3xl md:text-5xl lg:text-6xl text-gradient-gold mb-6 leading-tight glow-text"
             >
-              VIDDHANA: THE WEALTH MANAGEMENT REVOLUTION
+              {t('home.hero.mainTitle')}
             </motion.h1>
 
             <motion.p
@@ -189,7 +192,7 @@ export default function Index() {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="text-xl md:text-2xl text-foreground/90 mb-4"
             >
-              Your Personal Wealth Operating System (PWOS) - Powered by AI, Secured by Blockchain
+              {t('home.hero.subtitle')}
             </motion.p>
 
             <motion.p
@@ -198,7 +201,7 @@ export default function Index() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="text-lg text-muted-foreground mb-10 max-w-3xl mx-auto"
             >
-              The first comprehensive ecosystem combining Blockchain Layer 3, Quantitative AI, DeFi, SocialFi, and DePIN to democratize wealth management for the global middle class.
+              {t('home.hero.description')}
             </motion.p>
 
             {/* CTAs */}
@@ -209,12 +212,12 @@ export default function Index() {
               className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
             >
               <Button variant="hero" size="xl" className="min-w-[200px]">
-                Start Your Journey
+                {t('home.hero.cta')}
                 <ArrowRight className="ml-2" size={20} />
               </Button>
               <a href="/VIDDHANA WHITEPAPERE.pdf" target="_blank" rel="noopener noreferrer">
                 <Button variant="heroOutline" size="xl" className="min-w-[200px]">
-                  Read Whitepaper
+                  {t('home.hero.learnMore')}
                 </Button>
               </a>
             </motion.div>
@@ -225,7 +228,7 @@ export default function Index() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
             >
-              <CountdownTimer targetDate={launchDate} label="Platform Launch: Q1 2026" />
+              <CountdownTimer targetDate={launchDate} label={t('home.countdown.label')} />
             </motion.div>
           </motion.div>
         </div>
@@ -277,23 +280,21 @@ export default function Index() {
               transition={{ duration: 0.6 }}
             >
               <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-gradient-gold mb-6">
-                Your Personal Wealth Operating System
+                {t('home.whatIs.title')}
               </h2>
               <p className="text-xl text-foreground/90 mb-4">
-                Democratizing Finance for 3.3 Billion People
+                {t('home.whatIs.subtitle')}
               </p>
               <p className="text-muted-foreground mb-8 leading-relaxed">
-                VIDDHANA combines cutting-edge blockchain technology with advanced AI to create 
-                a revolutionary wealth management platform. Led by MIT Professor of AI & DeFi, 
-                we're building the financial infrastructure for the global middle class.
+                {t('home.whatIs.description')}
               </p>
               <ul className="space-y-4 mb-8">
                 {[
-                  'Atlas Chain Layer 3 - 100,000+ TPS blockchain',
-                  'Prometheus AI - Self-learning quantitative brain',
-                  'DeFi Integration - 8-15% APY returns',
-                  'RWA Tokenization - Real-world assets from $50',
-                  'SocialFi & DePIN - Community-driven wealth'
+                  t('home.whatIs.feature1'),
+                  t('home.whatIs.feature2'),
+                  t('home.whatIs.feature3'),
+                  t('home.whatIs.feature4'),
+                  t('home.whatIs.feature5'),
                 ].map((item, index) => (
                   <motion.li
                     key={index}
@@ -312,7 +313,7 @@ export default function Index() {
               </ul>
               <Link to="/technology">
                 <Button variant="gold">
-                  Explore Technology
+                  {t('home.whatIs.exploreButton')}
                   <ArrowRight className="ml-2" size={18} />
                 </Button>
               </Link>
@@ -346,8 +347,8 @@ export default function Index() {
         <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/10 to-background" />
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <SectionHeading
-            title="The Current System Is Failing You"
-            subtitle="VIDDHANA solves the three biggest barriers to wealth creation"
+            title={t('home.problems.title')}
+            subtitle={t('home.problems.subtitle')}
           />
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -391,8 +392,8 @@ export default function Index() {
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <SectionHeading
-            title="Complete Ecosystem at Your Fingertips"
-            subtitle="7 integrated platforms working together for your financial success"
+            title={t('home.ecosystem.title')}
+            subtitle={t('home.ecosystem.subtitle')}
           />
 
           {/* Ecosystem Flow Diagram */}
@@ -406,7 +407,7 @@ export default function Index() {
           >
             <Link to="/ecosystem">
               <Button variant="gold" size="lg">
-                Explore Full Ecosystem
+                {t('home.ecosystem.exploreButton')}
                 <ArrowRight className="ml-2" size={18} />
               </Button>
             </Link>
@@ -418,8 +419,8 @@ export default function Index() {
       <section className="py-24">
         <div className="container mx-auto px-4 lg:px-8">
           <SectionHeading
-            title="Five Core Pillars of Financial Freedom"
-            subtitle="Revolutionary technology powering the future of wealth management"
+            title={t('home.corePillars.title')}
+            subtitle={t('home.corePillars.subtitle')}
           />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -458,7 +459,7 @@ export default function Index() {
           >
             <Link to="/technology">
               <Button variant="goldOutline" size="lg">
-                Deep Dive Into Technology
+                {t('home.corePillars.deepDiveButton')}
                 <ArrowRight className="ml-2" size={18} />
               </Button>
             </Link>
@@ -479,13 +480,13 @@ export default function Index() {
             className="text-center max-w-3xl mx-auto"
           >
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-gradient-gold mb-6">
-              Start Your Wealth Journey Today
+              {t('home.cta.title')}
             </h2>
             <p className="text-xl text-foreground/80 mb-8">
-              Join the revolution democratizing finance for 3.3 billion people. Investment starts from just $50.
+              {t('home.cta.subtitle')}
             </p>
             <Button variant="hero" size="xl">
-              Get Started Now
+              {t('home.cta.button')}
               <ArrowRight className="ml-2" size={20} />
             </Button>
           </motion.div>
@@ -510,17 +511,16 @@ export default function Index() {
             </div>
             
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-gradient-gold mb-4">
-              Led by MIT Professor
+              {t('home.mitProfessor.title')}
             </h2>
             <p className="text-xl text-foreground/80 mb-8">
-              A specialized project by a Professor of Artificial Intelligence & Decentralized Finance, 
-              Massachusetts Institute of Technology (MIT)
+              {t('home.mitProfessor.subtitle')}
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link to="/about">
                 <Button variant="goldOutline" size="lg" className="group">
-                  Learn More About Our Team
+                  {t('home.mitProfessor.learnButton')}
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>

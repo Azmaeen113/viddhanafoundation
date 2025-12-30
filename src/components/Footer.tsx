@@ -6,22 +6,23 @@ import {
   Mail,
   ArrowUp
 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const viddhanLogo = '/Viddhana Logo.jpg';
 
 const quickLinks = [
-  { href: '/technology', label: 'Technology' },
-  { href: '/ecosystem', label: 'Ecosystem' },
-  { href: '/tokenomics', label: 'Tokenomics' },
-  { href: '/roadmap', label: 'Roadmap' },
-  { href: '/dao', label: 'DAO' },
+  { href: '/technology', key: 'nav.technology' },
+  { href: '/ecosystem', key: 'nav.ecosystem' },
+  { href: '/tokenomics', key: 'nav.tokenomics' },
+  { href: '/roadmap', key: 'nav.roadmap' },
+  { href: '/dao', key: 'nav.dao' },
 ];
 
 const resourceLinks = [
-  { href: '/whitepaper', label: 'Whitepaper' },
-  { href: '/about', label: 'About Us' },
-  { href: '/contact', label: 'Contact' },
-  { href: '/submit-work', label: 'Careers' },
+  { href: '/whitepaper', key: 'nav.whitepaper' },
+  { href: '/about', key: 'nav.about' },
+  { href: '/contact', key: 'nav.contact' },
+  { href: '/submit-work', key: 'nav.submitWork' },
 ];
 
 const communityLinks = [
@@ -32,8 +33,8 @@ const communityLinks = [
 ];
 
 const legalLinks = [
-  { href: '/terms', label: 'Terms of Service' },
-  { href: '/privacy', label: 'Privacy Policy' },
+  { href: '/terms', key: 'footer.termsOfService' },
+  { href: '/privacy', key: 'footer.privacyPolicy' },
   { href: '/risk-disclosure', label: 'Risk Disclosure' },
   { href: '/compliance', label: 'Compliance' },
 ];
@@ -45,6 +46,8 @@ const socialLinks = [
 ];
 
 export function Footer() {
+  const { t } = useTranslation();
+  
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -83,7 +86,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-muted-foreground mb-6 leading-relaxed">
-              Personal Wealth Operating System. Democratizing Finance for Billions.
+              {t('footer.tagline')}
             </p>
             <div className="flex gap-3">
               {socialLinks.map((social) => (
@@ -103,7 +106,7 @@ export function Footer() {
 
           {/* Product Links */}
           <div>
-            <h4 className="font-serif text-lg text-secondary mb-6">Product</h4>
+            <h4 className="font-serif text-lg text-secondary mb-6">{t('footer.quickLinks')}</h4>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.href}>
@@ -111,7 +114,7 @@ export function Footer() {
                     to={link.href}
                     className="text-muted-foreground hover:text-secondary transition-colors duration-300"
                   >
-                    {link.label}
+                    {t(link.key)}
                   </Link>
                 </li>
               ))}
@@ -128,7 +131,7 @@ export function Footer() {
                     to={link.href}
                     className="text-muted-foreground hover:text-secondary transition-colors duration-300"
                   >
-                    {link.label}
+                    {t(link.key)}
                   </Link>
                 </li>
               ))}
@@ -137,7 +140,7 @@ export function Footer() {
 
           {/* Community */}
           <div>
-            <h4 className="font-serif text-lg text-secondary mb-6">Community</h4>
+            <h4 className="font-serif text-lg text-secondary mb-6">{t('footer.community')}</h4>
             <ul className="space-y-3">
               {communityLinks.map((link) => (
                 <li key={link.href}>
@@ -156,7 +159,7 @@ export function Footer() {
 
           {/* Legal & Contact */}
           <div>
-            <h4 className="font-serif text-lg text-secondary mb-6">Legal</h4>
+            <h4 className="font-serif text-lg text-secondary mb-6">{t('footer.legal')}</h4>
             <ul className="space-y-3 mb-6">
               {legalLinks.map((link) => (
                 <li key={link.href}>
@@ -164,7 +167,7 @@ export function Footer() {
                     to={link.href}
                     className="text-muted-foreground hover:text-secondary transition-colors duration-300"
                   >
-                    {link.label}
+                    {'key' in link ? t(link.key) : link.label}
                   </Link>
                 </li>
               ))}
@@ -193,11 +196,10 @@ export function Footer() {
         <div className="container mx-auto px-4 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="text-sm text-muted-foreground text-center md:text-left">
-              © {new Date().getFullYear()} VIDDHANA. All rights reserved.
+              {t('footer.copyright')}
             </div>
             <div className="text-sm text-muted-foreground text-center md:text-right">
-              <p className="mb-1">Personal Wealth Operating System</p>
-              <p>Democratizing Finance for Billions</p>
+              <p className="mb-1">{t('footer.tagline')}</p>
             </div>
           </div>
         </div>

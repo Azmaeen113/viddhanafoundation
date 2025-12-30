@@ -20,39 +20,49 @@ import { GlassCard } from '@/components/GlassCard';
 import { SectionHeading } from '@/components/SectionHeading';
 import { AnimatedCounter } from '@/components/AnimatedCounter';
 import { Link } from 'react-router-dom';
-
-const tokenParams = [
-  { label: 'Token Name', value: 'VIDDHANA Token' },
-  { label: 'Symbol', value: '$VDH' },
-  { label: 'Total Supply', value: '1,000,000,000 VDH' },
-  { label: 'Type', value: 'Utility & Governance' },
-];
-
-const distribution = [
-  { label: 'Community', percentage: 40, color: 'bg-green-medium', strokeColor: 'hsl(122, 39%, 41%)', icon: Users },
-  { label: 'Development Team', percentage: 20, color: 'bg-secondary', strokeColor: 'hsl(45, 73%, 52%)', icon: Code },
-  { label: 'Ecosystem Fund', percentage: 15, color: 'bg-green-light', strokeColor: 'hsl(122, 39%, 60%)', icon: Zap },
-  { label: 'Founding Team', percentage: 15, color: 'bg-gold', strokeColor: 'hsl(45, 73%, 52%)', icon: Heart },
-  { label: 'Seed & Series A', percentage: 10, color: 'bg-green-dark', strokeColor: 'hsl(150, 39%, 18%)', icon: TrendingDown },
-];
-
-const utilities = [
-  { title: 'Fee Discounts', description: 'Stake VDH for 20-50% platform fee reduction', icon: Zap },
-  { title: 'Governance Rights', description: '1 VDH = 1 Vote in DAO decisions', icon: Vote },
-  { title: 'Premium Access', description: 'Unlock AI Pro features and exclusive DeFi pools', icon: BarChart3 },
-  { title: 'Community Rewards', description: 'Earn VDH for contributions, education, referrals', icon: Coins },
-  { title: 'RWA Collateral', description: 'Use as supplementary collateral for loans', icon: Wallet },
-  { title: 'Staking Rewards', description: 'Earn passive income through token staking', icon: Shield },
-];
-
-const revenueModel = [
-  { source: 'Platform Fee', description: '0.25-0.5% annual AUM management fee', icon: BarChart3 },
-  { source: 'Performance Fee', description: '10% on profits exceeding 8% APY benchmark', icon: TrendingDown },
-  { source: 'Protocol Fees', description: '~$0.001 per Atlas Chain transaction', icon: Zap },
-  { source: 'DePIN Marketplace', description: '1-2% commission on NFT transactions', icon: Building },
-];
+import { useTranslation } from 'react-i18next';
 
 export default function Tokenomics() {
+  const { t } = useTranslation();
+
+  const tokenParams = [
+    { label: t('tokenomics.params.tokenName'), value: t('tokenomics.params.tokenNameValue') },
+    { label: t('tokenomics.params.symbol'), value: t('tokenomics.params.symbolValue') },
+    { label: t('tokenomics.params.totalSupply'), value: t('tokenomics.params.totalSupplyValue') },
+    { label: t('tokenomics.params.type'), value: t('tokenomics.params.typeValue') },
+  ];
+
+  const distribution = [
+    { label: t('tokenomics.distribution.community.label'), percentage: 40, color: 'bg-green-medium', strokeColor: 'hsl(122, 39%, 41%)', icon: Users, desc: t('tokenomics.distribution.community.desc') },
+    { label: t('tokenomics.distribution.devTeam.label'), percentage: 20, color: 'bg-secondary', strokeColor: 'hsl(45, 73%, 52%)', icon: Code, desc: t('tokenomics.distribution.devTeam.desc') },
+    { label: t('tokenomics.distribution.ecosystem.label'), percentage: 15, color: 'bg-green-light', strokeColor: 'hsl(122, 39%, 60%)', icon: Zap, desc: t('tokenomics.distribution.ecosystem.desc') },
+    { label: t('tokenomics.distribution.founding.label'), percentage: 15, color: 'bg-gold', strokeColor: 'hsl(45, 73%, 52%)', icon: Heart, desc: t('tokenomics.distribution.founding.desc') },
+    { label: t('tokenomics.distribution.seed.label'), percentage: 10, color: 'bg-green-dark', strokeColor: 'hsl(150, 39%, 18%)', icon: TrendingDown, desc: t('tokenomics.distribution.seed.desc') },
+  ];
+
+  const utilities = [
+    { title: t('tokenomics.utility.feeDiscount.title'), description: t('tokenomics.utility.feeDiscount.desc'), icon: Zap },
+    { title: t('tokenomics.utility.governance.title'), description: t('tokenomics.utility.governance.desc'), icon: Vote },
+    { title: t('tokenomics.utility.premiumAccess.title'), description: t('tokenomics.utility.premiumAccess.desc'), icon: BarChart3 },
+    { title: t('tokenomics.utility.rewards.title'), description: t('tokenomics.utility.rewards.desc'), icon: Coins },
+    { title: t('tokenomics.utility.collateral.title'), description: t('tokenomics.utility.collateral.desc'), icon: Wallet },
+    { title: t('tokenomics.utility.staking.title'), description: t('tokenomics.utility.staking.desc'), icon: Shield },
+  ];
+
+  const revenueModel = [
+    { source: t('tokenomics.revenue.platformFee.title'), description: t('tokenomics.revenue.platformFee.desc'), icon: BarChart3 },
+    { source: t('tokenomics.revenue.performanceFee.title'), description: t('tokenomics.revenue.performanceFee.desc'), icon: TrendingDown },
+    { source: t('tokenomics.revenue.protocolFees.title'), description: t('tokenomics.revenue.protocolFees.desc'), icon: Zap },
+    { source: t('tokenomics.revenue.marketplace.title'), description: t('tokenomics.revenue.marketplace.desc'), icon: Building },
+  ];
+
+  const burnFeatures = [
+    t('tokenomics.burn.feature1'),
+    t('tokenomics.burn.feature2'),
+    t('tokenomics.burn.feature3'),
+    t('tokenomics.burn.feature4'),
+  ];
+  
   return (
     <Layout>
       {/* Hero Section */}
@@ -67,10 +77,10 @@ export default function Tokenomics() {
             className="text-center max-w-4xl mx-auto"
           >
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-gradient-gold mb-6">
-              $VDH Token Economics
+              {t('tokenomics.title')}
             </h1>
             <p className="text-xl text-muted-foreground">
-              1 Billion Total Supply | Utility & Governance Token
+              {t('tokenomics.subtitle')}
             </p>
           </motion.div>
         </div>
@@ -86,7 +96,7 @@ export default function Tokenomics() {
           >
             <GlassCard className="max-w-3xl mx-auto" goldBorder>
               <h2 className="font-serif text-2xl text-secondary text-center mb-8">
-                Token Overview
+                {t('tokenomics.overview')}
               </h2>
               <div className="grid md:grid-cols-2 gap-6">
                 {tokenParams.map((param) => (
@@ -106,8 +116,8 @@ export default function Tokenomics() {
         <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background" />
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <SectionHeading
-            title="Token Utility"
-            subtitle="Multiple use cases driving real demand for VDH"
+            title={t('tokenomics.utilityTitle')}
+            subtitle={t('tokenomics.utilitySubtitle')}
           />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -140,8 +150,8 @@ export default function Tokenomics() {
       <section className="py-24">
         <div className="container mx-auto px-4 lg:px-8">
           <SectionHeading
-            title="Token Distribution"
-            subtitle="Fair allocation designed for sustainable growth"
+            title={t('tokenomics.distributionTitle')}
+            subtitle={t('tokenomics.distributionSubtitle')}
           />
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -159,7 +169,7 @@ export default function Tokenomics() {
                     <div className="font-serif text-5xl text-gradient-gold mb-2 font-bold">
                       <AnimatedCounter end={1} suffix="B" />
                     </div>
-                    <p className="text-secondary uppercase text-xs tracking-wider font-semibold">Total Supply</p>
+                    <p className="text-secondary uppercase text-xs tracking-wider font-semibold">{t('tokenomics.totalSupplyLabel')}</p>
                   </div>
                 </div>
                 
@@ -248,11 +258,7 @@ export default function Tokenomics() {
                               {item.label}
                             </h3>
                             <p className="text-sm text-muted-foreground">
-                              {item.percentage === 40 && 'Gradual unlock via activity & rewards'}
-                              {item.percentage === 20 && '3-year lock, linear monthly vesting'}
-                              {item.percentage === 15 && item.label === 'Ecosystem Fund' && 'DAO-managed allocation'}
-                              {item.percentage === 15 && item.label === 'Founding Team' && '4-year lock, linear vesting'}
-                              {item.percentage === 10 && '2-year lock, linear vesting'}
+                              {item.desc}
                             </p>
                           </div>
                         </div>
@@ -277,8 +283,8 @@ export default function Tokenomics() {
         <div className="absolute inset-0 bg-pattern-circuit opacity-20" />
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <SectionHeading
-            title="Revenue Model"
-            subtitle="Multiple streams supporting ecosystem growth"
+            title={t('tokenomics.revenueTitle')}
+            subtitle={t('tokenomics.revenueSubtitle')}
           />
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -311,17 +317,17 @@ export default function Tokenomics() {
           >
             <GlassCard goldBorder className="max-w-4xl mx-auto">
               <h3 className="font-serif text-2xl text-secondary text-center mb-6">
-                Projected Revenue Growth
+                {t('tokenomics.projectedRevenue')}
               </h3>
               <div className="overflow-x-auto">
                 <table className="w-full text-left">
                   <thead>
                     <tr className="border-b border-secondary/20">
-                      <th className="py-3 px-4 text-secondary">Year</th>
-                      <th className="py-3 px-4 text-secondary">AUM</th>
-                      <th className="py-3 px-4 text-secondary">Platform Fee</th>
-                      <th className="py-3 px-4 text-secondary">Performance Fee</th>
-                      <th className="py-3 px-4 text-secondary">Total Revenue</th>
+                      <th className="py-3 px-4 text-secondary">{t('tokenomics.table.year')}</th>
+                      <th className="py-3 px-4 text-secondary">{t('tokenomics.table.aum')}</th>
+                      <th className="py-3 px-4 text-secondary">{t('tokenomics.table.platformFee')}</th>
+                      <th className="py-3 px-4 text-secondary">{t('tokenomics.table.performanceFee')}</th>
+                      <th className="py-3 px-4 text-secondary">{t('tokenomics.table.totalRevenue')}</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -364,18 +370,13 @@ export default function Tokenomics() {
               viewport={{ once: true }}
             >
               <h2 className="font-serif text-3xl md:text-4xl text-gradient-gold mb-6">
-                Deflationary Mechanism
+                {t('tokenomics.burn.title')}
               </h2>
               <p className="text-xl text-foreground/80 mb-6">
-                5% of platform fees used for quarterly VDH buyback & burn
+                {t('tokenomics.burn.subtitle')}
               </p>
               <ul className="space-y-4">
-                {[
-                  'Quarterly token burns reduce circulating supply',
-                  'Deflationary pressure increases token value over time',
-                  'Transparent on-chain burn transactions',
-                  'Community-governed burn schedule'
-                ].map((item, index) => (
+                {burnFeatures.map((item, index) => (
                   <motion.li
                     key={index}
                     initial={{ opacity: 0, x: -20 }}
@@ -399,11 +400,10 @@ export default function Tokenomics() {
               <GlassCard goldBorder>
                 <Coins className="w-20 h-20 text-secondary mx-auto mb-6" />
                 <h3 className="font-serif text-2xl text-secondary text-center mb-4">
-                  Sustainable Growth Model
+                  {t('tokenomics.sustainableGrowth.title')}
                 </h3>
                 <p className="text-center text-foreground/80">
-                  Token burns combined with growing utility ensure long-term value appreciation 
-                  for all VDH holders.
+                  {t('tokenomics.sustainableGrowth.desc')}
                 </p>
               </GlassCard>
             </motion.div>
@@ -421,21 +421,21 @@ export default function Tokenomics() {
             className="text-center"
           >
             <h2 className="font-serif text-3xl md:text-4xl text-gradient-gold mb-6">
-              Join the VIDDHANA Ecosystem
+              {t('tokenomics.cta.title')}
             </h2>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Acquire VDH tokens and participate in the wealth management revolution
+              {t('tokenomics.cta.subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="/VIDDHANA WHITEPAPERE.pdf" target="_blank" rel="noopener noreferrer">
                 <Button variant="hero" size="lg">
-                  Read Full Tokenomics
+                  {t('tokenomics.cta.readButton')}
                   <ArrowRight className="ml-2" size={18} />
                 </Button>
               </a>
               <Link to="/dao">
                 <Button variant="goldOutline" size="lg">
-                  Explore DAO Governance
+                  {t('tokenomics.cta.daoButton')}
                 </Button>
               </Link>
             </div>

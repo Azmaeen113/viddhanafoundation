@@ -3,24 +3,27 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { useTranslation } from 'react-i18next';
+import { LanguageSelector } from './LanguageSelector';
 
 const viddhanLogo = '/Viddhana Logo.jpg';
 
 const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/technology', label: 'Technology' },
-  { href: '/ecosystem', label: 'Ecosystem' },
-  { href: '/tokenomics', label: 'Tokenomics' },
-  { href: '/roadmap', label: 'Roadmap' },
-  { href: '/dao', label: 'DAO' },
-  { href: '/whitepaper', label: 'Whitepaper' },
-  { href: '/about', label: 'About' },
+  { href: '/', key: 'nav.home' },
+  { href: '/technology', key: 'nav.technology' },
+  { href: '/ecosystem', key: 'nav.ecosystem' },
+  { href: '/tokenomics', key: 'nav.tokenomics' },
+  { href: '/roadmap', key: 'nav.roadmap' },
+  { href: '/dao', key: 'nav.dao' },
+  { href: '/whitepaper', key: 'nav.whitepaper' },
+  { href: '/about', key: 'nav.about' },
 ];
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -73,13 +76,14 @@ export function Navbar() {
                     : 'text-foreground/80 hover:text-secondary hover:bg-secondary/5'
                 )}
               >
-                {link.label}
+                {t(link.key)}
               </Link>
             ))}
           </div>
 
-          {/* CTA Buttons */}
+          {/* CTA Buttons & Language Selector */}
           <div className="hidden lg:flex items-center gap-3">
+            <LanguageSelector />
             <Button variant="gold" size="default">
               Launch App
             </Button>
@@ -114,10 +118,11 @@ export function Navbar() {
                     : 'text-foreground/80 hover:text-secondary hover:bg-secondary/5'
                 )}
               >
-                {link.label}
+                {t(link.key)}
               </Link>
             ))}
-            <div className="pt-4">
+            <div className="pt-4 space-y-3">
+              <LanguageSelector />
               <Button variant="gold" size="lg" className="w-full">
                 Launch App
               </Button>

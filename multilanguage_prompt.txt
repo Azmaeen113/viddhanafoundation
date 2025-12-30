@@ -1,0 +1,134 @@
+
+
+```
+Implement a complete multi-language system for this multi-page website with 7 languages: Chinese (Simplified), Hindi, Spanish, French, Vietnamese, Japanese, and Korean.
+
+Requirements:
+
+1. LANGUAGE SWITCHING MECHANISM:
+   - Add a language selector dropdown/button in the navigation bar
+   - Store the selected language in localStorage to persist across page navigation
+   - Default language should be English
+   - When language changes, dynamically update all text content on the current page without page reload
+
+2. TRANSLATION STRUCTURE:
+   - Create a centralized translations.js file with a nested object structure
+   - Format: translations[languageCode][pageId][elementKey] = "translated text"
+   - Language codes: 'en' (English), 'zh' (Chinese), 'hi' (Hindi), 'es' (Spanish), 'fr' (French), 'vi' (Vietnamese), 'ja' (Japanese), 'ko' (Korean)
+   - Include translations for: navigation menu items, page headings, body text, button labels, form labels, placeholders, error messages, footer text
+
+3. IMPLEMENTATION APPROACH:
+   - Add data-translate="key-name" attributes to all HTML elements that need translation (except terms that should remain in English)
+   - Create a main language.js file that handles language detection, switching, and DOM updates
+   - On page load, detect saved language from localStorage and apply translations immediately
+   - Create a function that loops through all elements with data-translate attribute and updates their textContent or innerHTML
+   - Handle special cases like input placeholders, button values, and alt text for images
+
+4. NAVIGATION BAR COMPONENT:
+   - Add a language selector with flags or language names
+   - Make it accessible on all pages
+   - Show current selected language with visual indicator
+   - Dropdown or modal design that lists all 7 languages
+
+5. TRANSLATION QUALITY:
+   - Use natural, contextually appropriate translations for each language
+   - Maintain tone consistency across all languages
+   - Keep common English terms (like brand names, technical terms, or internationally recognized words) in English if appropriate
+   - Ensure proper character encoding (UTF-8) for all special characters
+
+6. PERFORMANCE:
+   - Lazy load translations if the file becomes large
+   - Minimize layout shift when switching languages
+   - Ensure fast language switching (under 100ms)
+
+7. TECHNICAL DETAILS:
+   - Use vanilla JavaScript or adapt to existing framework (React/Vue/etc)
+   - Ensure RTL language considerations are handled if needed in the future
+   - Make the system scalable for adding more languages later
+   - Add comments in code for easy maintenance
+
+Please generate:
+- Complete translations.js file with sample translations for all pages
+- language.js file with all switching logic
+- Updated HTML structure with data-translate attributes
+- CSS for the language selector component
+- Instructions for adding new translations
+
+Start with the core language switching functionality and translation structure.
+```
+
+---
+
+## Follow-up Prompts for Specific Components
+
+### For Navigation Bar:
+```
+Create a language selector component for the navigation bar that:
+- Displays current language with a flag icon or language code
+- Opens a dropdown/modal showing all 7 languages (Chinese, Hindi, Spanish, French, Vietnamese, Japanese, Korean)
+- Has smooth animations and is mobile-responsive
+- Calls the language switching function when a language is selected
+- Updates the displayed language immediately after selection
+- Includes hover and active states for better UX
+```
+
+### For Translation File Structure:
+```
+Generate a comprehensive translations.js file with this structure:
+- Organize by language code at the top level
+- Within each language, organize by page identifiers (home, about, contact, etc.)
+- Within each page, use descriptive keys for each text element
+- Include translations for: nav menu, hero section, feature descriptions, call-to-action buttons, form fields, footer links
+- Ensure all special characters are properly escaped
+- Add helpful comments explaining the structure
+```
+
+### For Applying Translations:
+```
+Create a robust language.js file that:
+- Detects saved language preference from localStorage on page load
+- Provides a setLanguage(languageCode) function
+- Updates all elements with data-translate attributes
+- Handles special cases: input placeholders (placeholder attribute), images (alt attribute), meta tags (if needed)
+- Saves language preference to localStorage
+- Dispatches a custom event when language changes for other scripts to listen to
+- Includes error handling for missing translations
+- Falls back to English if translation key is not found
+```
+
+### For HTML Updates:
+```
+Update all HTML pages to support multi-language:
+- Add data-translate="uniqueKey" to every text element that needs translation
+- Use semantic naming for keys (e.g., "nav.home", "hero.title", "contact.form.email")
+- Keep brand names, product codes, and specific English terms without data-translate attribute
+- Ensure all form inputs have data-translate on their placeholder attribute if needed
+- Add language selector component to the navigation bar
+- Include the translations.js and language.js scripts before closing body tag
+```
+
+---
+
+## Prompt for Testing & Edge Cases:
+```
+Add comprehensive error handling and edge cases:
+- Handle missing translation keys gracefully (fallback to English)
+- Prevent layout breaking when text length varies significantly between languages
+- Add loading state during language switch if translations are fetched async
+- Test with long German-like compound words and short languages
+- Ensure proper character encoding across all pages
+- Add console warnings in development mode for missing translations
+- Create a validation script to check if all translation keys exist across all languages
+```
+
+---
+
+## Tips for Using These Prompts:
+
+1. **Start with the main prompt** - paste it into Copilot and let it generate the core structure
+2. **Use follow-up prompts** one at a time to refine specific components
+3. **Review generated code** and ask Copilot to fix any issues: "Fix the language switching to work with the existing navigation structure"
+4. **Request explanations**: "Explain how the translation lookup works" or "Add comments to this function"
+5. **Iterate gradually**: "Now add French translations for the homepage" then "Add Spanish translations"
+
+These prompts are structured to help Copilot understand the full context while breaking down the implementation into manageable pieces.

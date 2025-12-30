@@ -21,101 +21,104 @@ import { GlassCard } from '@/components/GlassCard';
 import { SectionHeading } from '@/components/SectionHeading';
 import { SplitCard } from '@/components/SplitCard';
 import { Link } from 'react-router-dom';
-
-const metrics = [
-  { label: 'Throughput', value: '100,000+ TPS', icon: Gauge },
-  { label: 'Transaction Fee', value: '<$0.001', icon: Zap },
-  { label: 'Confirmation Time', value: '<1 second', icon: Shield },
-  { label: 'Cross-Chain', value: 'Multi-Chain', icon: Code },
-];
-
-const quadCoreLayers = [
-  { 
-    name: 'Layer 1: Prometheus AI Core', 
-    description: 'Multi-Model Quantitative AI System trained on billions of financial data points',
-    icon: Brain,
-    color: 'from-green-dark to-primary',
-    features: [
-      'Holistic Financial Profile Analysis',
-      'Dynamic Portfolio Optimization',
-      'Early Warning & Risk Management',
-      'Continuous Learning via RL',
-      '24/7 Unbiased Financial Advisor'
-    ]
-  },
-  { 
-    name: 'Layer 2: Atlas Chain (L3)', 
-    description: 'Application-specific blockchain optimized for wealth management',
-    icon: Layers,
-    color: 'from-primary to-green-medium',
-    features: [
-      '100,000+ TPS Speed',
-      '<$0.001 Transaction Fees',
-      '<1 Second Confirmation',
-      'ZK-Rollups/Optimistic Rollups',
-      'Cross-Chain Compatible'
-    ]
-  },
-  { 
-    name: 'Layer 3: DeFi & RWA Integration', 
-    description: 'Real-world assets and decentralized finance protocols',
-    icon: Building,
-    color: 'from-green-medium to-gold-dark',
-    features: [
-      'Real Estate Tokenization',
-      'Corporate Bond Tokens',
-      'Renewable Energy Assets',
-      'Lending/Borrowing Protocol',
-      '8-15% APY Yield'
-    ]
-  },
-  { 
-    name: 'Layer 4: DePIN Oracles & IoT', 
-    description: 'Physical infrastructure network with IoT verification',
-    icon: Wifi,
-    color: 'from-gold-dark to-gold',
-    features: [
-      'IoT Sensors for Assets',
-      'Decentralized Oracles',
-      'EV Charging Stations',
-      'Decentralized WiFi/Hotspots',
-      'Environmental Data Market'
-    ]
-  },
-];
-
-const rwaTypes = [
-  { title: 'Real Estate', description: 'Fractional ownership via NFTs', icon: Building },
-  { title: 'Corporate Bonds', description: 'Security token offerings', icon: Shield },
-  { title: 'Renewable Energy', description: 'Solar farms, wind projects', icon: Zap },
-  { title: 'Telecom Infrastructure', description: '5G/DePIN towers', icon: Wifi },
-  { title: 'Carbon Credits', description: 'Environmental assets', icon: Globe },
-];
-
-const aiFeatures = [
-  {
-    title: 'Multi-Model System',
-    description: 'Compact LLMs (7B parameters) with Reinforcement Learning and Deep Learning for comprehensive analysis',
-    icon: Brain
-  },
-  {
-    title: 'Portfolio Optimization',
-    description: 'Goes beyond Modern Portfolio Theory with dynamic rebalancing based on real-time market conditions',
-    icon: Gauge
-  },
-  {
-    title: 'Risk Management',
-    description: 'Proactive early warning system with continuous monitoring and adjustment',
-    icon: Shield
-  },
-  {
-    title: 'Continuous Learning',
-    description: 'Self-improving through Reinforcement Learning, adapting to market changes 24/7',
-    icon: Cpu
-  }
-];
+import { useTranslation } from 'react-i18next';
 
 export default function Technology() {
+  const { t } = useTranslation();
+  
+  const metrics = [
+    { label: t('technology.metrics.throughput'), value: '100,000+ TPS', icon: Gauge },
+    { label: t('technology.metrics.transactionFee'), value: '<$0.001', icon: Zap },
+    { label: t('technology.metrics.confirmationTime'), value: '<1 second', icon: Shield },
+    { label: t('technology.metrics.crossChain'), value: 'Multi-Chain', icon: Code },
+  ];
+
+const quadCoreLayers = [
+    { 
+      name: t('technology.quadCore.layer1Name'), 
+      description: t('technology.quadCore.layer1Desc'),
+      icon: Brain,
+      color: 'from-green-dark to-primary',
+      features: [
+        t('technology.quadCore.layer1Feature1'),
+        t('technology.quadCore.layer1Feature2'),
+        t('technology.quadCore.layer1Feature3'),
+        t('technology.quadCore.layer1Feature4'),
+        t('technology.quadCore.layer1Feature5'),
+      ]
+    },
+    { 
+      name: t('technology.quadCore.layer2Name'), 
+      description: t('technology.quadCore.layer2Desc'),
+      icon: Layers,
+      color: 'from-primary to-green-medium',
+      features: [
+        t('technology.quadCore.layer2Feature1'),
+        t('technology.quadCore.layer2Feature2'),
+        t('technology.quadCore.layer2Feature3'),
+        t('technology.quadCore.layer2Feature4'),
+        t('technology.quadCore.layer2Feature5'),
+      ]
+    },
+    { 
+      name: t('technology.quadCore.layer3Name'), 
+      description: t('technology.quadCore.layer3Desc'),
+      icon: Building,
+      color: 'from-green-medium to-gold-dark',
+      features: [
+        t('technology.quadCore.layer3Feature1'),
+        t('technology.quadCore.layer3Feature2'),
+        t('technology.quadCore.layer3Feature3'),
+        t('technology.quadCore.layer3Feature4'),
+        t('technology.quadCore.layer3Feature5'),
+      ]
+    },
+    { 
+      name: t('technology.quadCore.layer4Name'), 
+      description: t('technology.quadCore.layer4Desc'),
+      icon: Wifi,
+      color: 'from-gold-dark to-gold',
+      features: [
+        t('technology.quadCore.layer4Feature1'),
+        t('technology.quadCore.layer4Feature2'),
+        t('technology.quadCore.layer4Feature3'),
+        t('technology.quadCore.layer4Feature4'),
+        t('technology.quadCore.layer4Feature5'),
+      ]
+    },
+  ];
+
+const rwaTypes = [
+    { title: t('technology.rwa.realEstate'), description: t('technology.rwa.realEstateDesc'), icon: Building },
+    { title: t('technology.rwa.corporateBonds'), description: t('technology.rwa.corporateBondsDesc'), icon: Shield },
+    { title: t('technology.rwa.renewableEnergy'), description: t('technology.rwa.renewableEnergyDesc'), icon: Zap },
+    { title: t('technology.rwa.telecom'), description: t('technology.rwa.telecomDesc'), icon: Wifi },
+    { title: t('technology.rwa.carbonCredits'), description: t('technology.rwa.carbonCreditsDesc'), icon: Globe },
+  ];
+
+  const aiFeatures = [
+    {
+      title: t('technology.prometheusAI.feature1Title'),
+      description: t('technology.prometheusAI.feature1Desc'),
+      icon: Brain
+    },
+    {
+      title: t('technology.prometheusAI.feature2Title'),
+      description: t('technology.prometheusAI.feature2Desc'),
+      icon: Gauge
+    },
+    {
+      title: t('technology.prometheusAI.feature3Title'),
+      description: t('technology.prometheusAI.feature3Desc'),
+      icon: Shield
+    },
+    {
+      title: t('technology.prometheusAI.feature4Title'),
+      description: t('technology.prometheusAI.feature4Desc'),
+      icon: Cpu
+    }
+  ];
+  
   return (
     <Layout>
       {/* Hero Section */}
@@ -130,10 +133,10 @@ export default function Technology() {
             className="text-center max-w-4xl mx-auto"
           >
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-gradient-gold mb-6">
-              Unified Quad-Core Architecture
+              {t('technology.title')}
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
-              First wealth management platform combining AI, Blockchain Layer 3, DeFi, RWA, and DePIN
+              {t('technology.subtitle')}
             </p>
           </motion.div>
         </div>
@@ -171,8 +174,8 @@ export default function Technology() {
         <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background" />
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <SectionHeading
-            title="Four Revolutionary Layers"
-            subtitle="Integrated architecture for complete wealth management"
+            title={t('technology.quadCore.title')}
+            subtitle={t('technology.quadCore.subtitle')}
           />
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -216,8 +219,8 @@ export default function Technology() {
         <div className="absolute inset-0 bg-pattern-circuit opacity-20" />
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <SectionHeading
-            title="Prometheus AI: Your 24/7 Financial Brain"
-            subtitle="Self-learning quantitative AI trained on billions of data points"
+            title={t('technology.prometheusAI.title')}
+            subtitle={t('technology.prometheusAI.subtitle')}
           />
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
@@ -250,11 +253,10 @@ export default function Technology() {
           >
             <GlassCard goldBorder className="max-w-3xl mx-auto">
               <h3 className="font-serif text-2xl text-secondary mb-4">
-                Tech Stack
+                {t('technology.prometheusAI.techStack')}
               </h3>
               <p className="text-lg text-foreground/80">
-                Compact LLMs (7B parameters) • Reinforcement Learning • Deep Learning • 
-                Real-time Market Data Processing • Sentiment Analysis Engine
+                {t('technology.prometheusAI.techStackDesc')}
               </p>
             </GlassCard>
           </motion.div>
@@ -265,8 +267,8 @@ export default function Technology() {
       <section className="py-24">
         <div className="container mx-auto px-4 lg:px-8">
           <SectionHeading
-            title="Real-World Asset Tokenization"
-            subtitle="Invest in physical assets starting from just $50"
+            title={t('technology.rwa.title')}
+            subtitle={t('technology.rwa.subtitle')}
           />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -306,15 +308,15 @@ export default function Technology() {
               viewport={{ once: true }}
             >
               <h2 className="font-serif text-3xl md:text-4xl text-gradient-gold mb-6">
-                Web3 & Digital Identity
+                {t('technology.web3Security.title')}
               </h2>
               <ul className="space-y-4">
                 {[
-                  'Non-Custodial Wallets - "Not your keys, not your crypto"',
-                  'Decentralized Identity (DID) with social recovery',
-                  'Asset NFTs for instant, seamless trading',
-                  'Full transparency and on-chain verification',
-                  'Military-grade encryption and security'
+                  t('technology.web3Security.feature1'),
+                  t('technology.web3Security.feature2'),
+                  t('technology.web3Security.feature3'),
+                  t('technology.web3Security.feature4'),
+                  t('technology.web3Security.feature5'),
                 ].map((item, index) => (
                   <motion.li
                     key={index}
@@ -339,11 +341,10 @@ export default function Technology() {
               <GlassCard goldBorder>
                 <Shield className="w-20 h-20 text-secondary mx-auto mb-6" />
                 <h3 className="font-serif text-2xl text-secondary text-center mb-4">
-                  Bank-Level Security
+                  {t('technology.web3Security.securityTitle')}
                 </h3>
                 <p className="text-center text-foreground/80">
-                  Multi-signature wallets, hardware security modules, and continuous 
-                  audits ensure your assets are always protected.
+                  {t('technology.web3Security.securityDesc')}
                 </p>
               </GlassCard>
             </motion.div>
@@ -361,21 +362,21 @@ export default function Technology() {
             className="text-center"
           >
             <h2 className="font-serif text-3xl md:text-4xl text-gradient-gold mb-6">
-              Experience the Future of Wealth Management
+              {t('technology.cta.title')}
             </h2>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Join the revolution and take control of your financial future
+              {t('technology.cta.subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="/VIDDHANA WHITEPAPERE.pdf" target="_blank" rel="noopener noreferrer">
                 <Button variant="hero" size="lg">
-                  Read Technical Whitepaper
+                  {t('technology.cta.whitepaperButton')}
                   <ArrowRight className="ml-2" size={18} />
                 </Button>
               </a>
               <Link to="/ecosystem">
                 <Button variant="goldOutline" size="lg">
-                  Explore Ecosystem
+                  {t('technology.cta.ecosystemButton')}
                 </Button>
               </Link>
             </div>

@@ -9,8 +9,10 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { openEmailClient, WEBSITE_EMAIL } from '@/lib/emailUtils';
+import { useTranslation } from 'react-i18next';
 
 export default function Contact() {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -54,10 +56,10 @@ export default function Contact() {
             className="text-center max-w-4xl mx-auto"
           >
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-gradient-gold mb-6">
-              Get in Touch
+              {t('contact.title')}
             </h1>
             <p className="text-xl text-muted-foreground">
-              Have questions about VIDDHANA? We'd love to hear from you.
+              {t('contact.subtitle')}
             </p>
           </motion.div>
         </div>
@@ -82,14 +84,14 @@ export default function Contact() {
                   <div>
                     <Label htmlFor="name" className="text-white mb-2 flex items-center gap-2">
                       <User size={16} className="text-gold" />
-                      Full Name <span className="text-red-500">*</span>
+                      {t('contact.form.name')} <span className="text-red-500">*</span>
                     </Label>
                     <Input
                       id="name"
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      placeholder="John Doe"
+                      placeholder={t('contact.form.namePlaceholder')}
                       required
                       className="bg-green-dark/30 border-gold/20 focus:border-gold text-white"
                     />
@@ -98,7 +100,7 @@ export default function Contact() {
                   <div>
                     <Label htmlFor="email" className="text-white mb-2 flex items-center gap-2">
                       <Mail size={16} className="text-gold" />
-                      Email Address <span className="text-red-500">*</span>
+                      {t('contact.form.email')} <span className="text-red-500">*</span>
                     </Label>
                     <Input
                       id="email"
@@ -106,7 +108,7 @@ export default function Contact() {
                       type="email"
                       value={formData.email}
                       onChange={handleChange}
-                      placeholder="john@example.com"
+                      placeholder={t('contact.form.emailPlaceholder')}
                       required
                       className="bg-green-dark/30 border-gold/20 focus:border-gold text-white"
                     />
@@ -148,14 +150,14 @@ export default function Contact() {
                   <div>
                     <Label htmlFor="subject" className="text-white mb-2 flex items-center gap-2">
                       <MessageSquare size={16} className="text-gold" />
-                      Subject <span className="text-red-500">*</span>
+                      {t('contact.form.subject')} <span className="text-red-500">*</span>
                     </Label>
                     <Input
                       id="subject"
                       name="subject"
                       value={formData.subject}
                       onChange={handleChange}
-                      placeholder="How can we help you?"
+                      placeholder={t('contact.form.subjectPlaceholder')}
                       required
                       className="bg-green-dark/30 border-gold/20 focus:border-gold text-white"
                     />
@@ -164,14 +166,14 @@ export default function Contact() {
                   <div>
                     <Label htmlFor="message" className="text-white mb-2 flex items-center gap-2">
                       <Mail size={16} className="text-gold" />
-                      Message <span className="text-red-500">*</span>
+                      {t('contact.form.message')} <span className="text-red-500">*</span>
                     </Label>
                     <Textarea
                       id="message"
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
-                      placeholder="Tell us more about your inquiry..."
+                      placeholder={t('contact.form.messagePlaceholder')}
                       rows={6}
                       required
                       className="bg-green-dark/30 border-gold/20 focus:border-gold text-white resize-none"
@@ -180,7 +182,7 @@ export default function Contact() {
 
                   <Button type="submit" variant="gold" size="lg" className="w-full">
                     <Send className="mr-2" size={18} />
-                    Send Message
+                    {t('contact.form.submit')}
                   </Button>
 
                   <p className="text-xs text-gray-light text-center mt-4">

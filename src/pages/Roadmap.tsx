@@ -15,87 +15,7 @@ import { GlassCard } from '@/components/GlassCard';
 import { SectionHeading } from '@/components/SectionHeading';
 import { HorizontalTimeline } from '@/components/HorizontalTimeline';
 import { Link } from 'react-router-dom';
-
-const roadmapPhases = [
-  {
-    quarter: 'Q1 2026',
-    date: 'Feb 15',
-    title: 'Testnet Launch',
-    status: 'upcoming' as const,
-    icon: <Rocket size={24} />,
-    milestones: [
-      'Public testnet launch',
-      'Bug bounty program',
-      'Developer grants',
-      'Community building'
-    ]
-  },
-  {
-    quarter: 'Q3 2026',
-    date: 'July 2026',
-    title: 'Full Platform',
-    status: 'upcoming' as const,
-    icon: <BadgeCheck size={24} />,
-    milestones: [
-      'All components ready',
-      'Asset Management OS',
-      'Mainnet preparation',
-      'Complete testing'
-    ]
-  },
-  {
-    quarter: 'Q4 2026',
-    date: 'Aug 15',
-    title: 'Mainnet Launch',
-    status: 'upcoming' as const,
-    icon: <BadgeCheck size={24} />,
-    milestones: [
-      'Genesis block',
-      'DeFi Hub live',
-      'AI Marketplace',
-      'Mining rewards'
-    ]
-  },
-  {
-    quarter: '2026-2027',
-    date: '',
-    title: 'Ecosystem Growth',
-    status: 'planned' as const,
-    icon: <Users size={24} />,
-    milestones: [
-      '10M+ users',
-      '100+ dApps',
-      'Cross-chain bridges',
-      'Exchange listings'
-    ]
-  },
-  {
-    quarter: '2027-2029',
-    date: '',
-    title: 'Mass Adoption',
-    status: 'planned' as const,
-    icon: <Globe size={24} />,
-    milestones: [
-      '50M+ users',
-      'Merchant programs',
-      'DeFi dominance',
-      'Mobile ecosystem'
-    ]
-  },
-  {
-    quarter: '2030+',
-    date: '',
-    title: 'Global Reserve',
-    status: 'vision' as const,
-    icon: <Building size={24} />,
-    milestones: [
-      '100M+ users',
-      'Reserve asset',
-      'Institutional',
-      'Full maturity'
-    ]
-  }
-];
+import { useTranslation } from 'react-i18next';
 
 const getStatusStyles = (status: string) => {
   switch (status) {
@@ -111,6 +31,89 @@ const getStatusStyles = (status: string) => {
 };
 
 export default function Roadmap() {
+  const { t } = useTranslation();
+
+  const roadmapPhases = [
+    {
+      quarter: t('roadmap.q1.quarter'),
+      date: t('roadmap.q1.date'),
+      title: t('roadmap.q1.title'),
+      status: 'upcoming' as const,
+      icon: <Rocket size={24} />,
+      milestones: [
+        t('roadmap.q1.milestone1'),
+        t('roadmap.q1.milestone2'),
+        t('roadmap.q1.milestone3'),
+        t('roadmap.q1.milestone4'),
+      ]
+    },
+    {
+      quarter: t('roadmap.q3.quarter'),
+      date: t('roadmap.q3.date'),
+      title: t('roadmap.q3.title'),
+      status: 'upcoming' as const,
+      icon: <BadgeCheck size={24} />,
+      milestones: [
+        t('roadmap.q3.milestone1'),
+        t('roadmap.q3.milestone2'),
+        t('roadmap.q3.milestone3'),
+        t('roadmap.q3.milestone4'),
+      ]
+    },
+    {
+      quarter: t('roadmap.q4.quarter'),
+      date: t('roadmap.q4.date'),
+      title: t('roadmap.q4.title'),
+      status: 'upcoming' as const,
+      icon: <BadgeCheck size={24} />,
+      milestones: [
+        t('roadmap.q4.milestone1'),
+        t('roadmap.q4.milestone2'),
+        t('roadmap.q4.milestone3'),
+        t('roadmap.q4.milestone4'),
+      ]
+    },
+    {
+      quarter: t('roadmap.ecosystem.quarter'),
+      date: '',
+      title: t('roadmap.ecosystem.title'),
+      status: 'planned' as const,
+      icon: <Users size={24} />,
+      milestones: [
+        t('roadmap.ecosystem.milestone1'),
+        t('roadmap.ecosystem.milestone2'),
+        t('roadmap.ecosystem.milestone3'),
+        t('roadmap.ecosystem.milestone4'),
+      ]
+    },
+    {
+      quarter: t('roadmap.mass.quarter'),
+      date: '',
+      title: t('roadmap.mass.title'),
+      status: 'planned' as const,
+      icon: <Globe size={24} />,
+      milestones: [
+        t('roadmap.mass.milestone1'),
+        t('roadmap.mass.milestone2'),
+        t('roadmap.mass.milestone3'),
+        t('roadmap.mass.milestone4'),
+      ]
+    },
+    {
+      quarter: t('roadmap.global.quarter'),
+      date: '',
+      title: t('roadmap.global.title'),
+      status: 'vision' as const,
+      icon: <Building size={24} />,
+      milestones: [
+        t('roadmap.global.milestone1'),
+        t('roadmap.global.milestone2'),
+        t('roadmap.global.milestone3'),
+        t('roadmap.global.milestone4'),
+      ]
+    }
+  ];
+  
   return (
     <Layout>
       {/* Hero Section */}
@@ -125,10 +128,10 @@ export default function Roadmap() {
             className="text-center max-w-4xl mx-auto"
           >
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-gradient-gold mb-6">
-              The Path to Global Financial Transformation
+              {t('roadmap.title')}
             </h1>
             <p className="text-xl text-muted-foreground">
-              From Launch to 100M+ Users
+              {t('roadmap.subtitle')}
             </p>
           </motion.div>
         </div>
@@ -146,37 +149,37 @@ export default function Roadmap() {
           >
             <GlassCard goldBorder className="p-8">
               <h2 className="font-serif text-2xl md:text-3xl text-gradient-gold text-center mb-6">
-                Development Progress: On Track
+                {t('roadmap.progressTitle')}
               </h2>
               <div className="grid md:grid-cols-4 gap-6 mb-6">
                 <div className="text-center">
                   <BadgeCheck className="w-10 h-10 text-secondary mx-auto mb-2" />
-                  <p className="text-sm font-semibold text-secondary">Layer 1 Blockchain</p>
-                  <p className="text-xs text-foreground/60">Completed</p>
+                  <p className="text-sm font-semibold text-secondary">{t('roadmap.progress.blockchain')}</p>
+                  <p className="text-xs text-foreground/60">{t('roadmap.progress.completed')}</p>
                 </div>
                 <div className="text-center">
                   <BadgeCheck className="w-10 h-10 text-secondary mx-auto mb-2" />
-                  <p className="text-sm font-semibold text-secondary">Swap Platform</p>
-                  <p className="text-xs text-foreground/60">Completed</p>
+                  <p className="text-sm font-semibold text-secondary">{t('roadmap.progress.swap')}</p>
+                  <p className="text-xs text-foreground/60">{t('roadmap.progress.completed')}</p>
                 </div>
                 <div className="text-center">
                   <BadgeCheck className="w-10 h-10 text-secondary mx-auto mb-2" />
-                  <p className="text-sm font-semibold text-secondary">DEX Platform</p>
-                  <p className="text-xs text-foreground/60">Completed</p>
+                  <p className="text-sm font-semibold text-secondary">{t('roadmap.progress.dex')}</p>
+                  <p className="text-xs text-foreground/60">{t('roadmap.progress.completed')}</p>
                 </div>
                 <div className="text-center">
                   <BadgeCheck className="w-10 h-10 text-secondary mx-auto mb-2" />
-                  <p className="text-sm font-semibold text-secondary">AI Bot Trade</p>
-                  <p className="text-xs text-foreground/60">Completed</p>
+                  <p className="text-sm font-semibold text-secondary">{t('roadmap.progress.aiBot')}</p>
+                  <p className="text-xs text-foreground/60">{t('roadmap.progress.completed')}</p>
                 </div>
               </div>
               <div className="text-center pt-6 border-t border-secondary/20">
                 <p className="text-foreground/80 mb-2">
                   <Clock className="inline w-5 h-5 mr-2 text-gold" />
-                  <strong className="text-secondary">Expected Completion: July 2026</strong>
+                  <strong className="text-secondary">{t('roadmap.expectedCompletion')}</strong>
                 </p>
                 <p className="text-sm text-foreground/60">
-                  ~15 dedicated professionals working continuously on remaining components
+                  {t('roadmap.teamSize')}
                 </p>
               </div>
             </GlassCard>
@@ -199,21 +202,21 @@ export default function Roadmap() {
             className="text-center max-w-3xl mx-auto"
           >
             <h2 className="font-serif text-3xl md:text-4xl text-gradient-gold mb-6">
-              Be Part of History
+              {t('roadmap.cta.title')}
             </h2>
             <p className="text-xl text-foreground/80 mb-8">
-              Join us on this journey to revolutionize global finance.
+              {t('roadmap.cta.subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link to="/about">
                 <Button variant="gold" size="lg">
-                  Learn About Our Vision
+                  {t('roadmap.cta.visionButton')}
                   <ArrowRight className="ml-2" size={18} />
                 </Button>
               </Link>
               <Link to="/dao">
                 <Button variant="goldOutline" size="lg">
-                  Join Governance
+                  {t('roadmap.cta.governanceButton')}
                 </Button>
               </Link>
             </div>
