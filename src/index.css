@@ -6,9 +6,11 @@
 
 @layer base {
   :root {
-    /* VIDDHANA Green Primary Colors */
-    --background: 150 30% 10%;
-    --foreground: 0 0% 98%;
+    /* VIDDHANA Green Primary Colors - ENHANCED */
+    --background: 150 50% 8%;
+    --background-darkest: 150 50% 5%;
+    --background-card: 150 35% 18%;
+    --foreground: 0 0% 100%;
 
     --card: 150 25% 15%;
     --card-foreground: 0 0% 98%;
@@ -20,9 +22,11 @@
     --primary: 122 39% 41%;
     --primary-foreground: 0 0% 100%;
 
-    /* Rich Gold */
+    /* Rich Gold - ENHANCED */
     --secondary: 45 73% 52%;
     --secondary-foreground: 0 0% 0%;
+    --gold-bright: 45 87% 59%;
+    --gold-dark: 42 65% 38%;
 
     /* Muted green */
     --muted: 150 20% 20%;
@@ -44,6 +48,7 @@
     /* Custom VIDDHANA colors */
     --green: 122 39% 41%;
     --green-dark: 150 39% 18%;
+    --green-darkest: 150 50% 8%;
     --green-medium: 150 35% 28%;
     --green-light: 122 39% 60%;
     --gold: 45 73% 52%;
@@ -51,6 +56,17 @@
     --gold-dark: 40 80% 45%;
     --cream: 35 47% 94%;
     --charcoal: 0 0% 12%;
+    
+    /* New Gray Tones */
+    --gray-light: 0 0% 72%;
+    --gray-medium: 0 0% 60%;
+    --gray-dark: 0 0% 48%;
+    
+    /* Geometric Element Sizes */
+    --node-sm: 64px;
+    --node-md: 96px;
+    --node-lg: 128px;
+    --connector-height: 4px;
 
     /* Gradients */
     --gradient-green: linear-gradient(135deg, hsl(122, 39%, 41%) 0%, hsl(150, 35%, 28%) 100%);
@@ -274,6 +290,122 @@
     background: rgba(74, 124, 89, 0.1);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(74, 124, 89, 0.2);
+  }
+  
+  /* NEW: Geometric Pattern Utilities */
+  
+  /* Circular Nodes */
+  .circular-node {
+    @apply rounded-full flex items-center justify-center;
+    @apply bg-gradient-to-br from-gold-bright to-gold;
+    @apply border-4 border-green-dark;
+    @apply transition-all duration-300;
+  }
+  
+  .circular-node:hover {
+    @apply scale-110;
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.6);
+  }
+  
+  .circular-node-sm {
+    width: var(--node-sm);
+    height: var(--node-sm);
+  }
+  
+  .circular-node-md {
+    width: var(--node-md);
+    height: var(--node-md);
+  }
+  
+  .circular-node-lg {
+    width: var(--node-lg);
+    height: var(--node-lg);
+  }
+  
+  /* Flow Connectors */
+  .flow-connector {
+    @apply h-1 flex-1;
+    background: linear-gradient(90deg, #D4AF37, #E8B84D);
+    animation: flow-pulse 2s ease-in-out infinite;
+  }
+  
+  @keyframes flow-pulse {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+  }
+  
+  /* Split Cards (BTCD Style) */
+  .split-card {
+    @apply rounded-3xl overflow-hidden;
+    @apply transition-all duration-300;
+  }
+  
+  .split-card:hover {
+    @apply scale-[1.02];
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 30px rgba(212, 175, 55, 0.3);
+  }
+  
+  .split-card-header {
+    @apply p-6 bg-gradient-to-br from-gold-bright to-gold;
+    @apply rounded-t-3xl;
+  }
+  
+  .split-card-content {
+    @apply p-6 text-white;
+    background: #1A3A2E;
+  }
+  
+  .split-card-footer-tab {
+    @apply w-20 h-8 mx-auto rounded-b-xl;
+    @apply bg-gold;
+  }
+  
+  /* Alternating Card Backgrounds */
+  .card-gold {
+    @apply bg-gradient-to-br from-gold-bright to-gold;
+  }
+  
+  .card-gray {
+    background: #B8B8B8;
+  }
+  
+  /* Horizontal Timeline */
+  .timeline-horizontal {
+    @apply relative flex items-center justify-between;
+  }
+  
+  .timeline-baseline {
+    @apply absolute top-1/2 left-0 right-0 h-1;
+    background: linear-gradient(90deg, #D4AF37, #E8B84D);
+    transform: translateY(-50%);
+  }
+  
+  .timeline-node {
+    @apply relative z-10 rounded-full;
+    @apply flex items-center justify-center;
+    @apply transition-all duration-300;
+  }
+  
+  .timeline-node-upcoming {
+    @apply bg-gradient-to-br from-gold-bright to-gold;
+    @apply border-4 border-green-dark;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+  }
+  
+  .timeline-node-planned {
+    @apply bg-transparent border-4 border-primary;
+  }
+  
+  .timeline-node-vision {
+    @apply bg-transparent border-4 border-gray-medium;
+  }
+  
+  /* Numbered Badges */
+  .numbered-badge {
+    @apply w-10 h-10 rounded-full;
+    @apply bg-gradient-to-br from-gold-bright to-gold;
+    @apply flex items-center justify-center;
+    @apply text-green-dark font-bold;
   }
 }
 

@@ -8,13 +8,17 @@ import {
   Users,
   Zap,
   Shield,
-  BarChart3
+  BarChart3,
+  Wallet,
+  MessageSquare
 } from 'lucide-react';
 import { Layout } from '@/components/Layout';
 import { Button } from '@/components/ui/button';
 import { GlassCard } from '@/components/GlassCard';
 import { SectionHeading } from '@/components/SectionHeading';
 import { AnimatedCounter } from '@/components/AnimatedCounter';
+import { CircularDiagram } from '@/components/CircularDiagram';
+import { HorizontalTimeline } from '@/components/HorizontalTimeline';
 import { Link } from 'react-router-dom';
 
 const daoSteps = [
@@ -22,6 +26,53 @@ const daoSteps = [
   { step: 2, title: 'AI Impact Analysis', description: 'AI evaluates proposal implications', icon: Brain },
   { step: 3, title: 'Community Voting', description: '1 VDH = 1 Vote for 7 days', icon: Vote },
   { step: 4, title: 'Automatic Execution', description: 'Smart contracts implement results', icon: CheckCircle },
+];
+
+const governancePhases = [
+  {
+    icon: <FileText size={24} />,
+    quarter: 'Day 1',
+    title: 'Submit Proposal',
+    status: 'upcoming' as const,
+    milestones: ['Draft creation', 'Community review', 'Formal submission']
+  },
+  {
+    icon: <MessageSquare size={24} />,
+    quarter: 'Days 2-3',
+    title: 'Discussion Period',
+    status: 'upcoming' as const,
+    milestones: ['Community debate', 'Q&A sessions', 'Revisions']
+  },
+  {
+    icon: <Vote size={24} />,
+    quarter: 'Days 4-10',
+    title: 'Voting Period',
+    status: 'planned' as const,
+    milestones: ['Cast votes', 'Track progress', 'Real-time results']
+  },
+  {
+    icon: <BarChart3 size={24} />,
+    quarter: 'Day 11',
+    title: 'Count Votes',
+    status: 'planned' as const,
+    milestones: ['Tally results', 'Verify quorum', 'Announce outcome']
+  },
+  {
+    icon: <CheckCircle size={24} />,
+    quarter: 'Day 12+',
+    title: 'Implementation',
+    status: 'vision' as const,
+    milestones: ['Execute changes', 'Monitor impact', 'Report results']
+  }
+];
+
+const daoNodes = [
+  { icon: <Users size={32} />, label: 'Token Holders', description: 'VDH holders vote' },
+  { icon: <FileText size={32} />, label: 'Proposals', description: 'Submit ideas' },
+  { icon: <Vote size={32} />, label: 'Voting', description: '1 VDH = 1 Vote' },
+  { icon: <Wallet size={32} />, label: 'Treasury', description: 'Community funds' },
+  { icon: <Shield size={32} />, label: 'Governance', description: 'Protocol rules' },
+  { icon: <Zap size={32} />, label: 'Execution', description: 'Smart contracts' },
 ];
 
 const proposalTypes = [
@@ -61,12 +112,113 @@ export default function DAO() {
         </div>
       </section>
 
-      {/* How DAO Works */}
-      <section className="py-24">
+      {/* DAO Structure - Grid Layout */}
+      <section className="py-32 bg-green-darkest relative overflow-hidden">
+        <div className="absolute inset-0 bg-pattern-circuit opacity-10" />
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <SectionHeading
+            title="DAO Structure"
+            subtitle="Decentralized governance with interconnected components"
+          />
+          
+          <div className="mt-16 max-w-6xl mx-auto">
+            {/* Center DAO Card */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="mb-12"
+            >
+              <GlassCard className="p-8 text-center bg-gradient-to-br from-gold/10 to-transparent border-2 border-gold">
+                <div className="w-24 h-24 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-gold-bright to-gold border-4 border-green-dark shadow-[0_0_40px_rgba(212,175,55,0.7)] flex items-center justify-center">
+                  <Shield className="w-12 h-12 text-green-dark" />
+                </div>
+                <h3 className="font-serif text-3xl text-gradient-gold mb-2">VIDDHANA DAO</h3>
+                <p className="text-gray-light">Decentralized Autonomous Organization</p>
+              </GlassCard>
+            </motion.div>
+
+            {/* Connecting Lines Container */}
+            <div className="relative mb-8">
+              {/* Vertical Line from Center */}
+              <div className="absolute left-1/2 top-0 w-1 h-8 bg-gradient-to-b from-gold to-transparent -translate-x-1/2"></div>
+              {/* Horizontal Line */}
+              <div className="absolute left-0 right-0 top-8 h-1 bg-gradient-to-r from-transparent via-gold to-transparent"></div>
+            </div>
+
+            {/* DAO Components Grid */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+              {daoNodes.map((node, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                >
+                  <GlassCard className="p-6 h-full hover:border-gold/50 transition-all duration-300 group cursor-pointer">
+                    <div className="flex flex-col items-center text-center">
+                      {/* Icon */}
+                      <div className="w-20 h-20 mb-4 rounded-xl bg-gradient-to-br from-gold/20 to-gold/5 border-2 border-gold/30 flex items-center justify-center group-hover:scale-110 group-hover:border-gold transition-all duration-300 group-hover:shadow-[0_0_30px_rgba(212,175,55,0.5)]">
+                        <div className="text-gold">
+                          {node.icon}
+                        </div>
+                      </div>
+                      
+                      {/* Label */}
+                      <h4 className="font-bold text-white text-lg mb-2 group-hover:text-gold transition-colors">
+                        {node.label}
+                      </h4>
+                      
+                      {/* Description */}
+                      <p className="text-sm text-gray-light">
+                        {node.description}
+                      </p>
+                    </div>
+                  </GlassCard>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Flow Explanation */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mt-12 text-center"
+            >
+              <div className="inline-flex items-center gap-3 px-6 py-3 bg-gold/10 border border-gold/30 rounded-full">
+                <ArrowRight className="w-5 h-5 text-gold" />
+                <p className="text-sm text-gray-light">
+                  All components work together in a <span className="text-gold font-semibold">trustless, transparent</span> ecosystem
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Governance Process - Horizontal Timeline */}
+      <section className="py-32 bg-gradient-to-b from-background to-green-dark/20">
         <div className="container mx-auto px-4 lg:px-8">
           <SectionHeading
-            title="How Governance Works"
-            subtitle="A transparent, AI-assisted decision-making process"
+            title="Governance Process"
+            subtitle="From proposal to implementation in 12 days"
+          />
+          
+          <div className="mt-16">
+            <HorizontalTimeline phases={governancePhases} />
+          </div>
+        </div>
+      </section>
+
+      {/* How DAO Works */}
+      <section className="py-24 bg-primary/5">
+        <div className="container mx-auto px-4 lg:px-8">
+          <SectionHeading
+            title="Key Features"
+            subtitle="Transparent, AI-assisted decision-making"
           />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">

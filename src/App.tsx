@@ -12,6 +12,8 @@ import Roadmap from "./pages/Roadmap";
 import DAO from "./pages/DAO";
 import Whitepaper from "./pages/Whitepaper";
 import About from "./pages/About";
+import Contact from "./pages/Contact";
+import SubmitWork from "./pages/SubmitWork";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -42,6 +44,8 @@ const App = () => (
           <Route path="/dao" element={<DAO />} />
           <Route path="/whitepaper" element={<Whitepaper />} />
           <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/submit-work" element={<SubmitWork />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

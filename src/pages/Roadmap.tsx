@@ -13,6 +13,7 @@ import { Layout } from '@/components/Layout';
 import { Button } from '@/components/ui/button';
 import { GlassCard } from '@/components/GlassCard';
 import { SectionHeading } from '@/components/SectionHeading';
+import { HorizontalTimeline } from '@/components/HorizontalTimeline';
 import { Link } from 'react-router-dom';
 
 const roadmapPhases = [
@@ -20,50 +21,50 @@ const roadmapPhases = [
     quarter: 'Q1 2026',
     date: 'Feb 15',
     title: 'Testnet Launch',
-    status: 'upcoming',
-    icon: Rocket,
+    status: 'upcoming' as const,
+    icon: <Rocket size={24} />,
     milestones: [
       'Public testnet launch',
       'Bug bounty program',
       'Developer grants',
-      'Community building initiatives'
+      'Community building'
     ]
   },
   {
     quarter: 'Q3 2026',
     date: 'July 2026',
-    title: 'Full Platform Completion',
-    status: 'upcoming',
-    icon: BadgeCheck,
+    title: 'Full Platform',
+    status: 'upcoming' as const,
+    icon: <BadgeCheck size={24} />,
     milestones: [
-      'All core components operational',
-      'Viddhana Asset Management OS launch',
-      'Mainnet preparation complete',
-      'Comprehensive testing finished'
+      'All components ready',
+      'Asset Management OS',
+      'Mainnet preparation',
+      'Complete testing'
     ]
   },
   {
     quarter: 'Q4 2026',
     date: 'Aug 15',
     title: 'Mainnet Launch',
-    status: 'upcoming',
-    icon: BadgeCheck,
+    status: 'upcoming' as const,
+    icon: <BadgeCheck size={24} />,
     milestones: [
-      'Genesis block mined',
-      'DeFi Hub goes live',
-      'AI Marketplace apps launch',
-      'Initial mining rewards'
+      'Genesis block',
+      'DeFi Hub live',
+      'AI Marketplace',
+      'Mining rewards'
     ]
   },
   {
     quarter: '2026-2027',
     date: '',
     title: 'Ecosystem Growth',
-    status: 'planned',
-    icon: Users,
+    status: 'planned' as const,
+    icon: <Users size={24} />,
     milestones: [
-      'Target: 10M+ users',
-      'Goal: 100+ dApps',
+      '10M+ users',
+      '100+ dApps',
       'Cross-chain bridges',
       'Exchange listings'
     ]
@@ -72,26 +73,26 @@ const roadmapPhases = [
     quarter: '2027-2029',
     date: '',
     title: 'Mass Adoption',
-    status: 'planned',
-    icon: Globe,
+    status: 'planned' as const,
+    icon: <Globe size={24} />,
     milestones: [
-      'Target: 50M+ users',
-      'Merchant acceptance programs',
-      'AI-driven DeFi dominance',
-      'Mobile app ecosystem'
+      '50M+ users',
+      'Merchant programs',
+      'DeFi dominance',
+      'Mobile ecosystem'
     ]
   },
   {
     quarter: '2030+',
     date: '',
-    title: 'Global Reserve Asset',
-    status: 'vision',
-    icon: Building,
+    title: 'Global Reserve',
+    status: 'vision' as const,
+    icon: <Building size={24} />,
     milestones: [
-      'Target: 100M+ users',
-      'VDH as reserve asset',
-      'Institutional adoption',
-      'Full ecosystem maturity'
+      '100M+ users',
+      'Reserve asset',
+      'Institutional',
+      'Full maturity'
     ]
   }
 ];
@@ -181,76 +182,8 @@ export default function Roadmap() {
             </GlassCard>
           </motion.div>
 
-          <div className="relative">
-            {/* Vertical line */}
-            <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-gold via-secondary to-primary transform md:-translate-x-1/2" />
-
-            <div className="space-y-16">
-              {roadmapPhases.map((phase, index) => {
-                const styles = getStatusStyles(phase.status);
-                const isEven = index % 2 === 0;
-
-                return (
-                  <motion.div
-                    key={phase.quarter}
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className={`relative flex flex-col md:flex-row items-start gap-8 ${
-                      isEven ? 'md:flex-row' : 'md:flex-row-reverse'
-                    }`}
-                  >
-                    {/* Timeline node */}
-                    <div className="absolute left-8 md:left-1/2 transform -translate-x-1/2 z-10">
-                      <div className={`w-16 h-16 rounded-full ${styles.bg} border-4 ${styles.border} flex items-center justify-center`}>
-                        <phase.icon className={`w-8 h-8 ${styles.text}`} />
-                      </div>
-                    </div>
-
-                    {/* Content */}
-                    <div className={`flex-1 pl-24 md:pl-0 ${isEven ? 'md:pr-12 md:text-right' : 'md:pl-12'}`}>
-                      <div className={`inline-block mb-4 ${isEven ? 'md:float-right md:clear-right' : ''}`}>
-                        <GlassCard className="inline-block" goldBorder={phase.status === 'upcoming'}>
-                          <div className={`${isEven ? 'md:text-right' : ''}`}>
-                            <div className="flex items-center gap-3 mb-2">
-                              {!isEven && <Clock className="w-4 h-4 text-secondary" />}
-                              <span className="font-serif text-lg text-secondary">
-                                {phase.quarter}
-                                {phase.date && ` - ${phase.date}`}
-                              </span>
-                              {isEven && <Clock className="w-4 h-4 text-secondary" />}
-                            </div>
-                            
-                            <h3 className="font-serif text-2xl text-foreground mb-4">
-                              {phase.title}
-                            </h3>
-
-                            <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs uppercase tracking-wider ${styles.bg} ${styles.text} border ${styles.border} mb-4`}>
-                              {phase.status === 'upcoming' && <Circle className="w-3 h-3 fill-current" />}
-                              {phase.status}
-                            </div>
-
-                            <ul className={`space-y-2 ${isEven ? 'md:text-right' : ''}`}>
-                              {phase.milestones.map((milestone, i) => (
-                                <li key={i} className={`flex items-center gap-2 ${isEven ? 'md:flex-row-reverse' : ''}`}>
-                                  <div className="w-1.5 h-1.5 rounded-full bg-secondary flex-shrink-0" />
-                                  <span className="text-muted-foreground text-sm">{milestone}</span>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        </GlassCard>
-                      </div>
-                    </div>
-
-                    {/* Spacer for opposite side */}
-                    <div className="flex-1 hidden md:block" />
-                  </motion.div>
-                );
-              })}
-            </div>
-          </div>
+          {/* Horizontal Timeline */}
+          <HorizontalTimeline phases={roadmapPhases} />
         </div>
       </section>
 

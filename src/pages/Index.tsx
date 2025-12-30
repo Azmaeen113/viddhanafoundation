@@ -14,7 +14,9 @@ import {
   BarChart3,
   ArrowRightLeft,
   Youtube,
-  BadgeCheck
+  BadgeCheck,
+  Store,
+  Building
 } from 'lucide-react';
 import { Layout } from '@/components/Layout';
 import { Button } from '@/components/ui/button';
@@ -22,6 +24,8 @@ import { AnimatedCounter } from '@/components/AnimatedCounter';
 import { GlassCard } from '@/components/GlassCard';
 import { SectionHeading } from '@/components/SectionHeading';
 import { CountdownTimer } from '@/components/CountdownTimer';
+import { FlowDiagram } from '@/components/FlowDiagram';
+import { SplitCard } from '@/components/SplitCard';
 
 const viddhanLogo = '/Viddhana Logo.jpg';
 
@@ -57,28 +61,73 @@ const corePillars = [
   { 
     title: 'Atlas Chain (Layer 3)', 
     description: '100,000+ TPS, <$0.001 fees, <1 second confirmation', 
-    icon: Cpu 
+    icon: Cpu,
+    features: [
+      'Lightning-fast transaction processing',
+      'Near-zero transaction costs',
+      'Instant settlement finality',
+      'EVM compatible infrastructure',
+      'Cross-chain interoperability'
+    ]
   },
   { 
     title: 'Prometheus AI Core', 
     description: '24/7 self-learning quantitative financial brain', 
-    icon: Brain 
+    icon: Brain,
+    features: [
+      'Multi-model AI architecture',
+      'Real-time market analysis',
+      'Dynamic portfolio optimization',
+      'Risk management automation',
+      'Continuous learning system'
+    ]
   },
   { 
     title: 'DeFi Integration', 
     description: '8-15% APY with AI-optimized strategies', 
-    icon: BarChart3 
+    icon: BarChart3,
+    features: [
+      'Automated yield farming',
+      'Liquidity pool optimization',
+      'Cross-protocol arbitrage',
+      'Risk-adjusted returns',
+      'Multi-chain DeFi access'
+    ]
   },
   { 
     title: 'RWA Tokenization', 
     description: 'Invest in real estate, solar farms, bonds with $50', 
-    icon: BadgeCheck 
+    icon: BadgeCheck,
+    features: [
+      'Fractional real estate ownership',
+      'Renewable energy investments',
+      'Tokenized corporate bonds',
+      'Low minimum investment ($50)',
+      'Legal compliance framework'
+    ]
   },
   { 
     title: 'SocialFi & DePIN', 
     description: 'Community-driven wealth building with passive income', 
-    icon: Users 
+    icon: Users,
+    features: [
+      'Engage-to-earn rewards',
+      'Decentralized infrastructure',
+      'Community governance',
+      'Data ownership rights',
+      'Passive income streams'
+    ]
   },
+];
+
+const ecosystemComponents = [
+  { icon: <ArrowRightLeft size={24} />, label: 'DeFi Hub', description: 'Decentralized exchange' },
+  { icon: <Brain size={24} />, label: 'Prometheus AI', description: 'AI advisor' },
+  { icon: <Users size={24} />, label: 'SocialFi', description: 'Social network' },
+  { icon: <MessageSquare size={24} />, label: 'Webcall', description: 'Web3 communication' },
+  { icon: <Store size={24} />, label: 'AI Marketplace', description: 'App store' },
+  { icon: <Wallet size={24} />, label: 'Asset Dashboard', description: 'Portfolio tracker' },
+  { icon: <Building size={24} />, label: 'RWA Platform', description: 'Real assets' },
 ];
 
 // Launch date: Q1 2026
@@ -336,37 +385,67 @@ export default function Index() {
       </section>
 
       {/* Ecosystem Preview */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-green-darkest" />
+        <div className="absolute inset-0 bg-pattern-circuit opacity-10" />
+        
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <SectionHeading
+            title="Complete Ecosystem at Your Fingertips"
+            subtitle="7 integrated platforms working together for your financial success"
+          />
+
+          {/* Ecosystem Flow Diagram */}
+          <FlowDiagram steps={ecosystemComponents} size="md" />
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mt-12"
+          >
+            <Link to="/ecosystem">
+              <Button variant="gold" size="lg">
+                Explore Full Ecosystem
+                <ArrowRight className="ml-2" size={18} />
+              </Button>
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Core Pillars - Redesigned with Alternating Cards */}
       <section className="py-24">
         <div className="container mx-auto px-4 lg:px-8">
           <SectionHeading
             title="Five Core Pillars of Financial Freedom"
-            subtitle="A complete, integrated wealth management ecosystem"
+            subtitle="Revolutionary technology powering the future of wealth management"
           />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {corePillars.map((item, index) => (
+            {corePillars.map((pillar, index) => (
               <motion.div
-                key={item.title}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                key={pillar.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <GlassCard className="h-full">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center flex-shrink-0">
-                      <item.icon className="w-6 h-6 text-secondary" />
-                    </div>
-                    <div>
-                      <h3 className="font-serif text-lg text-secondary mb-2">
-                        {item.title}
-                      </h3>
-                      <p className="text-muted-foreground text-sm">
-                        {item.description}
-                      </p>
-                    </div>
-                  </div>
-                </GlassCard>
+                <SplitCard
+                  title={pillar.title}
+                  icon={<pillar.icon size={32} />}
+                  className="h-full"
+                >
+                  <p className="text-gold mb-4 font-semibold">{pillar.description}</p>
+                  <ul className="space-y-2">
+                    {pillar.features.map((feature, fIdx) => (
+                      <li key={fIdx} className="flex items-start gap-2 text-sm">
+                        <BadgeCheck className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </SplitCard>
               </motion.div>
             ))}
           </div>
@@ -377,9 +456,9 @@ export default function Index() {
             viewport={{ once: true }}
             className="text-center mt-12"
           >
-            <Link to="/ecosystem">
+            <Link to="/technology">
               <Button variant="goldOutline" size="lg">
-                Explore Full Ecosystem
+                Deep Dive Into Technology
                 <ArrowRight className="ml-2" size={18} />
               </Button>
             </Link>

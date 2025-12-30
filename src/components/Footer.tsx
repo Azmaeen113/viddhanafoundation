@@ -14,13 +14,14 @@ const quickLinks = [
   { href: '/ecosystem', label: 'Ecosystem' },
   { href: '/tokenomics', label: 'Tokenomics' },
   { href: '/roadmap', label: 'Roadmap' },
+  { href: '/dao', label: 'DAO' },
 ];
 
 const resourceLinks = [
   { href: '/whitepaper', label: 'Whitepaper' },
-  { href: '/docs', label: 'Documentation' },
-  { href: '/api', label: 'API Docs' },
-  { href: '/blog', label: 'Blog' },
+  { href: '/about', label: 'About Us' },
+  { href: '/contact', label: 'Contact' },
+  { href: '/submit-work', label: 'Careers' },
 ];
 
 const communityLinks = [

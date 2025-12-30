@@ -19,6 +19,7 @@ import { Layout } from '@/components/Layout';
 import { Button } from '@/components/ui/button';
 import { GlassCard } from '@/components/GlassCard';
 import { SectionHeading } from '@/components/SectionHeading';
+import { SplitCard } from '@/components/SplitCard';
 import { Link } from 'react-router-dom';
 
 const metrics = [
@@ -165,7 +166,7 @@ export default function Technology() {
         </div>
       </section>
 
-      {/* Quad-Core Architecture */}
+      {/* Quad-Core Architecture - Redesigned as Split Card Grid */}
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background" />
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
@@ -174,57 +175,35 @@ export default function Technology() {
             subtitle="Integrated architecture for complete wealth management"
           />
 
-          <div className="space-y-16">
+          <div className="grid md:grid-cols-2 gap-8">
             {quadCoreLayers.map((layer, index) => (
               <motion.div
                 key={layer.name}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6 }}
-                className={`grid lg:grid-cols-2 gap-12 items-center ${
-                  index % 2 === 1 ? 'lg:flex-row-reverse' : ''
-                }`}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.15 }}
               >
-                <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
-                  <div className={`inline-flex items-center gap-3 px-4 py-2 rounded-full bg-gradient-to-r ${layer.color} mb-6`}>
-                    <layer.icon className="w-5 h-5 text-foreground" />
-                    <span className="text-foreground font-medium text-sm">
-                      {String(index + 1).padStart(2, '0')}
-                    </span>
-                  </div>
-                  
-                  <h2 className="font-serif text-3xl md:text-4xl text-gradient-gold mb-4">
-                    {layer.name}
-                  </h2>
-                  
-                  <p className="text-xl text-foreground/80 mb-6">
+                <SplitCard
+                  title={layer.name}
+                  icon={<layer.icon size={32} />}
+                  className="h-full"
+                >
+                  <p className="text-gray-light mb-6 leading-relaxed">
                     {layer.description}
                   </p>
-
-                  <ul className="space-y-3">
-                    {layer.features.map((feature, idx) => (
-                      <motion.li
-                        key={idx}
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: idx * 0.1 }}
-                        className="flex items-center gap-3"
-                      >
-                        <BadgeCheck className="w-5 h-5 text-secondary flex-shrink-0" />
-                        <span className="text-foreground/80">{feature}</span>
-                      </motion.li>
+                  
+                  <div className="space-y-3">
+                    {layer.features.map((feature, fIdx) => (
+                      <div key={fIdx} className="flex items-start gap-3">
+                        <div className="numbered-badge w-8 h-8 text-sm flex-shrink-0">
+                          {fIdx + 1}
+                        </div>
+                        <p className="text-white pt-1">{feature}</p>
+                      </div>
                     ))}
-                  </ul>
-                </div>
-
-                <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
-                  <GlassCard goldBorder>
-                    <layer.icon className="w-20 h-20 text-secondary mx-auto mb-4" />
-                    <div className="h-2 bg-gradient-to-r ${layer.color} rounded-full w-full"></div>
-                  </GlassCard>
-                </div>
+                  </div>
+                </SplitCard>
               </motion.div>
             ))}
           </div>

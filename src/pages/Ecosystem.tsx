@@ -12,12 +12,15 @@ import {
   Shield,
   Globe,
   BadgeCheck,
-  Sparkles
+  Sparkles,
+  Building
 } from 'lucide-react';
 import { Layout } from '@/components/Layout';
 import { Button } from '@/components/ui/button';
 import { GlassCard } from '@/components/GlassCard';
 import { SectionHeading } from '@/components/SectionHeading';
+import { FlowDiagram } from '@/components/FlowDiagram';
+import { SplitCard } from '@/components/SplitCard';
 import { Link } from 'react-router-dom';
 
 const ecosystemComponents = [
@@ -100,19 +103,25 @@ const ecosystemComponents = [
     gradient: 'from-gold-light to-secondary'
   },
   {
-    id: 'swap',
-    title: 'Simple Swap',
-    icon: RefreshCw,
-    description: '3-step token exchange',
+    id: 'rwa',
+    title: 'RWA Platform',
+    icon: Building,
+    description: 'Real-world asset tokenization',
     features: [
-      'Best price routing algorithm',
-      'Multiple chain support',
-      'Minimal transaction fees',
-      'Instant confirmation'
+      'Fractional real estate',
+      'Renewable energy projects',
+      'Corporate bonds',
+      'Low $50 minimum'
     ],
     gradient: 'from-secondary to-gold'
   }
 ];
+
+const flowSteps = ecosystemComponents.map(comp => ({
+  icon: <comp.icon size={24} />,
+  label: comp.title,
+  description: comp.description.split(' ').slice(0, 3).join(' ')
+}));
 
 const benefits = [
   { icon: Zap, title: 'Lightning Fast', description: '65,000+ TPS for instant transactions' },
@@ -141,6 +150,17 @@ export default function Ecosystem() {
               A complete, integrated financial operating system
             </p>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Ecosystem Flow Diagram */}
+      <section className="py-24 bg-green-darkest">
+        <div className="container mx-auto px-4 lg:px-8">
+          <SectionHeading
+            title="Integrated Ecosystem"
+            subtitle="All components working seamlessly together"
+          />
+          <FlowDiagram steps={flowSteps} size="md" />
         </div>
       </section>
 

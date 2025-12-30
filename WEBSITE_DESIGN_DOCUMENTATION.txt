@@ -1,0 +1,1269 @@
+================================================================================
+                    VIDDHANA FOUNDATION WEBSITE
+                    DESIGN & THEME DOCUMENTATION
+================================================================================
+
+Project Overview:
+-----------------
+The VIDDHANA Foundation website is a modern, sophisticated blockchain/DeFi 
+platform showcasing a wealth management ecosystem. The design employs a premium,
+elegant aesthetic combining nature-inspired greens with luxurious gold accents.
+
+ENHANCED VERSION (BTCD-Inspired):
+The design now incorporates geometric layout patterns including horizontal flow
+diagrams, circular node systems, and split-card layouts. The color palette has
+been refined with darker, richer greens and more prominent gold accents, plus
+the addition of light gray tones for content cards. This creates a more
+professional, structured visual language while maintaining the original brand
+identity.
+
+================================================================================
+                           COLOR PALETTE
+================================================================================
+
+PRIMARY COLOR SCHEME (ENHANCED):
+--------------------------------
+
+1. GREENS (Nature, Growth, Trust) - REFINED FOR DEPTH:
+   - Darkest Green (#0D2818): NEW - Very dark forest green for primary backgrounds
+   - Dark Green (#1A3A2E): Deep forest green for main backgrounds (kept)
+   - Medium Green (#2D5F4D): Mid-tone for cards and layering (kept)
+   - Card Green (#1e3a2e): NEW - Specific tone for card content areas
+   - Primary Green (#4A7C59): Main brand color for accents (kept)
+   - Light Green (#5fb88a): Softer accent for highlights (kept)
+
+2. GOLD (Wealth, Premium) - ENHANCED PROMINENCE:
+   - Bright Gold (#E8B84D): NEW - Warmer, more vibrant for highlights
+   - Primary Gold (#D4AF37): Luxurious gold for premium elements (kept)
+   - Dark Gold (#B8962A): NEW - Deeper, richer tone for borders
+   - Legacy Gold (#C79B2E): Deeper tones for sophistication (kept)
+   - Light Gold (#FFE391): Brighter highlights and accents (kept)
+
+3. GRAYS (NEW - Content & Structure):
+   - Light Gray (#B8B8B8): NEW - Primary gray for content card backgrounds
+   - Medium Gray (#9A9A9A): NEW - Secondary content areas
+   - Dark Gray (#7A7A7A): NEW - Muted elements
+
+4. NEUTRALS:
+   - Background: Very dark green-tinted (HSL 150, 30%, 10%)
+   - Foreground: White (#FFFFFF) for maximum contrast
+   - Text on Gold: Dark Green (#1A3A2E) for readability
+   - Cream (#F5EDE3): Warm neutral accent
+   - Charcoal (#1F1F1F): Deep neutral for cards
+
+4. FUNCTIONAL COLORS:
+   - Destructive/Error: Red (#EA5A47)
+   - Success: Matches primary green
+   - Muted: 20% saturation green tones
+
+================================================================================
+                          BACKGROUND STYLES
+================================================================================
+
+GRADIENT SYSTEMS:
+-----------------
+
+1. Hero Gradients:
+   - Dark green to medium green (180° vertical)
+   - Creates depth with 3-layer system:
+     * Deep forest base (#12251f)
+     * Mid-tone green center (#1a3a2e)
+     * Dark green bottom
+   
+2. Glass Morphism:
+   - Semi-transparent cards (50% opacity)
+   - Backdrop blur (12-16px)
+   - Subtle borders (gold/green at 20-30% opacity)
+   - Creates floating, premium effect
+
+3. Circuit Pattern:
+   - Subtle tech pattern overlay at 20% opacity
+   - 60px grid size
+   - Reinforces blockchain/technology theme
+
+4. Animated Orbs:
+   - Floating circular gradients
+   - Green orbs: 96px × 96px with radial fade
+   - Gold orbs: 80px × 80px with offset animation
+   - 3D blur effect (blur-3xl)
+
+5. Geometric Patterns (NEW - BTCD-Inspired):
+   - Circular node systems for ecosystem diagrams
+   - Horizontal flow connectors with gradient lines
+   - Split-card layouts (gold header + dark green content)
+   - Alternating card backgrounds (gold/gray pattern)
+   - Connecting lines between elements (gold gradients)
+   - Radial circular diagrams for features/risks
+
+================================================================================
+                    GEOMETRIC LAYOUT SYSTEMS (NEW)
+================================================================================
+
+CIRCULAR NODE PATTERNS:
+-----------------------
+
+1. Circular Icon Containers:
+   - Size variations: 64px, 96px, 128px diameter
+   - Gold gradient backgrounds (#E8B84D → #D4AF37)
+   - Dark green border (4-6px solid #1A3A2E)
+   - White icon/content inside
+   - Usage: Ecosystem flows, feature highlights, stats
+
+2. Flow Diagram Connectors:
+   - Horizontal gradient lines (gold #D4AF37 → bright gold #E8B84D)
+   - Height: 4-6px
+   - Animated pulse effect (2s loop)
+   - Connects circular nodes horizontally
+
+3. Split Card System:
+   - Structure: Gold header + Dark green content + Gold footer tab
+   - Header: 24px top border-radius, gold gradient background
+   - Content: Dark green (#1A3A2E) with white text
+   - Footer tab: 60-80px wide, rounded bottom, centered
+   - Total border-radius: 24-32px
+
+HORIZONTAL TIMELINE LAYOUT:
+---------------------------
+   - Replace vertical timelines with horizontal flow
+   - Circular nodes (80-100px) as milestones
+   - Gold connecting line as base (4px height)
+   - Labels below each node
+   - Responsive: Stack vertically on mobile
+
+CIRCULAR DIAGRAM LAYOUT:
+------------------------
+   - Center element: Logo or main concept (150px diameter)
+   - Surrounding nodes: 6-8 items positioned in circle
+   - Radius: 300-400px from center
+   - SVG connecting lines from center to each node
+   - Gold gradient lines with subtle glow
+   - Usage: Risk analysis, feature ecosystem, recommendations
+
+ALTERNATING CARD GRID:
+----------------------
+   - 3-column grid (desktop), 1-column (mobile)
+   - Even cards: Gold gradient background
+   - Odd cards: Light gray background
+   - All cards: Dark green rounded top section
+   - Creates visual rhythm and hierarchy
+
+================================================================================
+                          TYPOGRAPHY SYSTEM
+================================================================================
+
+FONT FAMILIES:
+--------------
+
+1. CINZEL (Serif - Headings):
+   - Weights: 400, 500, 600, 700, 800, 900
+   - Usage: All h1-h6 headings, titles
+   - Character: Classic, elegant, premium
+   - Tracking: Wide letter spacing for luxury feel
+
+2. MONTSERRAT (Sans-Serif - Body):
+   - Weights: 300, 400, 500, 600, 700
+   - Usage: Body text, navigation, UI elements
+   - Character: Modern, clean, highly readable
+
+TEXT TREATMENTS:
+----------------
+
+1. Gold Gradient Text:
+   - 135° gradient from bright gold to light gold
+   - Webkit background clip technique
+   - Used for major headings and CTAs
+   - Creates shimmer effect
+
+2. Text Shadows:
+   - Glow text: 20px blur with 50% gold opacity
+   - Subtle depth on hero headings
+   - Enhances premium feel
+
+3. Hierarchy:
+   - h1: 4xl-6xl (responsive), Cinzel, gold gradient
+   - h2: 3xl-5xl, Cinzel, gold/green gradient
+   - h3: 2xl-4xl, Cinzel, secondary color
+   - Body: xl base, Montserrat, muted foreground
+   - Small text: sm-md, uppercase tracking for labels
+
+================================================================================
+                      COMPONENT DESIGN PATTERNS
+================================================================================
+
+GLASS CARDS (GlassCard Component) - ENHANCED:
+----------------------------------------------
+- Semi-transparent background (10-15% opacity)
+- Backdrop blur: 10-16px
+- Border: 1-2px solid green/gold at 20% opacity
+- Border radius: 0.75rem (12px)
+- Optional gold border variant for premium content
+- Hover effects: Scale 1.02, increased glow
+
+NEW CARD VARIANTS:
+
+1. Split Card (BTCD-Inspired):
+   - Gold gradient header section (rounded top)
+   - Dark green content area
+   - Gold footer tab (60-80px wide, centered)
+   - 24-32px border radius
+   - Usage: Features, technology pillars, team cards
+
+2. Alternating Grid Cards:
+   - Gold variant: Full gold gradient background with dark text
+   - Gray variant: Light gray (#B8B8B8) with dark green header
+   - Both: 24px border radius, consistent padding
+   - Usage: Core pillars, features, benefits
+
+3. Circular Feature Card:
+   - Circular icon (96px) at top
+   - Gold gradient border around icon
+   - Content below in standard card layout
+   - Usage: Stats, key metrics, team members
+
+BUTTONS:
+--------
+
+1. Primary (Green):
+   - Background: Primary green (#4A7C59)
+   - Hover: Lighter green with scale
+   - Text: White, medium weight
+
+2. Gold Variant:
+   - Background: Gold gradient
+   - Hover: Enhanced glow effect
+   - Used for CTAs and important actions
+
+3. Ghost/Outline:
+   - Transparent background
+   - Gold border
+   - Hover: Fill with gold/green
+
+NAVIGATION BAR:
+---------------
+- Fixed position, full width
+- Height: 80px (5rem)
+- Transparent initially
+- Scrolled state:
+  * Background: 95% opacity with backdrop blur
+  * Gold border bottom (20% opacity)
+  * Box shadow for depth
+- Logo: 48px height with hover scale effect
+- Links: Montserrat, hover gold underline
+- Mobile: Hamburger menu with slide-in panel
+
+FOOTER:
+-------
+- Dark green-black background
+- 4-column layout (desktop), stack on mobile
+- Sections: Quick Links, Resources, Community, Legal
+- Social icons: Twitter, Telegram, YouTube
+- Scroll-to-top button (gold, bottom-right)
+- Copyright notice with subtle green separator
+
+NEW GEOMETRIC COMPONENTS:
+-------------------------
+
+1. CIRCULAR NODE COMPONENT:
+   - Props: icon, label, size (sm/md/lg)
+   - Sizes: 64px, 96px, 128px
+   - Gold gradient background
+   - Dark green border (4-6px)
+   - White icon centered
+   - Label below (optional)
+   - Hover: Scale 1.1, enhanced glow
+
+2. FLOW DIAGRAM COMPONENT:
+   - Horizontal row of circular nodes
+   - Gold gradient connectors between nodes
+   - Animated pulse on connectors
+   - Responsive: Wraps or scrolls on mobile
+   - Usage: Ecosystem, technology stack, user journey
+
+3. SPLIT CARD COMPONENT:
+   - Three sections: header (gold), content (dark green), footer tab (gold)
+   - Header: Icon + title
+   - Content: Description, features, bullets
+   - Footer: Decorative gold rounded tab
+   - Variants: Left-aligned or centered content
+
+4. CIRCULAR DIAGRAM COMPONENT:
+   - SVG-based radial layout
+   - Center element with surrounding nodes
+   - Connecting lines with animation
+   - Each node: circular icon + label + description
+   - Rotation: Positioned evenly around circle
+   - Usage: Risk analysis, ecosystem overview, recommendations
+
+5. HORIZONTAL TIMELINE COMPONENT:
+   - Linear progression with circular nodes
+   - Gold baseline connector
+   - Each milestone: circle + date + title + content
+   - Responsive: Converts to vertical on mobile
+   - Usage: Roadmap, history, process steps
+
+6. NUMBERED LIST WITH CIRCULAR BADGES:
+   - Each item has circular number badge (40px)
+   - Badge: Gold background, dark green number
+   - Content aligned to right of badge
+   - Vertical spacing between items
+   - Usage: Steps, recommendations, features
+
+================================================================================
+                        PAGE-BY-PAGE BREAKDOWN
+================================================================================
+
+1. HOME PAGE (Index.tsx):
+--------------------------
+
+A. HERO SECTION:
+   - Full viewport height
+   - Dark green gradient background
+   - Floating animated orbs (green & gold)
+   - Circuit pattern overlay
+   - Center-aligned content
+   - Large Cinzel heading with gold gradient
+   - Subheading in Montserrat
+   - Twin CTAs: "Get Started" (gold) + "Read Whitepaper" (outline)
+   - Countdown timer to Q1 2026 launch
+
+B. STATS SECTION:
+   - 4 animated counter cards
+   - Glass morphism cards in 2×2 grid (desktop)
+   - Icons: Users, Zap, TrendingUp, Shield
+   - Numbers: 3.3B, 100K+, $100B, 8-15%
+   - Animated counter effect on scroll into view
+   - Gold text for numbers, muted for labels
+
+C. "WHAT IS VIDDHANA" SECTION:
+   - Two-column layout (text + logo)
+   - Green gradient background
+   - Text column:
+     * Gold gradient heading
+     * Feature list with check icons
+     * "Explore Technology" CTA button
+   - Visual column:
+     * Large centered logo (384×384px)
+     * Gold glow effect
+     * Pulsing animation
+
+D. PROBLEMS SOLVED SECTION:
+   - Three problem/solution cards
+   - Icons: Wallet, Globe, TrendingUp
+   - Problem in red/muted, solution in gold
+   - Glass card styling with hover lift
+   - Staggered fade-in animation
+
+E. CORE PILLARS SECTION (REDESIGNED):
+   - 5 technology pillars
+   - Alternating card grid (3 cols desktop, 1 mobile)
+   - NEW LAYOUT:
+     * Odd cards: Gold gradient background with dark text
+     * Even cards: Light gray background with gold accents
+     * All cards: Dark green rounded header section
+     * Gold footer tabs on each card
+   - Icons: Cpu, Brain, BarChart3, BadgeCheck, Users (in circular containers)
+   - Feature lists with circular bullet points
+   - Hover: Lift with enhanced gold glow
+   - Border radius: 24px for premium feel
+
+Ea. ECOSYSTEM FLOW (NEW SECTION - ADD BEFORE CORE PILLARS):
+   - Horizontal flow diagram
+   - 7 circular nodes representing ecosystem components:
+     1. DeFi Hub (Exchange icon)
+     2. Prometheus AI (Brain icon)
+     3. SocialFi (Users icon)
+     4. Webcall (MessageSquare icon)
+     5. AI Marketplace (Store icon)
+     6. Asset Dashboard (Wallet icon)
+     7. RWA Platform (Building icon)
+   - Gold gradient connectors between nodes
+   - Animated pulse on connector lines
+   - Each node: 96px circular icon + label below
+   - Responsive: Horizontal scroll on mobile
+
+F. CALL TO ACTION:
+   - Dark background with gold accents
+   - Centered heading "Join the VIDDHANA Revolution"
+   - Description text
+   - Primary gold button "Join Waitlist"
+   - Arrow icon animation
+
+2. TECHNOLOGY PAGE (Technology.tsx):
+------------------------------------
+
+A. HERO:
+   - Gradient background (hero variant)
+   - Circuit pattern overlay
+   - Centered title: "Revolutionary Technology Stack"
+   - Subtitle describing quad-core architecture
+
+B. PERFORMANCE METRICS:
+   - 4 metric cards in row
+   - Icons: Gauge, Zap, Shield, Code
+   - Values: 100K+ TPS, <$0.001 fees, <1s confirmation, Multi-chain
+   - Gold borders on glass cards
+
+C. QUAD-CORE LAYERS (REDESIGNED):
+   - Horizontal flow with circular nodes OR split card grid
+   
+   OPTION 1 - Horizontal Flow:
+   - 4 large circular nodes (128px) in horizontal row
+   - Gold gradient connectors between
+   - Icons: Brain, Layers, Building, Wifi
+   - Expandable cards below each node with details
+   - Responsive: Vertical stack on mobile
+   
+   OPTION 2 - Split Card Grid (RECOMMENDED):
+   - 2x2 grid of split cards
+   - Each card:
+     * Gold gradient header with circular icon (96px)
+     * Dark green content section with 5 features
+     * Gold footer tab
+     * 24px border radius
+   - Cards:
+     1. Prometheus AI Core (Brain icon)
+     2. Atlas Chain L3 (Layers icon)
+     3. DeFi & RWA Integration (Building icon)
+     4. DePIN Oracles & IoT (Wifi icon)
+   - Hover: Lift effect with gold glow
+
+D. RWA TYPES:
+   - 5 card grid
+   - Icons: Building, Shield, Zap, Wifi, Globe
+   - Types: Real Estate, Bonds, Energy, Telecom, Carbon Credits
+   - Glass cards with hover effects
+
+E. AI FEATURES:
+   - Detailed cards for AI capabilities
+   - Brain icon prominently featured
+   - Multi-model architecture explanation
+   - Technical specifications in gold highlights
+
+3. ECOSYSTEM PAGE (Ecosystem.tsx):
+----------------------------------
+
+A. HERO:
+   - Title: "The VIDDHANA Ecosystem"
+   - Subtitle: "Comprehensive DeFi & Web3 Platform"
+
+B. ECOSYSTEM COMPONENTS (REDESIGNED):
+   - Horizontal flow diagram with 6 major components
+   
+   PRIMARY LAYOUT - Horizontal Flow:
+   - 6 circular nodes (120px) in connected horizontal row
+   - Gold gradient connectors between nodes
+   - Each node:
+     * Gold gradient circle with white icon
+     * Dark green border (6px)
+     * Component label below
+   - Components:
+     1. DeFi Hub (ArrowRightLeft)
+     2. Prometheus AI Core (Brain)
+     3. SocialFi Network (Users)
+     4. Webcall (MessageSquare)
+     5. AI App Marketplace (Store)
+     6. Asset Dashboard (Wallet)
+   - Click to expand: Shows split card with details below
+   - Responsive: 2-row layout on mobile
+   
+   SECONDARY LAYOUT - Circular Diagram:
+   - Center: VIDDHANA logo (150px)
+   - 6 nodes positioned in circle around center
+   - SVG connecting lines from center to each node
+   - Animated gold gradient glow on lines
+   - Each node: Circular icon + title + brief description
+   - Radius: 350px from center
+
+C. USER JOURNEY:
+   - Step-by-step flow visualization
+   - Numbers in gold circles
+   - Connecting lines between steps
+   - Icons for each action
+   - Timeline-style layout
+
+D. INTEGRATION SECTION:
+   - Multi-chain compatibility logos
+   - Partnership badges (placeholder)
+   - Glass card groupings
+
+4. TOKENOMICS PAGE (Tokenomics.tsx):
+-------------------------------------
+
+A. HERO:
+   - Title: "$VDH Token Economics"
+   - Subtitle: "1 Billion Total Supply | Utility & Governance"
+   - Coins icon motif
+
+B. TOKEN PARAMETERS:
+   - Gold-bordered glass card
+   - 2×2 grid layout:
+     * Token Name: VIDDHANA Token
+     * Symbol: $VDH
+     * Total Supply: 1,000,000,000 VDH
+     * Type: Utility & Governance
+   - Gold text for values
+
+C. DISTRIBUTION PIE CHART:
+   - 5 segments with color coding:
+     * Community 40% (medium green)
+     * Dev Team 20% (secondary gold)
+     * Ecosystem 15% (light green)
+     * Founding 15% (gold)
+     * Seed/Series A 10% (dark green)
+   - Interactive hover states
+   - Legend with icons (Users, Code, Zap, Heart, TrendingDown)
+
+D. TOKEN UTILITIES:
+   - 6 utility cards in grid
+   - Icons: Zap, Vote, BarChart3, Coins, Wallet, Shield
+   - Features:
+     * Fee Discounts (20-50%)
+     * Governance Rights (1 VDH = 1 Vote)
+     * Premium Access
+     * Community Rewards
+     * RWA Collateral
+     * Staking Rewards
+   - Glass cards with hover grow effect
+
+E. REVENUE MODEL:
+   - 4 revenue stream cards
+   - Icons: BarChart3, TrendingDown, Zap, Building
+   - Sources:
+     * Platform Fee (0.25-0.5% AUM)
+     * Performance Fee (10% above 8% APY)
+     * Protocol Fees (~$0.001/tx)
+     * DePIN Marketplace (1-2% commission)
+
+F. VESTING SCHEDULE:
+   - Timeline visualization
+   - Lock periods by stakeholder
+   - Cliff and vesting duration graphs
+   - Gold accent lines
+
+5. ROADMAP PAGE (Roadmap.tsx):
+-------------------------------
+
+A. HERO:
+   - Title: "Our Journey to Global Adoption"
+   - Subtitle with target metrics
+
+B. ROADMAP PHASES (REDESIGNED - HORIZONTAL):
+   - Horizontal timeline with 6 milestone nodes
+   - Gold gradient baseline (4px height) connecting all nodes
+   
+   LAYOUT:
+   - Each milestone:
+     * Circular node (100px diameter)
+     * Gold gradient background for upcoming/completed
+     * Green outline for planned
+     * Gray outline for vision
+     * Dark green border (5px)
+     * White icon inside
+   
+   - Timeline structure:
+     * Q1 2026 - Testnet Launch (Rocket, upcoming - gold solid)
+     * Q3 2026 - Platform Completion (BadgeCheck, upcoming - gold solid)
+     * Q4 2026 - Mainnet Launch (BadgeCheck, upcoming - gold solid)
+     * 2026-2027 - Ecosystem Growth (Users, planned - green outline)
+     * 2027-2029 - Mass Adoption (Globe, planned - green outline)
+     * 2030+ - Global Reserve (Building, vision - gray outline)
+   
+   - Below each node:
+     * Quarter/date label (gold text)
+     * Phase title (white text, Cinzel)
+     * Expandable card with 4 milestone bullets
+   
+   - Connector animation:
+     * Pulse effect flows from left to right
+     * Gold gradient shimmer (2s loop)
+   
+   - Responsive: 
+     * Desktop: Full horizontal with all 6 visible
+     * Tablet: 2 rows of 3
+     * Mobile: Vertical stack with left-aligned nodes
+
+C. KEY MILESTONES:
+   - Highlighted achievements
+   - Date markers
+   - Progress indicators
+
+6. DAO PAGE (DAO.tsx):
+----------------------
+
+A. HERO:
+   - Title: "Decentralized Autonomous Organization"
+   - Subtitle: "Community-Governed Ecosystem"
+
+B. DAO STRUCTURE (REDESIGNED - CIRCULAR DIAGRAM):
+   - Circular diagram layout (BTCD-inspired)
+   
+   CENTER:
+   - DAO logo/icon (150px circular gold gradient)
+   - Label: "VIDDHANA DAO"
+   
+   SURROUNDING NODES (6-8 items in circle):
+   - Each node: 80px circular gold gradient
+   - Positioned at 350px radius from center
+   - SVG connecting lines (gold, 2px) from center to each
+   - Nodes:
+     1. Token Holders (Users icon)
+     2. Proposals (FileText icon)
+     3. Voting (Vote icon)
+     4. Treasury (Wallet icon)
+     5. Governance (Shield icon)
+     6. Execution (Zap icon)
+   
+   - Each node expands on hover:
+     * Shows description card
+     * Gold border highlight
+     * Connecting line brightens
+   
+   - Animation:
+     * Subtle rotation of connecting lines
+     * Pulse glow on nodes (staggered timing)
+
+C. GOVERNANCE PROCESS (HORIZONTAL FLOW):
+   - 5-step horizontal timeline
+   - Circular nodes (80px) connected by gold line
+   - Steps:
+     1. Submit Proposal (FileText)
+     2. Community Discussion (MessageSquare)
+     3. Voting Period (Vote)
+     4. Vote Count (BarChart)
+     5. Implementation (CheckCircle)
+   - Each step has expandable content below
+   - Animated flow showing progression
+
+D. DAO STATS (SPLIT CARDS):
+   - 4 split card grid (2x2)
+   - Each card:
+     * Gold header with stat icon
+     * Dark green content with large number
+     * Animated counter on scroll
+   - Stats:
+     1. Active Proposals (with count)
+     2. Voting Power Distribution (chart)
+     3. Treasury Value (with amount)
+     4. Participation Rate (percentage)
+
+7. WHITEPAPER PAGE (Whitepaper.tsx):
+-------------------------------------
+
+A. HERO:
+   - Title: "VIDDHANA Whitepaper"
+   - Version and date
+   - Download button (gold, prominent)
+
+B. TABLE OF CONTENTS:
+   - Numbered sections with links
+   - Glass card container
+   - Smooth scroll navigation
+
+C. DOCUMENT SECTIONS:
+   - Multiple content sections
+   - Formatted with:
+     * Section headings (Cinzel)
+     * Body paragraphs (Montserrat)
+     * Bullet lists
+     * Technical diagrams (placeholders)
+     * Statistical callouts
+
+D. DOWNLOAD OPTIONS:
+   - PDF format
+   - Multiple language versions
+   - Share buttons
+
+8. ABOUT PAGE (About.tsx):
+--------------------------
+
+A. HERO:
+   - Title: "About VIDDHANA Foundation"
+   - Mission statement
+
+B. TEAM SECTION:
+   - Leadership profiles
+   - MIT Professor highlight
+   - Team member cards with:
+     * Photo placeholder
+     * Name and title
+     * LinkedIn/social links
+     * Brief bio
+
+C. ADVISORY BOARD:
+   - Advisor cards
+   - Similar styling to team
+
+D. PARTNERS:
+   - Logo grid
+   - Partnership descriptions
+
+E. CONTACT:
+   - Email and social links
+   - Contact form (glass card)
+
+9. 404 NOT FOUND PAGE (NotFound.tsx):
+--------------------------------------
+   - Centered error message
+   - Large "404" in gold gradient
+   - Humorous or helpful message
+   - "Return Home" button (gold)
+   - Minimal design, maintains brand
+
+================================================================================
+                        ANIMATION & INTERACTIONS
+================================================================================
+
+SCROLL ANIMATIONS (Framer Motion):
+----------------------------------
+
+1. Fade In Up:
+   - Initial: opacity 0, translateY 30px
+   - Animate: opacity 1, translateY 0
+   - Duration: 0.6-0.8s
+   - Used for: Section headings, cards, content blocks
+
+2. Staggered Children:
+   - Parent container with stagger delay
+   - Children animate sequentially
+   - Delay: 0.1s between items
+   - Used for: Lists, card grids, features
+
+3. Parallax Orbs:
+   - Floating animation: 6s ease-in-out loop
+   - Y-axis translation: 0 → -20px → 0
+   - Multiple orbs with offset timing
+   - Creates depth perception
+
+4. Hover States:
+   - Cards: Scale 1.02, lift shadow
+   - Buttons: Brightness increase, glow enhancement
+   - Links: Color shift to gold, underline slide
+   - Duration: 0.3s ease
+
+5. Gradient Pulse:
+   - Background gradients slowly shift
+   - 8s infinite loop
+   - Subtle movement (0-100% background position)
+   - Adds life to static sections
+
+6. Counter Animation:
+   - Numbers count up from 0 to target
+   - Triggered on scroll into view
+   - Duration: 2s
+   - Easing: ease-out
+
+7. Flow Connector Animation (NEW):
+   - Gold gradient pulse along connecting lines
+   - Duration: 2s infinite loop
+   - Direction: Left to right
+   - Opacity oscillation: 0.6 → 1 → 0.6
+   - Creates sense of data/energy flow
+
+8. Circular Node Entrance (NEW):
+   - Scale in from 0.8 to 1
+   - Simultaneous fade in
+   - Stagger delay: 0.15s between nodes
+   - Gold glow appears on completion
+   - Duration: 0.5s ease-out
+
+9. Split Card Reveal (NEW):
+   - Header slides down from top (50px)
+   - Content fades in after header
+   - Footer tab slides up from bottom
+   - Total sequence: 0.8s
+   - Stagger in grids: 0.1s between cards
+
+10. Circular Diagram Rotation (NEW):
+    - Subtle rotation of connecting lines (360°)
+    - Duration: 20s infinite
+    - Easing: linear
+    - Nodes remain stationary
+    - Creates orbital effect
+
+INTERACTIVE ELEMENTS:
+---------------------
+
+1. Navbar:
+   - Scroll detection at 50px
+   - Smooth transition to solid background
+   - Mobile menu slide-in from right
+   - Active link highlighting (gold underline)
+
+2. Accordion/Expandables:
+   - Smooth height animation
+   - Icon rotation (chevron)
+   - Content fade-in
+
+3. Tabs:
+   - Underline indicator slide
+   - Content cross-fade
+   - Active tab gold highlight
+
+4. Tooltips:
+   - Fade in with scale
+   - Positioned dynamically
+   - Gold background, dark text
+
+5. Modals/Dialogs:
+   - Backdrop blur
+   - Scale in from 0.9 to 1
+   - Center alignment
+   - Glass morphism styling
+
+================================================================================
+                        RESPONSIVE DESIGN
+================================================================================
+
+BREAKPOINT SYSTEM:
+------------------
+- Mobile: < 640px (sm)
+- Tablet: 640px - 1024px (md, lg)
+- Desktop: > 1024px (xl, 2xl)
+
+MOBILE ADAPTATIONS:
+-------------------
+
+1. Navigation:
+   - Hamburger menu icon
+   - Full-screen mobile menu
+   - Stack navigation links
+   - Larger touch targets (48px min)
+
+2. Grid Layouts:
+   - Multi-column grids collapse to single column
+   - 4-col → 2-col → 1-col progression
+   - Maintain spacing ratios
+
+3. Typography:
+   - Responsive font sizes (clamp function)
+   - h1: 2.5rem mobile → 4rem desktop
+   - h2: 2rem mobile → 3.5rem desktop
+   - Body: 1rem mobile → 1.125rem desktop
+
+4. Spacing:
+   - Container padding: 1rem mobile → 2rem desktop
+   - Section spacing: 3rem mobile → 6rem desktop
+
+5. Cards:
+   - Full width on mobile
+   - Reduced padding
+   - Simplified layouts
+
+6. Hero Sections:
+   - Reduce hero height on mobile
+   - Stack two-column layouts
+   - Scale down orb decorations
+
+================================================================================
+                        SPECIAL EFFECTS
+================================================================================
+
+GLASS MORPHISM:
+---------------
+- Core design language
+- Implementation:
+  * Background: rgba with 10-15% opacity
+  * Backdrop filter: blur(12px) saturate(150%)
+  * Border: 1px solid with 20% opacity
+  * Box shadow: Multi-layer for depth
+- Variants:
+  * Glass-green: Green tinted
+  * Glass-gold: Gold tinted
+  * Glass-card: Neutral with border
+
+GLOW EFFECTS:
+-------------
+
+1. Gold Glow:
+   - Box shadow: 0 0 30px gold at 40% opacity
+   - Extended shadow: 0 0 60px gold at 20% opacity
+   - Used for CTAs, premium elements
+
+2. Green Glow:
+   - Similar structure with green color
+   - Used for success states, badges
+
+3. Text Glow:
+   - Text shadow: 0 0 20px gold at 50%
+   - Enhances gold gradient headings
+
+4. Pulse Glow:
+   - Animated glow intensity
+   - 2s ease-in-out loop
+   - 0% & 100%: 30px spread
+   - 50%: 40px spread
+
+SHINE ANIMATION:
+----------------
+- Pseudo-element (::after)
+- Linear gradient: transparent → gold 30% → transparent
+- Slides left to right
+- 3s duration, infinite loop
+- Used on buttons and special cards
+
+CIRCUIT PATTERN:
+----------------
+- SVG or CSS background
+- 60px × 60px tile size
+- Represents blockchain/tech connectivity
+- Always at 20% opacity
+- Never overpowers content
+
+================================================================================
+                        ACCESSIBILITY FEATURES
+================================================================================
+
+1. COLOR CONTRAST:
+   - All text meets WCAG AA standards (4.5:1 minimum)
+   - Important text uses high contrast (white on dark green)
+   - Gold used primarily for accents, not primary text
+
+2. KEYBOARD NAVIGATION:
+   - All interactive elements focusable
+   - Focus indicators (gold ring, 2px)
+   - Logical tab order
+   - Skip to content link
+
+3. ARIA LABELS:
+   - Icons have aria-label attributes
+   - Complex components have aria-described-by
+   - Role attributes on custom components
+
+4. SEMANTIC HTML:
+   - Proper heading hierarchy (h1 → h2 → h3)
+   - Nav, main, section, article elements
+   - Button vs link distinction
+
+5. REDUCED MOTION:
+   - prefers-reduced-motion media query
+   - Disables animations for sensitive users
+   - Maintains layout without motion
+
+================================================================================
+                        TECHNICAL IMPLEMENTATION
+================================================================================
+
+TECH STACK:
+-----------
+- React 18 with TypeScript
+- Vite build tool
+- Tailwind CSS for styling
+- Framer Motion for animations
+- Radix UI for accessible components
+- React Router for navigation
+- Lucide React for icons
+
+CSS VARIABLES (Custom Properties) - ENHANCED:
+----------------------------------------------
+- All colors defined as HSL variables in :root
+- Enables easy theme switching
+- Dark mode ready (currently dark-first design)
+
+UPDATED COLOR VARIABLES:
+:root {
+  /* Darker, Richer Greens */
+  --background-darkest: #0D2818;      /* NEW - Very dark forest */
+  --background-dark: #1A3A2E;         /* Main background */
+  --background-medium: #2D5F4D;       /* Cards & layering */
+  --background-card: #1e3a2e;         /* NEW - Card content */
+  --primary: 122 39% 41%;             /* Primary green */
+  
+  /* Enhanced Golds */
+  --gold-bright: #E8B84D;             /* NEW - Vibrant highlights */
+  --gold: #D4AF37;                    /* Primary gold */
+  --gold-dark: #B8962A;               /* NEW - Rich borders */
+  --gold-legacy: #C79B2E;             /* Deep sophistication */
+  
+  /* Content Grays (NEW) */
+  --gray-light: #B8B8B8;              /* NEW - Card backgrounds */
+  --gray-medium: #9A9A9A;             /* NEW - Secondary content */
+  --gray-dark: #7A7A7A;               /* NEW - Muted elements */
+  
+  /* Text */
+  --text-primary: #FFFFFF;            /* White text */
+  --text-secondary: rgba(255, 255, 255, 0.8);
+  --text-on-gold: #1A3A2E;            /* Dark green on gold */
+  
+  /* Borders */
+  --border-gold: #D4AF37;
+  --border-gold-dark: #B8962A;        /* NEW */
+  --border-green: #2D5F4D;
+  
+  /* Geometric Elements (NEW) */
+  --node-size-sm: 64px;
+  --node-size-md: 96px;
+  --node-size-lg: 128px;
+  --connector-height: 4px;
+  --connector-gradient: linear-gradient(90deg, #D4AF37, #E8B84D);
+  
+  /* Split Card (NEW) */
+  --split-card-radius: 24px;
+  --split-card-header-height: 120px;
+  --split-card-tab-width: 60px;
+}
+
+COMPONENT LIBRARY:
+------------------
+- Shadcn/ui base components
+- Custom styled variants:
+  * Button variants: default, gold, outline, ghost
+  * Card variants: glass, glass-gold
+  * Input styles: Green/gold focus rings
+  * All components themeable via CSS variables
+
+PERFORMANCE:
+------------
+- Lazy loading for page components
+- Image optimization (WebP with fallbacks)
+- Framer Motion's viewport detection (whileInView)
+- CSS animations for simple effects
+- Minimal JavaScript bundle
+
+================================================================================
+                        BRAND IDENTITY SUMMARY
+================================================================================
+
+BRAND PERSONALITY:
+------------------
+- Premium yet Accessible
+- Innovative and Cutting-edge
+- Trustworthy and Stable
+- Nature-inspired (Growth, Sustainability)
+- Luxurious but not Exclusive
+
+DESIGN PRINCIPLES:
+------------------
+1. Clarity Over Complexity
+   - Information hierarchy is clear
+   - White space used generously
+   - Progressive disclosure
+
+2. Trust Through Design
+   - Stable, grounded color palette
+   - Consistent spacing and alignment
+   - Professional typography
+
+3. Innovation Visualization
+   - Modern glassmorphism
+   - Subtle animations
+   - Tech patterns and effects
+
+4. Accessibility First
+   - High contrast
+   - Readable fonts
+   - Clear interactive states
+
+5. Responsive Excellence
+   - Mobile-first approach
+   - Fluid typography
+   - Adaptive layouts
+
+KEY VISUAL MOTIFS:
+------------------
+- Circuit patterns (blockchain/technology)
+- Floating orbs (decentralization, network nodes)
+- Gradient transitions (smooth financial operations)
+- Glass surfaces (transparency, clarity)
+- Gold accents (value, premium quality)
+- Green foundations (growth, sustainability)
+
+NEW GEOMETRIC MOTIFS (BTCD-INSPIRED):
+--------------------------------------
+- Circular nodes (ecosystem components, milestones)
+- Horizontal flow diagrams (progression, connectivity)
+- Split cards (structure, hierarchy)
+- Connecting lines (relationships, data flow)
+- Radial layouts (holistic view, centralization)
+- Alternating patterns (rhythm, balance)
+- Gold gradient connectors (energy flow, value transfer)
+
+================================================================================
+                        CONTENT HIERARCHY
+================================================================================
+
+PAGE STRUCTURE (Standard):
+--------------------------
+1. Hero Section
+   - Immediate value proposition
+   - Primary CTA above the fold
+   - Visual interest (orbs, gradients)
+
+2. Key Metrics/Stats
+   - Build credibility
+   - Animated counters for engagement
+   - 4-item grid for balance
+
+3. Detailed Content
+   - Feature sections
+   - Benefits/solutions
+   - Technical specifications
+   - Use cases
+
+4. Social Proof
+   - Testimonials (future)
+   - Partner logos
+   - Community stats
+
+5. Secondary CTA
+   - Reinforce primary action
+   - Variant messaging
+   - Always visible
+
+6. Footer
+   - Navigation
+   - Legal
+   - Social links
+
+VISUAL WEIGHT DISTRIBUTION:
+---------------------------
+- Hero: 40% page attention
+- Stats/Proof: 20%
+- Content: 30%
+- CTAs: 10%
+
+INFORMATION DENSITY:
+--------------------
+- Hero: Low (focus on message)
+- Features: Medium (balanced)
+- Technical pages: High (detailed)
+- About: Medium-low (human focus)
+
+================================================================================
+                    DESIGN SYSTEM QUICK REFERENCE
+================================================================================
+
+SPACING SCALE (Tailwind):
+-------------------------
+- xs: 0.5rem (8px)
+- sm: 0.75rem (12px)
+- md: 1rem (16px)
+- lg: 1.5rem (24px)
+- xl: 2rem (32px)
+- 2xl: 3rem (48px)
+- 3xl: 4rem (64px)
+
+BORDER RADIUS:
+--------------
+- sm: 0.375rem (6px)
+- md: 0.5rem (8px)
+- lg: 0.75rem (12px) [DEFAULT]
+- xl: 1rem (16px)
+- 2xl: 1.5rem (24px)
+
+SHADOWS:
+--------
+- sm: Subtle lift
+- md: Standard card shadow
+- lg: Prominent elevation
+- gold: Custom gold glow (0 0 30px)
+- green: Custom green glow
+
+ICON SIZES:
+-----------
+- Small: 16px
+- Medium: 20-24px [STANDARD]
+- Large: 32-48px
+- Hero: 64px+
+
+BUTTON SIZES:
+-------------
+- sm: Compact (py-2 px-4)
+- md: Standard (py-3 px-6) [DEFAULT]
+- lg: Prominent (py-4 px-8)
+
+================================================================================
+                            FUTURE ENHANCEMENTS
+================================================================================
+
+PLANNED ADDITIONS:
+------------------
+1. Dark/Light mode toggle (currently dark-only)
+2. Language selector (internationalization)
+3. Interactive blockchain visualizer
+4. Real-time price ticker
+5. Animated infographics
+6. Video backgrounds (subtle)
+7. 3D elements (Three.js integration)
+8. Particle systems for backgrounds
+9. More sophisticated loading states
+10. Skeleton screens for content loading
+
+ANIMATION EXPANSIONS:
+---------------------
+1. Scroll-triggered parallax layers
+2. Mouse-follow effects on hero
+3. Morphing shapes between sections
+4. Data visualization animations
+5. Logo animation on load
+
+INTERACTIVE FEATURES:
+---------------------
+1. Ecosystem map (interactive SVG)
+2. Tokenomics calculator
+3. ROI simulator
+4. Risk assessment quiz
+5. Waitlist signup form with validation
+
+================================================================================
+                               CONCLUSION
+================================================================================
+
+The VIDDHANA Foundation website embodies a premium blockchain DeFi platform
+through its sophisticated use of natural green tones combined with luxurious
+gold accents. The glass morphism design language, paired with subtle animations
+and modern typography, creates an experience that is both trustworthy and
+innovative. Every design decision—from color choice to animation timing—serves
+to communicate the platform's core values: accessibility, growth, and financial
+empowerment for the global middle class.
+
+ENHANCED DESIGN PHILOSOPHY (BTCD-INSPIRED):
+The addition of geometric layout patterns elevates the design from elegant to
+structured excellence. Circular nodes represent interconnected ecosystem
+components, horizontal flows visualize progression and processes, and split
+cards create clear information hierarchy. The refined color palette—with darker
+greens for depth, brighter golds for prominence, and light grays for content
+balance—enhances professionalism while maintaining warmth.
+
+The design successfully balances technical sophistication with user-friendly
+presentation, making complex blockchain concepts approachable while maintaining
+the gravitas expected of a financial platform. Geometric patterns provide visual
+structure that guides users through complex information, while the enhanced
+color system creates stronger contrast and clearer focal points.
+
+Color psychology drives the palette: green for growth and stability, gold for
+value and premium quality. The dark backgrounds ensure content pops while
+reducing eye strain. The consistent use of glassmorphism creates visual unity
+across all pages while the gradient transitions guide users through content
+naturally.
+
+Responsive design ensures the experience translates beautifully across all
+devices, with thoughtful adaptations for mobile users rather than simple
+scaling. Accessibility features ensure the platform is usable by everyone,
+regardless of ability.
+
+This design system provides a solid foundation for scaling the VIDDHANA brand
+as the platform grows from launch through mass adoption.
+
+================================================================================
+                          END OF DOCUMENTATION
+================================================================================
+
+Document Version: 2.0 (BTCD-Enhanced)
+Created: December 30, 2025
+Last Updated: December 30, 2025
+Total Pages: 8 major pages + 1 error page
+Component Count: 46+ reusable components (6 new geometric components)
+Color Palette: 22+ defined colors with variants (7 new grays and golds)
+Animation Types: 14+ distinct animation patterns (4 new geometric animations)
+Layout Systems: 5 geometric pattern systems (circular, flow, split, radial, timeline)
+
+KEY ENHANCEMENTS:
+- Darker, richer green palette for professional depth
+- More prominent, warmer gold accents
+- Addition of light gray tones for content structure
+- Circular node components for ecosystem visualization
+- Horizontal flow diagrams for process illustration
+- Split card layouts for clear information hierarchy
+- Radial circular diagrams for relationship mapping
+- Horizontal timeline for roadmap presentation
+- Enhanced geometric animations and transitions
