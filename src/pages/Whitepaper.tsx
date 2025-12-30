@@ -69,10 +69,12 @@ export default function Whitepaper() {
             <p className="text-xl text-muted-foreground mb-8">
               Deep dive into VIDDHANA's architecture, economics, and vision
             </p>
-            <Button variant="hero" size="xl">
-              <Download className="mr-2" size={20} />
-              Download Full Whitepaper
-            </Button>
+            <a href="/VIDDHANA WHITEPAPERE.pdf" target="_blank" rel="noopener noreferrer">
+              <Button variant="hero" size="xl">
+                <Download className="mr-2" size={20} />
+                Download Full Whitepaper
+              </Button>
+            </a>
             <p className="text-muted-foreground text-sm mt-4">
               Version 2.1 | Last Updated: December 2024
             </p>

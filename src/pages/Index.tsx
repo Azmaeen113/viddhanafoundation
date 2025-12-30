@@ -212,11 +212,11 @@ export default function Index() {
                 Start Your Journey
                 <ArrowRight className="ml-2" size={20} />
               </Button>
-              <Link to="/whitepaper">
+              <a href="/VIDDHANA WHITEPAPERE.pdf" target="_blank" rel="noopener noreferrer">
                 <Button variant="heroOutline" size="xl" className="min-w-[200px]">
                   Read Whitepaper
                 </Button>
-              </Link>
+              </a>
             </motion.div>
 
             {/* Countdown */}

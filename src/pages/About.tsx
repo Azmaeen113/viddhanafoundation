@@ -458,11 +458,11 @@ export default function About() {
                 Start Your Wealth Journey
                 <ArrowRight className="ml-2" size={20} />
               </Button>
-              <Link to="/whitepaper">
+              <a href="/VIDDHANA WHITEPAPERE.pdf" target="_blank" rel="noopener noreferrer">
                 <Button variant="heroOutline" size="xl">
                   Read Our Whitepaper
                 </Button>
-              </Link>
+              </a>
             </div>
           </motion.div>
         </div>

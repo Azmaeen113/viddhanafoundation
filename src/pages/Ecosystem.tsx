@@ -326,7 +326,10 @@ export default function Ecosystem() {
                     </p>
                   </div>
                   <div className="space-y-3 bg-gold/10 p-4 rounded-lg border border-gold/30">
-                    <h4 className="font-semibold text-gold">✅ VIDDHANA</h4>
+                    <div className="flex items-center gap-2">
+                      <BadgeCheck className="w-5 h-5 text-gold" />
+                      <h4 className="font-semibold text-gold">VIDDHANA</h4>
+                    </div>
                     <p className="text-sm text-foreground/80">
                       Has DEX + AI Bot Trade → Automates trading, optimizes profits, no intervention needed.
                     </p>

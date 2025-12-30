@@ -367,12 +367,12 @@ export default function Technology() {
               Join the revolution and take control of your financial future
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/whitepaper">
+              <a href="/VIDDHANA WHITEPAPERE.pdf" target="_blank" rel="noopener noreferrer">
                 <Button variant="hero" size="lg">
                   Read Technical Whitepaper
                   <ArrowRight className="ml-2" size={18} />
                 </Button>
-              </Link>
+              </a>
               <Link to="/ecosystem">
                 <Button variant="goldOutline" size="lg">
                   Explore Ecosystem

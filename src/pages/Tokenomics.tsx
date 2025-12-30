@@ -427,12 +427,12 @@ export default function Tokenomics() {
               Acquire VDH tokens and participate in the wealth management revolution
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/whitepaper">
+              <a href="/VIDDHANA WHITEPAPERE.pdf" target="_blank" rel="noopener noreferrer">
                 <Button variant="hero" size="lg">
                   Read Full Tokenomics
                   <ArrowRight className="ml-2" size={18} />
                 </Button>
-              </Link>
+              </a>
               <Link to="/dao">
                 <Button variant="goldOutline" size="lg">
                   Explore DAO Governance
