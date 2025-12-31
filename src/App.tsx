@@ -29,28 +29,29 @@ function ScrollToTop() {
 }
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
+  <BrowserRouter>
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
-            <Route path="/technology" element={<Technology />} />
-            <Route path="/ecosystem" element={<Ecosystem />} />
-            <Route path="/tokenomics" element={<Tokenomics />} />
-            <Route path="/roadmap" element={<Roadmap />} />
-            <Route path="/dao" element={<DAO />} />
-            <Route path="/whitepaper" element={<Whitepaper />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/submit-work" element={<SubmitWork />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+          <Route path="/home" element={<Index />} />
+          <Route path="/technology" element={<Technology />} />
+          <Route path="/ecosystem" element={<Ecosystem />} />
+          <Route path="/tokenomics" element={<Tokenomics />} />
+          <Route path="/roadmap" element={<Roadmap />} />
+          <Route path="/dao" element={<DAO />} />
+          <Route path="/whitepaper" element={<Whitepaper />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/submit-work" element={<SubmitWork />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </TooltipProvider>
+    </QueryClientProvider>
+  </BrowserRouter>
 );
 
 export default App;
