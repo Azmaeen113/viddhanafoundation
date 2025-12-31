@@ -174,17 +174,17 @@ export function Footer() {
             </ul>
             <h4 className="font-serif text-lg text-secondary mb-4 mt-8">Contact</h4>
             <ul className="space-y-2">
-              <li className="flex items-center gap-2 text-sm text-muted-foreground">
+              <li className="flex items-center gap-2 text-sm">
                 <Mail size={16} className="text-secondary" />
-                <span>hello@viddhana.io</span>
+                <a href="mailto:support@btcd.foundation" className="text-muted-foreground hover:text-secondary transition-colors">
+                  support@btcd.foundation
+                </a>
               </li>
-              <li className="flex items-center gap-2 text-sm text-muted-foreground">
+              <li className="flex items-center gap-2 text-sm">
                 <Mail size={16} className="text-secondary" />
-                <span>press@viddhana.io</span>
-              </li>
-              <li className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Mail size={16} className="text-secondary" />
-                <span>support@viddhana.io</span>
+                <a href="mailto:admin@btcd.foundation" className="text-muted-foreground hover:text-secondary transition-colors">
+                  admin@btcd.foundation
+                </a>
               </li>
             </ul>
           </div>

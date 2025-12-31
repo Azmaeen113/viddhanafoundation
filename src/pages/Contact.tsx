@@ -8,7 +8,7 @@ import { SectionHeading } from '@/components/SectionHeading';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
-import { openEmailClient, WEBSITE_EMAIL } from '@/lib/emailUtils';
+import { openEmailClient, SUPPORT_EMAIL, ADMIN_EMAIL } from '@/lib/emailUtils';
 import { useTranslation } from 'react-i18next';
 
 export default function Contact() {
@@ -215,18 +215,17 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-white mb-2">Email</h3>
-                    <p className="text-gray-light text-sm mb-2">General Inquiries:</p>
-                    <a href={`mailto:${WEBSITE_EMAIL}`} className="text-gold hover:text-gold-bright transition-colors">
-                      {WEBSITE_EMAIL}
+                    <p className="text-gray-light text-sm mb-2">General Inquiries & Support:</p>
+                    <a href={`mailto:${SUPPORT_EMAIL}`} className="text-gold hover:text-gold-bright transition-colors">
+                      {SUPPORT_EMAIL}
                     </a>
-                    <p className="text-gray-light text-sm mt-3 mb-2">Press & Media:</p>
-                    <a href="mailto:press@viddhana.io" className="text-gold hover:text-gold-bright transition-colors">
-                      press@viddhana.io
+                    <p className="text-gray-light text-sm mt-3 mb-2">Administration:</p>
+                    <a href={`mailto:${ADMIN_EMAIL}`} className="text-gold hover:text-gold-bright transition-colors">
+                      {ADMIN_EMAIL}
                     </a>
-                    <p className="text-gray-light text-sm mt-3 mb-2">Support:</p>
-                    <a href="mailto:support@viddhana.io" className="text-gold hover:text-gold-bright transition-colors">
-                      support@viddhana.io
-                    </a>
+                    <p className="text-gray-light text-xs mt-4 opacity-75">
+                      All form submissions are sent to both addresses automatically
+                    </p>
                   </div>
                 </div>
               </GlassCard>
@@ -252,9 +251,9 @@ export default function Contact() {
                 <p className="text-gray-light text-sm mb-4">
                   We're always interested in strategic partnerships, integrations, and collaborations that align with our mission to democratize wealth management.
                 </p>
-                <a href="mailto:partnerships@viddhana.io">
+                <a href="mailto:support@btcd.foundation">
                   <Button variant="goldOutline" size="sm" className="w-full">
-                    partnerships@viddhana.io
+                    support@btcd.foundation
                   </Button>
                 </a>
               </GlassCard>
@@ -264,9 +263,9 @@ export default function Contact() {
                 <p className="text-gray-light text-sm mb-4">
                   We're building the future of finance. If you're passionate about blockchain, AI, and financial inclusion, we'd love to hear from you.
                 </p>
-                <a href="mailto:careers@viddhana.io">
+                <a href="mailto:support@btcd.foundation">
                   <Button variant="outline" size="sm" className="w-full border-primary text-primary hover:bg-primary hover:text-white">
-                    careers@viddhana.io
+                    support@btcd.foundation
                   </Button>
                 </a>
               </GlassCard>
@@ -299,7 +298,7 @@ export default function Contact() {
               },
               {
                 q: "How do I become a developer partner?",
-                a: "Contact us at partnerships@viddhana.io with details about your project or integration idea."
+                a: "Contact us at support@btcd.foundation with details about your project or integration idea."
               }
             ].map((faq, idx) => (
               <motion.div

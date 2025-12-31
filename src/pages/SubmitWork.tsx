@@ -74,9 +74,9 @@ If your files are larger than 10MB, please upload them to:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 We review all submissions within 5-7 business days.
-You'll hear back from us at: careers@viddhana.io
+You'll hear back from us at: support@btcd.foundation
 
-Thank you for your interest in joining VIDDHANA Foundation!
+Thank you for your interest in joining BTCD/VIDDHANA Foundation!
 `;
 
     // Open email client with form data and attachment instructions

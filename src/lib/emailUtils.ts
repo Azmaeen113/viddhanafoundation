@@ -1,6 +1,9 @@
 // Email utility functions for form submissions
 
-const WEBSITE_EMAIL = 'hello@viddhana.io';
+// BTCD Foundation email addresses
+const SUPPORT_EMAIL = 'support@btcd.foundation';
+const ADMIN_EMAIL = 'admin@btcd.foundation';
+const WEBSITE_EMAIL = SUPPORT_EMAIL; // Primary contact email
 
 export interface FormData {
   [key: string]: string | boolean | number;
@@ -26,15 +29,17 @@ export function generateEmailBody(formData: FormData, formType: string): string 
 
 export function openEmailClient(formData: FormData, subject: string, formType: string) {
   const body = generateEmailBody(formData, formType);
-  const mailtoLink = `mailto:${WEBSITE_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  // Send to both support and admin emails (CC)
+  const mailtoLink = `mailto:${SUPPORT_EMAIL}?cc=${ADMIN_EMAIL}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   window.location.href = mailtoLink;
 }
 
 export function openEmailWithInstructions(formData: FormData, subject: string, formType: string, attachmentInstructions: string) {
   const body = generateEmailBody(formData, formType);
   const fullBody = body + '\n\n' + attachmentInstructions;
-  const mailtoLink = `mailto:${WEBSITE_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(fullBody)}`;
+  // Send to both support and admin emails (CC)
+  const mailtoLink = `mailto:${SUPPORT_EMAIL}?cc=${ADMIN_EMAIL}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(fullBody)}`;
   window.location.href = mailtoLink;
 }
 
-export { WEBSITE_EMAIL };
+export { WEBSITE_EMAIL, SUPPORT_EMAIL, ADMIN_EMAIL };
