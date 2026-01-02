@@ -111,6 +111,22 @@
     font-family: 'Cinzel', serif;
     @apply font-semibold tracking-wide;
   }
+
+  /* Vietnamese font override */
+  html.lang-vi body {
+    font-family: "Segoe UI Variable Text Semibold", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 600;
+  }
+
+  html.lang-vi h1,
+  html.lang-vi h2,
+  html.lang-vi h3,
+  html.lang-vi h4,
+  html.lang-vi h5,
+  html.lang-vi h6 {
+    font-family: "Segoe UI Variable Text Semibold", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 600;
+  }
 }
 
 @layer utilities {

@@ -84,8 +84,10 @@ export function Navbar() {
           {/* CTA Buttons & Language Selector */}
           <div className="hidden lg:flex items-center gap-3">
             <LanguageSelector />
-            <Button variant="gold" size="default">
-              Launch App
+            <Button variant="gold" size="default" asChild>
+              <a href="https://t.me/btcdfoundation1" target="_blank" rel="noopener noreferrer">
+                Join Community
+              </a>
             </Button>
           </div>
 
@@ -123,8 +125,10 @@ export function Navbar() {
             ))}
             <div className="pt-4 space-y-3">
               <LanguageSelector />
-              <Button variant="gold" size="lg" className="w-full">
-                Launch App
+              <Button variant="gold" size="lg" className="w-full" asChild>
+                <a href="https://t.me/btcdfoundation1" target="_blank" rel="noopener noreferrer">
+                  Join Community
+                </a>
               </Button>
             </div>
           </div>

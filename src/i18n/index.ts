@@ -29,16 +29,25 @@ function convertTranslationsToResources() {
 
 const resources = convertTranslationsToResources();
 
+const applyDocumentLanguageAttributes = (lng: string) => {
+  if (typeof document === 'undefined') return;
+
+  document.documentElement.lang = lng;
+  document.documentElement.classList.toggle('lang-vi', lng === 'vi');
+};
+
 // Get stored language from localStorage or default to English
 const storedLang = typeof window !== "undefined" 
   ? window.localStorage.getItem("viddhana-lang") 
   : null;
 
+const initialLanguage = storedLang || "en";
+
 i18n
   .use(initReactI18next)
   .init({
     resources,
-    lng: storedLang || "en",
+    lng: initialLanguage,
     fallbackLng: "en",
     interpolation: {
       escapeValue: false, // React already escapes values
@@ -48,11 +57,13 @@ i18n
     },
   });
 
+applyDocumentLanguageAttributes(initialLanguage);
+
 // Save language to localStorage whenever it changes
 i18n.on("languageChanged", (lng) => {
   if (typeof window !== "undefined") {
     window.localStorage.setItem("viddhana-lang", lng);
-    document.documentElement.lang = lng;
+    applyDocumentLanguageAttributes(lng);
   }
 });
 
